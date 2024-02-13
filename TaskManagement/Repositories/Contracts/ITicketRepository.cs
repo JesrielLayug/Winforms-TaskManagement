@@ -7,8 +7,9 @@ using TaskManagement.Models;
 
 namespace TaskManagement.Repositories.Contracts
 {
-    public interface ITaskRepository
+    public interface ITicketRepository
     {
-        Task Add(TaskItem task);
+        Task Add(Ticket task);
+        Task<IEnumerable<Ticket>> GetAll();
     }
 }

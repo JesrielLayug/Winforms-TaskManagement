@@ -15,13 +15,13 @@ namespace TaskManagement.Views
     public partial class MainView : Form
     {
         private readonly IUserService userService;
-        private readonly ITaskService taskService;
+        private readonly ITicketService taskService;
 
         public string role { get; set; }
         public MainView(
             string role, 
             IUserService userService,
-            ITaskService taskService
+            ITicketService taskService
             )
         {
             this.userService = userService;

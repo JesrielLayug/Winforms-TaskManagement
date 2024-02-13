@@ -7,8 +7,9 @@ using TaskManagement.Models;
 
 namespace TaskManagement.Services.Contracts
 {
-    public interface ITaskService
+    public interface ITicketService
     {
-        Task<Response> Add(TaskItemEditor task);
+        Task<Response> Add(TicketEditor task);
+        Task<IEnumerable<TicketInfo>> GetAll();
     }
 }

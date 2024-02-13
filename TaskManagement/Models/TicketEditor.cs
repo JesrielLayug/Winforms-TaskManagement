@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Models
 {
-    public class TaskItemEditor
+    public class TicketEditor
     {
         public string Title { get; set; }
         public string AssignName { get; set; }
         public string Priority { get; set; }
         public string Division { get; set; }
-        public string TaskStatus { get; set; }
+        public string TicketStatus { get; set; }
         public string StartDate { get; set; }
         public string DueDate { get; set; }
         public string Description { get; set; }

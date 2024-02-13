@@ -15,11 +15,11 @@ namespace TaskManagement.UserControls
     public partial class AdminControl : UserControl
     {
         private readonly IUserService userService;
-        private readonly ITaskService taskService;
+        private readonly ITicketService taskService;
 
         public AdminControl(
             IUserService userService,
-            ITaskService taskService
+            ITicketService taskService
             )
         {
             this.userService = userService;

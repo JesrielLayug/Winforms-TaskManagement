@@ -133,9 +133,10 @@
     <Compile Include="Data\DatabaseSetting.cs" />
     <Compile Include="Data\IDatabaseSetting.cs" />
     <Compile Include="Data\ServiceLocator.cs" />
-    <Compile Include="Models\TaskItem.cs" />
-    <Compile Include="Models\TaskItemEditor.cs" />
-    <Compile Include="Models\TaskItemInfo.cs" />
+    <Compile Include="Models\TicketSubInfo.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketEditor.cs" />
+    <Compile Include="Models\TicketInfo.cs" />
     <Compile Include="Models\UserEditor.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\User.cs" />
@@ -147,15 +148,15 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\Contracts\ITaskRepository.cs" />
+    <Compile Include="Repositories\Contracts\ITicketRepository.cs" />
     <Compile Include="Repositories\Contracts\IUserRepository.cs" />
-    <Compile Include="Repositories\TaskRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\Contracts\IAuthenticationService.cs" />
-    <Compile Include="Services\Contracts\ITaskService.cs" />
+    <Compile Include="Services\Contracts\ITicketService.cs" />
     <Compile Include="Services\Contracts\IUserService.cs" />
-    <Compile Include="Services\TaskService.cs" />
+    <Compile Include="Services\TicketService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="UserControls\AdminControl.cs">
       <SubType>UserControl</SubType>
@@ -175,11 +176,11 @@
     <Compile Include="Views\CalendarView.Designer.cs">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditorTaskView.cs">
+    <Compile Include="Views\TicketEditorView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\EditorTaskView.Designer.cs">
-      <DependentUpon>EditorTaskView.cs</DependentUpon>
+    <Compile Include="Views\TicketEditorView.Designer.cs">
+      <DependentUpon>TicketEditorView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
@@ -215,8 +216,8 @@
     <EmbeddedResource Include="Views\CalendarView.resx">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EditorTaskView.resx">
-      <DependentUpon>EditorTaskView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\TicketEditorView.resx">
+      <DependentUpon>TicketEditorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
@@ -227,6 +228,7 @@
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TaskManagement.Models.TicketSubInfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,6 +247,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\time.png" />
+    <None Include="Resources\opened-door-aperture.png" />
+    <None Include="Resources\tool-gray.png" />
+    <None Include="Resources\dashboard-gray.png" />
+    <None Include="Resources\account-gray.png" />
+    <None Include="Resources\task2.png" />
+    <None Include="Resources\pie-15.png" />
+    <None Include="Resources\pie-11.png" />
+    <None Include="Resources\pie-ss.png" />
+    <None Include="Resources\pie-small.png" />
+    <None Include="Resources\task.png" />
+    <None Include="Resources\pie.png" />
+    <None Include="Resources\Combo Chart.png" />
+    <None Include="Resources\Add notes-bro.png" />
     <None Include="Resources\Calendar.png" />
     <None Include="Resources\Calendar Plus.png" />
     <None Include="Resources\Team work-amico.png" />

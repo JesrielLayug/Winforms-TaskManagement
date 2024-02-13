@@ -31,13 +31,13 @@ namespace TaskManagement
                 ServiceLocator.GetService<IMongoClient>(),
                 ServiceLocator.GetService<IDatabaseSetting>()
                 ));
-            ServiceLocator.Register<ITaskRepository>(() => new TaskRepository(
+            ServiceLocator.Register<ITicketRepository>(() => new TicketRepository(
                 ServiceLocator.GetService<IMongoClient>(),
                 ServiceLocator.GetService<IDatabaseSetting>()
                 ));
 
             var userRepository = ServiceLocator.GetService<IUserRepository>();
-            var taskRepository = ServiceLocator.GetService<ITaskRepository>();
+            var ticketRepository = ServiceLocator.GetService<ITicketRepository>();
 
             // Register Services
             ServiceLocator.Register<IAuthenticationService>(() => new AuthenticationService(
@@ -46,18 +46,18 @@ namespace TaskManagement
             ServiceLocator.Register<IUserService>(() => new UserService(
                 userRepository
                 ));
-            ServiceLocator.Register<ITaskService>(() => new TaskService(
-                taskRepository, userRepository
+            ServiceLocator.Register<ITicketService>(() => new TicketService(
+                ticketRepository, userRepository
                 ));
 
 
             var authenticationService = ServiceLocator.GetService<IAuthenticationService>();
             var userService = ServiceLocator.GetService<IUserService>();
-            var taskService = ServiceLocator.GetService<ITaskService>();
+            var ticketService = ServiceLocator.GetService<ITicketService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView(authenticationService, userService, taskService));
+            Application.Run(new LoginView(authenticationService, userService, ticketService));
             
         }
     }

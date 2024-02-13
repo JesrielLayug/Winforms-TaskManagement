@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Models
 {
-    public class TaskItemInfo
+    public class TicketInfo
     {
         public string Id { get; set; }
         public string Title { get; set; }
@@ -15,14 +15,14 @@ namespace TaskManagement.Models
         public string AssignRole {  get; set; }
         public string Priority { get; set; }
         public string Division { get; set; }
-        public string TaskStatus { get; set; }
+        public string TicketStatus { get; set; }
         public string StartDate { get; set; }
         public string DueDate { get; set; }
         public string Description { get; set; }
         public bool IsApprove {  get; set; }
         public bool IsDeleted {  get; set; }
-        public string CreatedBy { get; set; }
-        public string UserFullName { get; set; }
-        public string UserRole {  get; set; }
+        public string CreatorId { get; set; }
+        public string CreatorFullName { get; set; }
+        public string CreatorRole {  get; set; }
     }
 }

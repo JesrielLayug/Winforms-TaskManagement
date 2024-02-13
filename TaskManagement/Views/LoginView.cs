@@ -16,12 +16,12 @@ namespace TaskManagement.Views
     {
         private readonly IAuthenticationService authenticationService;
         private readonly IUserService userService;
-        private readonly ITaskService taskService;
+        private readonly ITicketService taskService;
 
         public LoginView(
             IAuthenticationService authenticationService, 
             IUserService userService,
-            ITaskService taskService
+            ITicketService taskService
             )
         {
             this.authenticationService = authenticationService;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Models
 {
-    public class TaskItem
+    public class Ticket
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -17,12 +17,12 @@ namespace TaskManagement.Models
         public string AssignUserId {  get; set; }
         public string Priority { get; set; }
         public string Division { get; set; }
-        public string TaskStatus {  get; set; }
+        public string TicketStatus {  get; set; }
         public string StartDate { get; set; }
         public string DueDate { get; set; }
         public string Description {  get; set; }
         public bool IsApprove {  get; set; }
         public bool IsDeleted {  get; set; }
-        public string UserId { get; set; } // this is the created by, should store the id of user
+        public string CreatorId { get; set; } // this is the created by, should store the id of user
     }
 }

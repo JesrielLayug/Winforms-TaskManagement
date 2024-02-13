@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.Views
 {
-    partial class EditorTaskView
+    partial class TicketEditorView
     {
         /// <summary>
         /// Required designer variable.
@@ -63,12 +63,12 @@
             this.TBTitle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBTitle.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBTitle.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTitle.Location = new System.Drawing.Point(75, 159);
+            this.TBTitle.Location = new System.Drawing.Point(47, 143);
             this.TBTitle.Name = "TBTitle";
             this.TBTitle.PasswordChar = '\0';
             this.TBTitle.Radius = 5;
             this.TBTitle.SelectedText = "";
-            this.TBTitle.Size = new System.Drawing.Size(468, 39);
+            this.TBTitle.Size = new System.Drawing.Size(218, 39);
             this.TBTitle.TabIndex = 9;
             // 
             // TBCreatedBy
@@ -81,7 +81,7 @@
             this.TBCreatedBy.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBCreatedBy.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBCreatedBy.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCreatedBy.Location = new System.Drawing.Point(75, 304);
+            this.TBCreatedBy.Location = new System.Drawing.Point(47, 288);
             this.TBCreatedBy.Name = "TBCreatedBy";
             this.TBCreatedBy.PasswordChar = '\0';
             this.TBCreatedBy.Radius = 5;
@@ -99,7 +99,7 @@
             this.TBDivision.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDivision.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBDivision.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDivision.Location = new System.Drawing.Point(325, 304);
+            this.TBDivision.Location = new System.Drawing.Point(297, 288);
             this.TBDivision.Name = "TBDivision";
             this.TBDivision.PasswordChar = '\0';
             this.TBDivision.Radius = 5;
@@ -120,7 +120,7 @@
             this.CBAssignTo.ForeColor = System.Drawing.Color.Black;
             this.CBAssignTo.FormattingEnabled = true;
             this.CBAssignTo.ItemHeight = 31;
-            this.CBAssignTo.Location = new System.Drawing.Point(75, 230);
+            this.CBAssignTo.Location = new System.Drawing.Point(47, 214);
             this.CBAssignTo.Name = "CBAssignTo";
             this.CBAssignTo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBAssignTo.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
@@ -133,7 +133,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(71, 137);
+            this.label1.Location = new System.Drawing.Point(43, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 19);
             this.label1.TabIndex = 13;
@@ -144,7 +144,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label2.Location = new System.Drawing.Point(71, 208);
+            this.label2.Location = new System.Drawing.Point(43, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 14;
@@ -155,7 +155,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label4.Location = new System.Drawing.Point(71, 282);
+            this.label4.Location = new System.Drawing.Point(43, 266);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 19);
             this.label4.TabIndex = 15;
@@ -166,7 +166,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label5.Location = new System.Drawing.Point(321, 282);
+            this.label5.Location = new System.Drawing.Point(293, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 19);
             this.label5.TabIndex = 16;
@@ -177,7 +177,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label6.Location = new System.Drawing.Point(321, 208);
+            this.label6.Location = new System.Drawing.Point(293, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 19);
             this.label6.TabIndex = 18;
@@ -200,7 +200,7 @@
             "High Priority",
             "Medium Priority",
             "Low Priority"});
-            this.CBPriority.Location = new System.Drawing.Point(325, 230);
+            this.CBPriority.Location = new System.Drawing.Point(297, 214);
             this.CBPriority.Name = "CBPriority";
             this.CBPriority.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBPriority.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
@@ -218,13 +218,13 @@
             this.TBDescription.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDescription.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBDescription.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescription.Location = new System.Drawing.Point(75, 388);
+            this.TBDescription.Location = new System.Drawing.Point(47, 460);
             this.TBDescription.Multiline = true;
             this.TBDescription.Name = "TBDescription";
             this.TBDescription.PasswordChar = '\0';
             this.TBDescription.Radius = 5;
             this.TBDescription.SelectedText = "";
-            this.TBDescription.Size = new System.Drawing.Size(716, 123);
+            this.TBDescription.Size = new System.Drawing.Size(468, 124);
             this.TBDescription.TabIndex = 19;
             // 
             // label7
@@ -232,7 +232,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label7.Location = new System.Drawing.Point(71, 366);
+            this.label7.Location = new System.Drawing.Point(43, 438);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 19);
             this.label7.TabIndex = 20;
@@ -257,7 +257,7 @@
             "On Hold",
             "Completed",
             "Cancelled"});
-            this.CBTaskStatus.Location = new System.Drawing.Point(573, 159);
+            this.CBTaskStatus.Location = new System.Drawing.Point(297, 145);
             this.CBTaskStatus.Name = "CBTaskStatus";
             this.CBTaskStatus.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBTaskStatus.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
@@ -270,7 +270,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label8.Location = new System.Drawing.Point(569, 137);
+            this.label8.Location = new System.Drawing.Point(293, 123);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 19);
             this.label8.TabIndex = 22;
@@ -281,7 +281,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label9.Location = new System.Drawing.Point(569, 208);
+            this.label9.Location = new System.Drawing.Point(43, 342);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 19);
             this.label9.TabIndex = 24;
@@ -297,7 +297,7 @@
             this.TBStartDate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBStartDate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBStartDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBStartDate.Location = new System.Drawing.Point(573, 230);
+            this.TBStartDate.Location = new System.Drawing.Point(47, 364);
             this.TBStartDate.Name = "TBStartDate";
             this.TBStartDate.PasswordChar = '\0';
             this.TBStartDate.Radius = 5;
@@ -315,7 +315,7 @@
             this.TBDueDate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDueDate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBDueDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDueDate.Location = new System.Drawing.Point(573, 304);
+            this.TBDueDate.Location = new System.Drawing.Point(297, 364);
             this.TBDueDate.Name = "TBDueDate";
             this.TBDueDate.PasswordChar = '\0';
             this.TBDueDate.Radius = 5;
@@ -328,7 +328,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label10.Location = new System.Drawing.Point(569, 282);
+            this.label10.Location = new System.Drawing.Point(293, 342);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 19);
             this.label10.TabIndex = 26;
@@ -347,7 +347,7 @@
             this.BTNSubmit.ForeColor = System.Drawing.Color.White;
             this.BTNSubmit.Image = null;
             this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNSubmit.Location = new System.Drawing.Point(333, 535);
+            this.BTNSubmit.Location = new System.Drawing.Point(305, 597);
             this.BTNSubmit.Name = "BTNSubmit";
             this.BTNSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -365,8 +365,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label3.Location = new System.Drawing.Point(342, 27);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(181, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 41);
             this.label3.TabIndex = 8;
@@ -377,7 +377,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label11.Location = new System.Drawing.Point(267, 77);
+            this.label11.Location = new System.Drawing.Point(106, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(356, 19);
             this.label11.TabIndex = 29;
@@ -398,7 +398,7 @@
             this.BTNDueDate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNDueDate.ImageOffsetX = 5;
             this.BTNDueDate.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNDueDate.Location = new System.Drawing.Point(744, 304);
+            this.BTNDueDate.Location = new System.Drawing.Point(468, 364);
             this.BTNDueDate.Name = "BTNDueDate";
             this.BTNDueDate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNDueDate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -425,7 +425,7 @@
             this.BTNStartDate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNStartDate.ImageOffsetX = 5;
             this.BTNStartDate.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNStartDate.Location = new System.Drawing.Point(744, 230);
+            this.BTNStartDate.Location = new System.Drawing.Point(218, 364);
             this.BTNStartDate.Name = "BTNStartDate";
             this.BTNStartDate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNStartDate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -437,12 +437,12 @@
             this.BTNStartDate.TabIndex = 30;
             this.BTNStartDate.Click += new System.EventHandler(this.BTNStartDate_Click);
             // 
-            // EditorTaskView
+            // TicketEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(881, 610);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(580, 661);
             this.Controls.Add(this.BTNDueDate);
             this.Controls.Add(this.BTNStartDate);
             this.Controls.Add(this.label11);
@@ -471,7 +471,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditorTaskView";
+            this.Name = "TicketEditorView";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -13,15 +13,15 @@ using TaskManagement.Services.Contracts;
 
 namespace TaskManagement.Views
 {
-    public partial class EditorTaskView : Form
+    public partial class TicketEditorView : Form
     {
         private readonly IUserService userService;
-        private readonly ITaskService taskService;
+        private readonly ITicketService taskService;
         private IEnumerable<User> Users;
 
-        public EditorTaskView (
+        public TicketEditorView (
             IUserService userService, 
-            ITaskService taskService
+            ITicketService taskService
             )
         {
 
@@ -57,13 +57,13 @@ namespace TaskManagement.Views
         {
             if (CheckAllFields())
             {
-                var newTask = new TaskItemEditor
+                var newTask = new TicketEditor
                 {
                     Title = TBTitle.Text,
                     AssignName = CBAssignTo.Text,
                     Priority = CBPriority.Text,
                     Division = TBDivision.Text,
-                    TaskStatus = CBTaskStatus.Text,
+                    TicketStatus = CBTaskStatus.Text,
                     StartDate = TBStartDate.Text,
                     DueDate = TBDueDate.Text,
                     Description = TBDescription.Text,
@@ -89,7 +89,7 @@ namespace TaskManagement.Views
             {
                 if (calendarForm.ShowDialog() == DialogResult.OK)
                 {
-                    targetTextBox.Text = calendarForm.SelectedDate.ToShortDateString();
+                    targetTextBox.Text = calendarForm.SelectedDate.ToString("MMM d, yyyy");
                 }
             }
         }
