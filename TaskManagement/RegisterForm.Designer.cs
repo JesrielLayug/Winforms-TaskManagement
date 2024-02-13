@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 448);
+            this.ClientSize = new System.Drawing.Size(1057, 670);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TBPassword);
             this.Controls.Add(this.TBEmail);

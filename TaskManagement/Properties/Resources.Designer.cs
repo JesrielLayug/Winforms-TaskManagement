@@ -63,9 +63,19 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap account_gray {
+        internal static System.Drawing.Bitmap account {
             get {
-                object obj = ResourceManager.GetObject("account-gray", resourceCulture);
+                object obj = ResourceManager.GetObject("account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap account_2_white {
+            get {
+                object obj = ResourceManager.GetObject("account-2-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +103,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Calendar_Plus {
+        internal static System.Drawing.Bitmap check {
             get {
-                object obj = ResourceManager.GetObject("Calendar Plus", resourceCulture);
+                object obj = ResourceManager.GetObject("check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Combo_Chart {
+        internal static System.Drawing.Bitmap dashboard_3 {
             get {
-                object obj = ResourceManager.GetObject("Combo Chart", resourceCulture);
+                object obj = ResourceManager.GetObject("dashboard-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +123,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dashboard_gray {
+        internal static System.Drawing.Bitmap dashboard_3_white {
             get {
-                object obj = ResourceManager.GetObject("dashboard-gray", resourceCulture);
+                object obj = ResourceManager.GetObject("dashboard-3-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap opened_door_aperture {
+        internal static System.Drawing.Bitmap door {
             get {
-                object obj = ResourceManager.GetObject("opened-door-aperture", resourceCulture);
+                object obj = ResourceManager.GetObject("door", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pie {
+        internal static System.Drawing.Bitmap door_white {
             get {
-                object obj = ResourceManager.GetObject("pie", resourceCulture);
+                object obj = ResourceManager.GetObject("door-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +153,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pie_11 {
+        internal static System.Drawing.Bitmap file {
             get {
-                object obj = ResourceManager.GetObject("pie-11", resourceCulture);
+                object obj = ResourceManager.GetObject("file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +163,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pie_15 {
+        internal static System.Drawing.Bitmap file__1_ {
             get {
-                object obj = ResourceManager.GetObject("pie-15", resourceCulture);
+                object obj = ResourceManager.GetObject("file (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +173,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pie_small {
+        internal static System.Drawing.Bitmap menu {
             get {
-                object obj = ResourceManager.GetObject("pie-small", resourceCulture);
+                object obj = ResourceManager.GetObject("menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +183,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pie_ss {
+        internal static System.Drawing.Bitmap option {
             get {
-                object obj = ResourceManager.GetObject("pie-ss", resourceCulture);
+                object obj = ResourceManager.GetObject("option", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +203,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap task2 {
+        internal static System.Drawing.Bitmap task_white {
             get {
-                object obj = ResourceManager.GetObject("task2", resourceCulture);
+                object obj = ResourceManager.GetObject("task-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +223,9 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap time {
+        internal static System.Drawing.Bitmap Team_work_amico1 {
             get {
-                object obj = ResourceManager.GetObject("time", resourceCulture);
+                object obj = ResourceManager.GetObject("Team work-amico1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +233,19 @@ namespace TaskManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tool_gray {
+        internal static System.Drawing.Bitmap tool {
             get {
-                object obj = ResourceManager.GetObject("tool-gray", resourceCulture);
+                object obj = ResourceManager.GetObject("tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tool_white {
+            get {
+                object obj = ResourceManager.GetObject("tool-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

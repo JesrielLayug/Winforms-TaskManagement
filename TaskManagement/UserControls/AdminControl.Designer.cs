@@ -30,33 +30,36 @@
         {
             this.MainPanel = new System.Windows.Forms.Panel();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.BTNCreate = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BTNLogout = new System.Windows.Forms.Button();
+            this.BTNSettings = new System.Windows.Forms.Button();
+            this.BTNAccount = new System.Windows.Forms.Button();
+            this.BTNPending = new System.Windows.Forms.Button();
+            this.BTNTicket = new System.Windows.Forms.Button();
+            this.BTNDashboard = new System.Windows.Forms.Button();
             this.gunaShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MainPanel.Location = new System.Drawing.Point(57, 0);
+            this.MainPanel.Location = new System.Drawing.Point(65, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1083, 755);
+            this.MainPanel.Size = new System.Drawing.Size(1180, 825);
             this.MainPanel.TabIndex = 4;
             // 
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaShadowPanel1.Controls.Add(this.gunaButton5);
-            this.gunaShadowPanel1.Controls.Add(this.gunaButton4);
-            this.gunaShadowPanel1.Controls.Add(this.gunaButton3);
-            this.gunaShadowPanel1.Controls.Add(this.gunaButton2);
-            this.gunaShadowPanel1.Controls.Add(this.gunaButton1);
-            this.gunaShadowPanel1.Controls.Add(this.BTNCreate);
+            this.gunaShadowPanel1.Controls.Add(this.pictureBox1);
+            this.gunaShadowPanel1.Controls.Add(this.BTNLogout);
+            this.gunaShadowPanel1.Controls.Add(this.BTNSettings);
+            this.gunaShadowPanel1.Controls.Add(this.BTNAccount);
+            this.gunaShadowPanel1.Controls.Add(this.BTNPending);
+            this.gunaShadowPanel1.Controls.Add(this.BTNTicket);
+            this.gunaShadowPanel1.Controls.Add(this.BTNDashboard);
             this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
@@ -64,164 +67,90 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
             this.gunaShadowPanel1.ShadowShift = 3;
             this.gunaShadowPanel1.ShadowStyle = Guna.UI.WinForms.ShadowMode.ForwardDiagonal;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(55, 755);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(59, 825);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
-            // gunaButton5
+            // pictureBox1
             // 
-            this.gunaButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaButton5.AnimationSpeed = 0.03F;
-            this.gunaButton5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton5.BaseColor = System.Drawing.Color.White;
-            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton5.ForeColor = System.Drawing.Color.White;
-            this.gunaButton5.Image = global::TaskManagement.Properties.Resources.time;
-            this.gunaButton5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton5.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaButton5.Location = new System.Drawing.Point(0, 364);
-            this.gunaButton5.Name = "gunaButton5";
-            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton5.OnHoverImage = null;
-            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Radius = 5;
-            this.gunaButton5.Size = new System.Drawing.Size(51, 38);
-            this.gunaButton5.TabIndex = 18;
-            this.gunaButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pictureBox1.Image = global::TaskManagement.Properties.Resources.check;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // gunaButton4
+            // BTNLogout
             // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton4.BaseColor = System.Drawing.Color.White;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = global::TaskManagement.Properties.Resources.opened_door_aperture;
-            this.gunaButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(1, 472);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 5;
-            this.gunaButton4.Size = new System.Drawing.Size(51, 38);
-            this.gunaButton4.TabIndex = 17;
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNLogout.FlatAppearance.BorderSize = 0;
+            this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
+            this.BTNLogout.Location = new System.Drawing.Point(-4, 457);
+            this.BTNLogout.Name = "BTNLogout";
+            this.BTNLogout.Size = new System.Drawing.Size(60, 41);
+            this.BTNLogout.TabIndex = 5;
+            this.BTNLogout.UseVisualStyleBackColor = true;
+            this.BTNLogout.Click += new System.EventHandler(this.BTNLogout_Click);
             // 
-            // gunaButton3
+            // BTNSettings
             // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton3.BaseColor = System.Drawing.Color.White;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = global::TaskManagement.Properties.Resources.tool_gray;
-            this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(1, 417);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Radius = 5;
-            this.gunaButton3.Size = new System.Drawing.Size(51, 38);
-            this.gunaButton3.TabIndex = 16;
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNSettings.FlatAppearance.BorderSize = 0;
+            this.BTNSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNSettings.Image = global::TaskManagement.Properties.Resources.tool;
+            this.BTNSettings.Location = new System.Drawing.Point(-4, 411);
+            this.BTNSettings.Name = "BTNSettings";
+            this.BTNSettings.Size = new System.Drawing.Size(60, 41);
+            this.BTNSettings.TabIndex = 4;
+            this.BTNSettings.UseVisualStyleBackColor = true;
+            this.BTNSettings.Click += new System.EventHandler(this.BTNSettings_Click);
             // 
-            // gunaButton2
+            // BTNAccount
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BaseColor = System.Drawing.Color.White;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = global::TaskManagement.Properties.Resources.account_gray;
-            this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaButton2.Location = new System.Drawing.Point(1, 314);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Radius = 5;
-            this.gunaButton2.Size = new System.Drawing.Size(51, 38);
-            this.gunaButton2.TabIndex = 15;
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNAccount.FlatAppearance.BorderSize = 0;
+            this.BTNAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNAccount.Image = global::TaskManagement.Properties.Resources.account;
+            this.BTNAccount.Location = new System.Drawing.Point(-4, 363);
+            this.BTNAccount.Name = "BTNAccount";
+            this.BTNAccount.Size = new System.Drawing.Size(60, 41);
+            this.BTNAccount.TabIndex = 3;
+            this.BTNAccount.UseVisualStyleBackColor = true;
+            this.BTNAccount.Click += new System.EventHandler(this.BTNAccount_Click);
             // 
-            // gunaButton1
+            // BTNPending
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = global::TaskManagement.Properties.Resources.task2;
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(0, 261);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 5;
-            this.gunaButton1.Size = new System.Drawing.Size(51, 38);
-            this.gunaButton1.TabIndex = 14;
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNPending.FlatAppearance.BorderSize = 0;
+            this.BTNPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNPending.Image = global::TaskManagement.Properties.Resources.file;
+            this.BTNPending.Location = new System.Drawing.Point(-4, 317);
+            this.BTNPending.Name = "BTNPending";
+            this.BTNPending.Size = new System.Drawing.Size(60, 41);
+            this.BTNPending.TabIndex = 2;
+            this.BTNPending.UseVisualStyleBackColor = true;
+            this.BTNPending.Click += new System.EventHandler(this.BTNPending_Click);
             // 
-            // BTNCreate
+            // BTNTicket
             // 
-            this.BTNCreate.AnimationHoverSpeed = 0.07F;
-            this.BTNCreate.AnimationSpeed = 0.03F;
-            this.BTNCreate.BackColor = System.Drawing.Color.Transparent;
-            this.BTNCreate.BaseColor = System.Drawing.Color.White;
-            this.BTNCreate.BorderColor = System.Drawing.Color.Black;
-            this.BTNCreate.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNCreate.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNCreate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNCreate.ForeColor = System.Drawing.Color.White;
-            this.BTNCreate.Image = global::TaskManagement.Properties.Resources.dashboard_gray;
-            this.BTNCreate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNCreate.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTNCreate.Location = new System.Drawing.Point(1, 209);
-            this.BTNCreate.Name = "BTNCreate";
-            this.BTNCreate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.BTNCreate.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNCreate.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNCreate.OnHoverImage = null;
-            this.BTNCreate.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNCreate.Radius = 5;
-            this.BTNCreate.Size = new System.Drawing.Size(51, 38);
-            this.BTNCreate.TabIndex = 13;
-            this.BTNCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNTicket.FlatAppearance.BorderSize = 0;
+            this.BTNTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNTicket.Image = global::TaskManagement.Properties.Resources.task;
+            this.BTNTicket.Location = new System.Drawing.Point(-3, 272);
+            this.BTNTicket.Name = "BTNTicket";
+            this.BTNTicket.Size = new System.Drawing.Size(59, 41);
+            this.BTNTicket.TabIndex = 1;
+            this.BTNTicket.UseVisualStyleBackColor = true;
+            this.BTNTicket.Click += new System.EventHandler(this.BTNTicket_Click);
+            // 
+            // BTNDashboard
+            // 
+            this.BTNDashboard.FlatAppearance.BorderSize = 0;
+            this.BTNDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNDashboard.Image = global::TaskManagement.Properties.Resources.dashboard_3;
+            this.BTNDashboard.Location = new System.Drawing.Point(-2, 226);
+            this.BTNDashboard.Name = "BTNDashboard";
+            this.BTNDashboard.Size = new System.Drawing.Size(58, 41);
+            this.BTNDashboard.TabIndex = 0;
+            this.BTNDashboard.UseVisualStyleBackColor = true;
+            this.BTNDashboard.Click += new System.EventHandler(this.BTNDashboard_Click);
             // 
             // AdminControl
             // 
@@ -233,8 +162,9 @@
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminControl";
-            this.Size = new System.Drawing.Size(1140, 755);
+            this.Size = new System.Drawing.Size(1245, 825);
             this.gunaShadowPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,11 +172,12 @@
         #endregion
         private System.Windows.Forms.Panel MainPanel;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
-        private Guna.UI.WinForms.GunaButton BTNCreate;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton gunaButton5;
+        private System.Windows.Forms.Button BTNDashboard;
+        private System.Windows.Forms.Button BTNLogout;
+        private System.Windows.Forms.Button BTNSettings;
+        private System.Windows.Forms.Button BTNAccount;
+        private System.Windows.Forms.Button BTNPending;
+        private System.Windows.Forms.Button BTNTicket;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

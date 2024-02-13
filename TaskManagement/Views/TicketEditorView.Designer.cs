@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.TBTitle = new Guna.UI.WinForms.GunaTextBox();
-            this.TBCreatedBy = new Guna.UI.WinForms.GunaTextBox();
             this.TBDivision = new Guna.UI.WinForms.GunaTextBox();
             this.CBAssignTo = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.BTNDueDate = new Guna.UI.WinForms.GunaButton();
             this.BTNStartDate = new Guna.UI.WinForms.GunaButton();
+            this.CBCreator = new Guna.UI.WinForms.GunaComboBox();
             this.SuspendLayout();
             // 
             // TBTitle
@@ -70,24 +70,6 @@
             this.TBTitle.SelectedText = "";
             this.TBTitle.Size = new System.Drawing.Size(218, 39);
             this.TBTitle.TabIndex = 9;
-            // 
-            // TBCreatedBy
-            // 
-            this.TBCreatedBy.BackColor = System.Drawing.Color.Transparent;
-            this.TBCreatedBy.BaseColor = System.Drawing.Color.White;
-            this.TBCreatedBy.BorderColor = System.Drawing.Color.Silver;
-            this.TBCreatedBy.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TBCreatedBy.FocusedBaseColor = System.Drawing.Color.White;
-            this.TBCreatedBy.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.TBCreatedBy.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBCreatedBy.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCreatedBy.Location = new System.Drawing.Point(47, 288);
-            this.TBCreatedBy.Name = "TBCreatedBy";
-            this.TBCreatedBy.PasswordChar = '\0';
-            this.TBCreatedBy.Radius = 5;
-            this.TBCreatedBy.SelectedText = "";
-            this.TBCreatedBy.Size = new System.Drawing.Size(218, 39);
-            this.TBCreatedBy.TabIndex = 10;
             // 
             // TBDivision
             // 
@@ -218,7 +200,7 @@
             this.TBDescription.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDescription.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBDescription.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescription.Location = new System.Drawing.Point(47, 460);
+            this.TBDescription.Location = new System.Drawing.Point(47, 442);
             this.TBDescription.Multiline = true;
             this.TBDescription.Name = "TBDescription";
             this.TBDescription.PasswordChar = '\0';
@@ -232,7 +214,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label7.Location = new System.Drawing.Point(43, 438);
+            this.label7.Location = new System.Drawing.Point(43, 420);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 19);
             this.label7.TabIndex = 20;
@@ -252,11 +234,9 @@
             this.CBTaskStatus.FormattingEnabled = true;
             this.CBTaskStatus.ItemHeight = 31;
             this.CBTaskStatus.Items.AddRange(new object[] {
-            "To Do",
+            "Next Up",
             "In Progress",
-            "On Hold",
-            "Completed",
-            "Cancelled"});
+            "Completed"});
             this.CBTaskStatus.Location = new System.Drawing.Point(297, 145);
             this.CBTaskStatus.Name = "CBTaskStatus";
             this.CBTaskStatus.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
@@ -347,7 +327,7 @@
             this.BTNSubmit.ForeColor = System.Drawing.Color.White;
             this.BTNSubmit.Image = null;
             this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNSubmit.Location = new System.Drawing.Point(305, 597);
+            this.BTNSubmit.Location = new System.Drawing.Point(305, 585);
             this.BTNSubmit.Name = "BTNSubmit";
             this.BTNSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -437,12 +417,34 @@
             this.BTNStartDate.TabIndex = 30;
             this.BTNStartDate.Click += new System.EventHandler(this.BTNStartDate_Click);
             // 
+            // CBCreator
+            // 
+            this.CBCreator.BackColor = System.Drawing.Color.Transparent;
+            this.CBCreator.BaseColor = System.Drawing.Color.White;
+            this.CBCreator.BorderColor = System.Drawing.Color.Silver;
+            this.CBCreator.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBCreator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBCreator.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CBCreator.FocusedColor = System.Drawing.Color.Empty;
+            this.CBCreator.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBCreator.ForeColor = System.Drawing.Color.Black;
+            this.CBCreator.FormattingEnabled = true;
+            this.CBCreator.ItemHeight = 31;
+            this.CBCreator.Location = new System.Drawing.Point(47, 290);
+            this.CBCreator.Name = "CBCreator";
+            this.CBCreator.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.CBCreator.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.CBCreator.Radius = 5;
+            this.CBCreator.Size = new System.Drawing.Size(218, 37);
+            this.CBCreator.TabIndex = 32;
+            // 
             // TicketEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(580, 661);
+            this.ClientSize = new System.Drawing.Size(568, 653);
+            this.Controls.Add(this.CBCreator);
             this.Controls.Add(this.BTNDueDate);
             this.Controls.Add(this.BTNStartDate);
             this.Controls.Add(this.label11);
@@ -463,7 +465,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBAssignTo);
             this.Controls.Add(this.TBDivision);
-            this.Controls.Add(this.TBCreatedBy);
             this.Controls.Add(this.TBTitle);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -482,7 +483,6 @@
 
         #endregion
         private Guna.UI.WinForms.GunaTextBox TBTitle;
-        private Guna.UI.WinForms.GunaTextBox TBCreatedBy;
         private Guna.UI.WinForms.GunaTextBox TBDivision;
         private Guna.UI.WinForms.GunaComboBox CBAssignTo;
         private System.Windows.Forms.Label label1;
@@ -504,5 +504,6 @@
         private System.Windows.Forms.Label label11;
         private Guna.UI.WinForms.GunaButton BTNStartDate;
         private Guna.UI.WinForms.GunaButton BTNDueDate;
+        private Guna.UI.WinForms.GunaComboBox CBCreator;
     }
 }

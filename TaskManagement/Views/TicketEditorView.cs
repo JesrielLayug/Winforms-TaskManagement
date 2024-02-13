@@ -15,6 +15,8 @@ namespace TaskManagement.Views
 {
     public partial class TicketEditorView : Form
     {
+        public event EventHandler TicketAdded;
+
         private readonly IUserService userService;
         private readonly ITicketService taskService;
         private IEnumerable<User> Users;
@@ -39,6 +41,7 @@ namespace TaskManagement.Views
             foreach(var user in Users)
             {
                 CBAssignTo.Items.Add(user.FullName);
+                CBCreator.Items.Add(user.FullName);
             }
 
         }
@@ -67,12 +70,13 @@ namespace TaskManagement.Views
                     StartDate = TBStartDate.Text,
                     DueDate = TBDueDate.Text,
                     Description = TBDescription.Text,
-                    CreatedBy = TBCreatedBy.Text,
+                    CreatedBy = CBCreator.Text,
                 };
 
                 var response = await taskService.Add(newTask);
                 if (response.IsSuccess)
                 {
+                    TicketAdded?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -89,7 +93,7 @@ namespace TaskManagement.Views
             {
                 if (calendarForm.ShowDialog() == DialogResult.OK)
                 {
-                    targetTextBox.Text = calendarForm.SelectedDate.ToString("MMM d, yyyy");
+                    targetTextBox.Text = calendarForm.SelectedDate.ToString("MMM dd");
                 }
             }
         }
@@ -101,7 +105,7 @@ namespace TaskManagement.Views
                 !string.IsNullOrEmpty(CBPriority.Text) && !string.IsNullOrEmpty(TBDivision.Text) &&
                 !string.IsNullOrEmpty(CBTaskStatus.Text) && !string.IsNullOrEmpty(TBStartDate.Text) &&
                 !string.IsNullOrEmpty(TBDueDate.Text) && !string.IsNullOrEmpty(TBDescription.Text) &&
-                !string.IsNullOrEmpty(TBCreatedBy.Text)
+                !string.IsNullOrEmpty(CBCreator.Text)
                )
             {
                 return true;
