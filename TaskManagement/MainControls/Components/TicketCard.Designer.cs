@@ -56,7 +56,7 @@
             this.gunaShadowPanel1.Radius = 3;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
             this.gunaShadowPanel1.ShadowShift = 1;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(321, 157);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(338, 157);
             this.gunaShadowPanel1.TabIndex = 7;
             // 
             // BTNDelete
@@ -75,7 +75,7 @@
             this.BTNDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNDelete.ImageOffsetX = 5;
             this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNDelete.Location = new System.Drawing.Point(181, 112);
+            this.BTNDelete.Location = new System.Drawing.Point(192, 112);
             this.BTNDelete.Name = "BTNDelete";
             this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Tomato;
             this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -105,7 +105,7 @@
             this.BTNUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNUpdate.ImageOffsetX = 5;
             this.BTNUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNUpdate.Location = new System.Drawing.Point(126, 112);
+            this.BTNUpdate.Location = new System.Drawing.Point(137, 112);
             this.BTNUpdate.Name = "BTNUpdate";
             this.BTNUpdate.OnHoverBaseColor = System.Drawing.Color.DarkOrange;
             this.BTNUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -135,7 +135,7 @@
             this.BTNView.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNView.ImageOffsetX = 5;
             this.BTNView.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNView.Location = new System.Drawing.Point(71, 112);
+            this.BTNView.Location = new System.Drawing.Point(82, 112);
             this.BTNView.Name = "BTNView";
             this.BTNView.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNView.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -155,7 +155,7 @@
             this.gunaShadowPanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(130)))), ((int)(((byte)(253)))));
             this.gunaShadowPanel4.Controls.Add(this.LBDate);
-            this.gunaShadowPanel4.Location = new System.Drawing.Point(253, 9);
+            this.gunaShadowPanel4.Location = new System.Drawing.Point(262, 10);
             this.gunaShadowPanel4.Name = "gunaShadowPanel4";
             this.gunaShadowPanel4.Radius = 3;
             this.gunaShadowPanel4.ShadowColor = System.Drawing.Color.Silver;
@@ -165,7 +165,6 @@
             // 
             // LBDate
             // 
-            this.LBDate.AutoSize = true;
             this.LBDate.Font = new System.Drawing.Font("Roboto Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBDate.ForeColor = System.Drawing.Color.White;
             this.LBDate.Location = new System.Drawing.Point(7, 9);
@@ -173,13 +172,14 @@
             this.LBDate.Size = new System.Drawing.Size(42, 13);
             this.LBDate.TabIndex = 6;
             this.LBDate.Text = "Aug 21";
+            this.LBDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LBDescription
             // 
             this.LBDescription.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBDescription.Location = new System.Drawing.Point(17, 45);
+            this.LBDescription.Location = new System.Drawing.Point(17, 44);
             this.LBDescription.Name = "LBDescription";
-            this.LBDescription.Size = new System.Drawing.Size(292, 53);
+            this.LBDescription.Size = new System.Drawing.Size(294, 60);
             this.LBDescription.TabIndex = 33;
             this.LBDescription.Text = "Lorem ipsum dolor sit amet, \r\nconsectetur adipiscing elit, sed \r\ndo eiusmod tempo" +
     "r incididunt ut labore et";
@@ -200,12 +200,11 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.gunaShadowPanel1);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TicketCard";
-            this.Size = new System.Drawing.Size(321, 157);
+            this.Size = new System.Drawing.Size(338, 157);
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel4.ResumeLayout(false);
-            this.gunaShadowPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -30,6 +30,16 @@ namespace TaskManagement.Repositories
             await UserCollection.InsertOneAsync(user);
         }
 
+        public async Task Delete(string id)
+        {
+            await UserCollection.DeleteOneAsync(x => x.Id == id);
+        }
+
+        public async Task Update(User user, string id)
+        {
+            await UserCollection.ReplaceOneAsync(x => x.Id == id, user);
+        }
+
         public async Task<IEnumerable<User>> GetAll()
         {
             return await UserCollection.Find(x => true).ToListAsync();
@@ -41,10 +51,17 @@ namespace TaskManagement.Repositories
             return user;
         }
 
+        public async Task<User> GetById(string id)
+        {
+            var user = await UserCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            return user;
+        }
+
         public async Task<User> GetByName(string name)
         {
             var user = await UserCollection.Find(x => x.FullName == name).FirstOrDefaultAsync();
             return user;
         }
+
     }
 }

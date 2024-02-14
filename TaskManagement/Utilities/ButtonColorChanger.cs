@@ -22,12 +22,12 @@ namespace TaskManagement.Utilities
         private Color NewBackColor;
 
         public ButtonColorChanger(
-            List<Image> listNewImages, 
+            List<Image> listNewImages,
             List<Image> listDefaultImages,
-            List<Button> listsButton, 
-            Color DefForeColor, 
-            Color DefBackColor, 
-            Color NewForeColor, 
+            List<Button> listsButton,
+            Color DefForeColor,
+            Color DefBackColor,
+            Color NewForeColor,
             Color NewBackColor
             )
         {
@@ -58,11 +58,13 @@ namespace TaskManagement.Utilities
                 {
                     button.Image = null;
                 }
-                button.MouseEnter += (s, e) => {
+                button.MouseEnter += (s, e) =>
+                {
                     button.ForeColor = NewForeColor;
                     button.BackColor = NewBackColor;
                 };
-                button.MouseLeave += (s, e) => {
+                button.MouseLeave += (s, e) =>
+                {
                     button.ForeColor = DefForeColor;
                     button.BackColor = DefBackColor;
                 };
@@ -75,54 +77,64 @@ namespace TaskManagement.Utilities
             foreach (Button button in listsButton)
             {
                 int index = listsButton.IndexOf(button);
-                bool isSelected = (button == _button);
 
-                button.BackColor = isSelected ? NewBackColor : DefBackColor;
-                button.ForeColor = isSelected ? NewForeColor : DefForeColor;
-
-                if (button.Image != null)
+                if (button == _button)
                 {
-                    button.Image = isSelected ? listNewImages[index] : listDefaultImages[index];
+                    _button.BackColor = NewBackColor;
+                    _button.ForeColor = NewForeColor;
+                    if (button.Image != null)
+                    {
+                        _button.Image = listNewImages[index];
+                        _button.MouseEnter += (s, e) => { _button.Image = listNewImages[index]; };
+                        _button.MouseLeave += (s, e) => { _button.Image = listNewImages[index]; };
+                    }
+                    else
+                    {
+                        _button.Image = null;
+                    }
+
+                    _button.MouseEnter += (s, e) =>
+                    {
+                        _button.ForeColor = NewForeColor;
+                        _button.BackColor = NewBackColor;
+                    };
+                    _button.MouseLeave += (s, e) =>
+                    {
+                        _button.ForeColor = NewForeColor;
+                        _button.BackColor = NewBackColor;
+                    };
+
+
+
                 }
                 else
                 {
-                    button.Image = null;
-                }
+                    button.BackColor = DefBackColor;
+                    button.ForeColor = DefForeColor;
+                    if (button.Image != null)
+                    {
+                        button.Image = listDefaultImages[index];
+                        button.MouseEnter += (s, e) => { button.Image = listNewImages[index]; };
+                        button.MouseLeave += (s, e) => { button.Image = listDefaultImages[index]; };
+                    }
+                    else
+                    {
+                        button.Image = null;
+                    }
 
-                // Unsubscribe from events first to prevent duplicate subscriptions
-                button.MouseEnter -= Button_MouseEnter;
-                button.MouseClick -= Button_MouseClick;
-                button.MouseLeave -= Button_MouseLeave;
+                    button.MouseEnter += (s, e) =>
+                    {
+                        button.ForeColor = NewForeColor;
+                        button.BackColor = NewBackColor;
+                    };
+                    button.MouseLeave += (s, e) =>
+                    {
+                        button.ForeColor = DefForeColor;
+                        button.BackColor = DefBackColor;
 
-                // Subscribe to events based on selection state
-                if (isSelected)
-                {
-                    button.MouseEnter += Button_MouseEnter;
-                    button.MouseClick += Button_MouseClick;
-                    button.MouseLeave += Button_MouseLeave;
+                    };
                 }
             }
-        }
-
-        private void Button_MouseEnter(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            button.ForeColor = NewForeColor;
-            button.BackColor = NewBackColor;
-        }
-
-        private void Button_MouseClick(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            button.ForeColor = NewForeColor;
-            button.BackColor = NewBackColor;
-        }
-
-        private void Button_MouseLeave(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            button.ForeColor = DefForeColor;
-            button.BackColor = DefBackColor;
         }
     }
 }

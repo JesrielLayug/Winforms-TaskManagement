@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TBEmail = new Guna.UI.WinForms.GunaTextBox();
             this.TBPassword = new Guna.UI.WinForms.GunaTextBox();
             this.BTNLogin = new Guna.UI.WinForms.GunaButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CBShowPassword = new Guna.UI.WinForms.GunaCheckBox();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBEmail = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,24 +51,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // TBEmail
-            // 
-            this.TBEmail.BackColor = System.Drawing.Color.Transparent;
-            this.TBEmail.BaseColor = System.Drawing.Color.White;
-            this.TBEmail.BorderColor = System.Drawing.Color.Silver;
-            this.TBEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TBEmail.FocusedBaseColor = System.Drawing.Color.White;
-            this.TBEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.TBEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmail.Location = new System.Drawing.Point(37, 218);
-            this.TBEmail.Name = "TBEmail";
-            this.TBEmail.PasswordChar = '\0';
-            this.TBEmail.Radius = 5;
-            this.TBEmail.SelectedText = "";
-            this.TBEmail.Size = new System.Drawing.Size(210, 33);
-            this.TBEmail.TabIndex = 1;
             // 
             // TBPassword
             // 
@@ -114,17 +96,6 @@
             this.BTNLogin.Text = "Login";
             this.BTNLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(33, 196);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Email";
             // 
             // label2
             // 
@@ -194,6 +165,35 @@
             this.gunaShadowPanel1.Size = new System.Drawing.Size(289, 518);
             this.gunaShadowPanel1.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.label1.Location = new System.Drawing.Point(33, 196);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Email";
+            // 
+            // TBEmail
+            // 
+            this.TBEmail.BackColor = System.Drawing.Color.Transparent;
+            this.TBEmail.BaseColor = System.Drawing.Color.White;
+            this.TBEmail.BorderColor = System.Drawing.Color.Silver;
+            this.TBEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TBEmail.FocusedBaseColor = System.Drawing.Color.White;
+            this.TBEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.TBEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TBEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmail.Location = new System.Drawing.Point(37, 218);
+            this.TBEmail.Name = "TBEmail";
+            this.TBEmail.PasswordChar = '\0';
+            this.TBEmail.Radius = 5;
+            this.TBEmail.SelectedText = "";
+            this.TBEmail.Size = new System.Drawing.Size(210, 33);
+            this.TBEmail.TabIndex = 1;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -221,14 +221,14 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaTextBox TBEmail;
         private Guna.UI.WinForms.GunaTextBox TBPassword;
         private Guna.UI.WinForms.GunaButton BTNLogin;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaCheckBox CBShowPassword;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
+        private Guna.UI.WinForms.GunaTextBox TBEmail;
+        private System.Windows.Forms.Label label1;
     }
 }

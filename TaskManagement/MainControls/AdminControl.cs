@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.MainControls.SubControls;
 using TaskManagement.Services.Contracts;
 using TaskManagement.UserControls.AdminSubControls;
 using TaskManagement.Utilities;
@@ -17,17 +18,18 @@ namespace TaskManagement.UserControls
     public partial class AdminControl : UserControl
     {
         private readonly IUserService userService;
-        private readonly ITicketService taskService;
+        private readonly ITicketService ticketService;
 
         private ButtonColorChanger ButtonColorChanger;
+        private UserControlChanger GetUserControlChanger;
 
         public AdminControl(
             IUserService userService,
-            ITicketService taskService
+            ITicketService ticketService
             )
         {
             this.userService = userService;
-            this.taskService = taskService;
+            this.ticketService = ticketService;
 
             InitializeComponent();
             InitializeButtonEffect();
@@ -36,10 +38,22 @@ namespace TaskManagement.UserControls
 
         private void InitializeMainControl()
         {
-            TicketBaseControl taskControl = new TicketBaseControl(userService, taskService);
-            taskControl.Dock = DockStyle.Fill;
+            //TicketBaseControl taskControl = new TicketBaseControl(userService, taskService);
+            //taskControl.Dock = DockStyle.Fill;
 
-            MainPanel.Controls.Add(taskControl);
+            //MainPanel.Controls.Add(taskControl);
+
+            List<UserControl> controls = new List<UserControl>()
+            {
+                new DashboardBaseControl(),
+                new TicketBaseControl(userService, ticketService),
+                new PendingBaseControl(),
+                new AccountBaseControl(userService),
+                new SettingsBaseControl()
+            };
+
+            GetUserControlChanger = new UserControlChanger( controls, MainPanel );
+            GetUserControlChanger.Display(0);
         }
 
         private void InitializeButtonEffect()
@@ -49,7 +63,7 @@ namespace TaskManagement.UserControls
             Color newBackColor = Color.FromArgb(64, 123, 255);
             Color newForeColor = Color.FromArgb(64, 123, 255);
 
-            Image defaultDashboard = Image.FromFile("..\\..\\Resources\\dashboard-gray.png");
+            Image defaultDashboard = Image.FromFile("..\\..\\Resources\\dashboard-3.png");
             Image defaultTask = Image.FromFile("..\\..\\Resources\\Task.png");
             Image defaultAccount = Image.FromFile("..\\..\\Resources\\account-gray.png");
             Image defaultTime = Image.FromFile("..\\..\\Resources\\file.png");
@@ -89,26 +103,31 @@ namespace TaskManagement.UserControls
         private void BTNTicket_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNTicket);
+            GetUserControlChanger.Display(1);
         }
 
         private void BTNDashboard_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNDashboard);
+            GetUserControlChanger.Display(0);
         }
 
         private void BTNPending_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNPending);
+            GetUserControlChanger.Display(2);
         }
 
         private void BTNAccount_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNAccount);
+            GetUserControlChanger.Display(3);
         }
 
         private void BTNSettings_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNSettings);
+            GetUserControlChanger.Display(4);
         }
 
         private void BTNLogout_Click(object sender, EventArgs e)

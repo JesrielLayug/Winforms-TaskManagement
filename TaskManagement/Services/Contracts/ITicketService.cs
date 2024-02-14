@@ -10,6 +10,8 @@ namespace TaskManagement.Services.Contracts
     public interface ITicketService
     {
         Task<Response> Add(TicketEditor task);
+        Task<Response> Delete(string id);
+        Task<Response> Update(TicketEditor ticket, string id);
         Task<IEnumerable<TicketInfo>> GetAll();
     }
 }

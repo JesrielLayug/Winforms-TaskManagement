@@ -62,7 +62,7 @@
             this.TBTitle.FocusedBaseColor = System.Drawing.Color.White;
             this.TBTitle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBTitle.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBTitle.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBTitle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBTitle.Location = new System.Drawing.Point(47, 143);
             this.TBTitle.Name = "TBTitle";
             this.TBTitle.PasswordChar = '\0';
@@ -98,7 +98,7 @@
             this.CBAssignTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBAssignTo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CBAssignTo.FocusedColor = System.Drawing.Color.Empty;
-            this.CBAssignTo.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBAssignTo.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBAssignTo.ForeColor = System.Drawing.Color.Black;
             this.CBAssignTo.FormattingEnabled = true;
             this.CBAssignTo.ItemHeight = 31;
@@ -113,55 +113,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(43, 121);
+            this.label1.Location = new System.Drawing.Point(44, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 19);
+            this.label1.Size = new System.Drawing.Size(34, 15);
             this.label1.TabIndex = 13;
             this.label1.Text = "Title";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label2.Location = new System.Drawing.Point(43, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 14;
             this.label2.Text = "Assign To";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label4.Location = new System.Drawing.Point(43, 266);
+            this.label4.Location = new System.Drawing.Point(44, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Created By";
+            this.label4.Text = "Issuer";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label5.Location = new System.Drawing.Point(293, 266);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 19);
+            this.label5.Size = new System.Drawing.Size(55, 15);
             this.label5.TabIndex = 16;
             this.label5.Text = "Division";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label6.Location = new System.Drawing.Point(293, 192);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 19);
+            this.label6.Size = new System.Drawing.Size(51, 15);
             this.label6.TabIndex = 18;
             this.label6.Text = "Priority";
             // 
@@ -174,7 +174,7 @@
             this.CBPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBPriority.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CBPriority.FocusedColor = System.Drawing.Color.Empty;
-            this.CBPriority.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBPriority.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBPriority.ForeColor = System.Drawing.Color.Black;
             this.CBPriority.FormattingEnabled = true;
             this.CBPriority.ItemHeight = 31;
@@ -199,7 +199,7 @@
             this.TBDescription.FocusedBaseColor = System.Drawing.Color.White;
             this.TBDescription.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDescription.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBDescription.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescription.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescription.Location = new System.Drawing.Point(47, 442);
             this.TBDescription.Multiline = true;
             this.TBDescription.Name = "TBDescription";
@@ -212,11 +212,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label7.Location = new System.Drawing.Point(43, 420);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 19);
+            this.label7.Size = new System.Drawing.Size(74, 15);
             this.label7.TabIndex = 20;
             this.label7.Text = "Description";
             // 
@@ -229,7 +229,7 @@
             this.CBTaskStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBTaskStatus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CBTaskStatus.FocusedColor = System.Drawing.Color.Empty;
-            this.CBTaskStatus.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBTaskStatus.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBTaskStatus.ForeColor = System.Drawing.Color.Black;
             this.CBTaskStatus.FormattingEnabled = true;
             this.CBTaskStatus.ItemHeight = 31;
@@ -248,22 +248,22 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label8.Location = new System.Drawing.Point(293, 123);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 19);
+            this.label8.Size = new System.Drawing.Size(75, 15);
             this.label8.TabIndex = 22;
             this.label8.Text = "Task Status";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label9.Location = new System.Drawing.Point(43, 342);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 19);
+            this.label9.Size = new System.Drawing.Size(64, 15);
             this.label9.TabIndex = 24;
             this.label9.Text = "Start Date";
             // 
@@ -276,7 +276,7 @@
             this.TBStartDate.FocusedBaseColor = System.Drawing.Color.White;
             this.TBStartDate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBStartDate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBStartDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBStartDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBStartDate.Location = new System.Drawing.Point(47, 364);
             this.TBStartDate.Name = "TBStartDate";
             this.TBStartDate.PasswordChar = '\0';
@@ -294,7 +294,7 @@
             this.TBDueDate.FocusedBaseColor = System.Drawing.Color.White;
             this.TBDueDate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBDueDate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBDueDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDueDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDueDate.Location = new System.Drawing.Point(297, 364);
             this.TBDueDate.Name = "TBDueDate";
             this.TBDueDate.PasswordChar = '\0';
@@ -306,11 +306,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.label10.Location = new System.Drawing.Point(293, 342);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 19);
+            this.label10.Size = new System.Drawing.Size(58, 15);
             this.label10.TabIndex = 26;
             this.label10.Text = "Due Date";
             // 
@@ -323,7 +323,7 @@
             this.BTNSubmit.BorderColor = System.Drawing.Color.Black;
             this.BTNSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BTNSubmit.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNSubmit.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNSubmit.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSubmit.ForeColor = System.Drawing.Color.White;
             this.BTNSubmit.Image = null;
             this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
@@ -344,22 +344,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Roboto Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(181, 33);
+            this.label3.Location = new System.Drawing.Point(185, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 41);
+            this.label3.Size = new System.Drawing.Size(170, 35);
             this.label3.TabIndex = 8;
             this.label3.Text = "Create Task";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label11.Location = new System.Drawing.Point(106, 74);
+            this.label11.Location = new System.Drawing.Point(117, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(356, 19);
+            this.label11.Size = new System.Drawing.Size(310, 15);
             this.label11.TabIndex = 29;
             this.label11.Text = "Generate Tasks for Enhanced Workflow Management";
             // 

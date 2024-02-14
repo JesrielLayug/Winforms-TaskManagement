@@ -10,8 +10,11 @@ namespace TaskManagement.Repositories.Contracts
     public interface IUserRepository
     {
         Task Add(User user);
+        Task Update(User user, string id);
+        Task Delete(string id);
         Task<User> GetByEmail(string email);
         Task<User> GetByName(string name);
+        Task<User> GetById(string id);
         Task<IEnumerable<User>> GetAll();
     }
 }

@@ -34,15 +34,11 @@ namespace TaskManagement.UserControls.AdminSubControls
 
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            TicketEditorView create = new TicketEditorView(userService, ticketService);
-            create.TicketAdded += Create_TicketAdded;
+            TicketEditorView create = new TicketEditorView(null, userService, ticketService);
+            create.TicketAdded += (s, ex) => { InitializeContainer(); };
             create.ShowDialog();
         }
 
-        private async void Create_TicketAdded(object sender, EventArgs e)
-        {
-            InitializeContainer();
-        }
 
         private async void InitializeContainer()
         {
@@ -51,8 +47,11 @@ namespace TaskManagement.UserControls.AdminSubControls
 
             if (Tickets != null && Tickets.Any())
             {
-                TicketControl ticketControl = new TicketControl(Tickets);
-
+                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService);
+                
+                ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
+                ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };
+                
                 ticketControl.Dock = DockStyle.Fill;
                 Container.Controls.Add(ticketControl);
             }

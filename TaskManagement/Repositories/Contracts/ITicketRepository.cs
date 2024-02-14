@@ -10,6 +10,8 @@ namespace TaskManagement.Repositories.Contracts
     public interface ITicketRepository
     {
         Task Add(Ticket task);
+        Task Delete (string id);
+        Task Update(Ticket ticket, string id);
         Task<IEnumerable<Ticket>> GetAll();
     }
 }

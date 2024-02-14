@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.Runtime.Internal.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,6 +66,59 @@ namespace TaskManagement.Services
 
         }
 
+        public async Task<Response> Delete(string id)
+        {
+            try
+            {
+                await ticketRepository.Delete(id);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successfully Deleted"
+                };
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<Response> Update(TicketEditor ticket, string id)
+        {
+            try
+            {
+                var assignee = await userRepository.GetByName(ticket.AssignName);
+                var creator = await userRepository.GetByName(ticket.CreatedBy);
+
+                var ticketTobeUpdate = new Ticket
+                {
+                    Id = id,
+                    Title = ticket.Title,
+                    AssignUserId = assignee.Id,
+                    Priority = ticket.Priority,
+                    Division = ticket.Division,
+                    TicketStatus = ticket.TicketStatus,
+                    StartDate = ticket.StartDate,
+                    DueDate = ticket.DueDate,
+                    Description = ticket.Description,
+                    IsApprove = ticket.IsApprove,
+                    IsDeleted = false,
+                    CreatorId = creator.Id,
+                };
+
+                await ticketRepository.Update(ticketTobeUpdate, id);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successfully Updated."
+                };
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<TicketInfo>> GetAll()
         {
             try
@@ -100,5 +154,6 @@ namespace TaskManagement.Services
                 throw;
             }
         }
+
     }
 }

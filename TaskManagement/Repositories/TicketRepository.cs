@@ -14,7 +14,7 @@ namespace TaskManagement.Repositories
     {
         private readonly IMongoClient mongoClient;
         private readonly IDatabaseSetting setting;
-        private readonly IMongoCollection<Ticket> TaskCollection;
+        private readonly IMongoCollection<Ticket> TicketCollection;
 
         public TicketRepository(IMongoClient mongoClient, IDatabaseSetting setting)
         {
@@ -22,17 +22,27 @@ namespace TaskManagement.Repositories
             this.setting = setting;
 
             var database = mongoClient.GetDatabase("TaskManagement");
-            TaskCollection = database.GetCollection<Ticket>("Tickets");
+            TicketCollection = database.GetCollection<Ticket>("Tickets");
         }
 
         public async Task Add(Ticket task)
         {
-           await TaskCollection.InsertOneAsync(task);
+           await TicketCollection.InsertOneAsync(task);
+        }
+
+        public async Task Delete(string id)
+        {
+            await TicketCollection.DeleteOneAsync(x => x.Id == id);
         }
 
         public async Task<IEnumerable<Ticket>> GetAll()
         {
-            return await TaskCollection.Find(x => true).ToListAsync();
+            return await TicketCollection.Find(x => true).ToListAsync();
+        }
+
+        public async Task Update(Ticket ticket, string id)
+        {
+            await TicketCollection.ReplaceOneAsync(x => x.Id == id, ticket);
         }
     }
 }
