@@ -31,7 +31,6 @@ namespace TaskManagement.Views
             LBDueDate.Text = ticket.DueDate;
             LBAssignee.Text = ticket.AssignUserName;
             LBDivision.Text = ticket.Division;
-            LBAssignee.Text = ticket.CreatorFullName;
             LBDescription.Text = ticket.Description;
             LBStatus.Text = ticket.TicketStatus;
             LBIssuer.Text = ticket.CreatorFullName;

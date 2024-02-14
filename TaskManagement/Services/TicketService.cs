@@ -37,6 +37,7 @@ namespace TaskManagement.Services
                     TicketStatus = task.TicketStatus,
                     StartDate = task.StartDate,
                     DueDate = task.DueDate,
+                    DateCreated = DateTime.Now,
                     Description = task.Description,
                     IsDeleted = false,
                     CreatorId = creator.Id
@@ -100,6 +101,7 @@ namespace TaskManagement.Services
                     TicketStatus = ticket.TicketStatus,
                     StartDate = ticket.StartDate,
                     DueDate = ticket.DueDate,
+                    DateCreated = DateTime.Now,
                     Description = ticket.Description,
                     IsApprove = ticket.IsApprove,
                     IsDeleted = false,
@@ -141,6 +143,7 @@ namespace TaskManagement.Services
                             TicketStatus = ticket.TicketStatus,
                             StartDate = ticket.StartDate,
                             DueDate = ticket.DueDate,
+                            DateCreated = ticket.DateCreated,
                             Description = ticket.Description,
                             IsApprove = ticket.IsApprove,
                             IsDeleted = ticket.IsDeleted,

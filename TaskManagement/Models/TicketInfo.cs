@@ -18,6 +18,7 @@ namespace TaskManagement.Models
         public string TicketStatus { get; set; }
         public string StartDate { get; set; }
         public string DueDate { get; set; }
+        public DateTime DateCreated {  get; set; }
         public string Description { get; set; }
         public bool IsApprove {  get; set; }
         public bool IsDeleted {  get; set; }

@@ -38,14 +38,9 @@ namespace TaskManagement.UserControls
 
         private void InitializeMainControl()
         {
-            //TicketBaseControl taskControl = new TicketBaseControl(userService, taskService);
-            //taskControl.Dock = DockStyle.Fill;
-
-            //MainPanel.Controls.Add(taskControl);
-
             List<UserControl> controls = new List<UserControl>()
             {
-                new DashboardBaseControl(),
+                new DashboardBaseControl(userService, ticketService),
                 new TicketBaseControl(userService, ticketService),
                 new PendingBaseControl(),
                 new AccountBaseControl(userService),
@@ -108,6 +103,7 @@ namespace TaskManagement.UserControls
 
         private void BTNDashboard_Click(object sender, EventArgs e)
         {
+            InitializeMainControl();
             ButtonColorChanger.SelectedButton(BTNDashboard);
             GetUserControlChanger.Display(0);
         }

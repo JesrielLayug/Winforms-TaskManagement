@@ -61,7 +61,7 @@ namespace TaskManagement.Views
             {
                 TBTitle.Text = Ticket.Title;
                 CBAssignTo.SelectedItem = Ticket.AssignUserName;
-                TBDivision.Text = Ticket.Division;
+                CBDivision.SelectedItem = Ticket.Division;
                 CBTaskStatus.SelectedItem = Ticket.TicketStatus;
                 CBPriority.SelectedItem = Ticket.Priority;
                 TBStartDate.Text = Ticket.StartDate;
@@ -90,7 +90,7 @@ namespace TaskManagement.Views
                     Title = TBTitle.Text,
                     AssignName = CBAssignTo.Text,
                     Priority = CBPriority.Text,
-                    Division = TBDivision.Text,
+                    Division = CBDivision.Text,
                     TicketStatus = CBTaskStatus.Text,
                     StartDate = TBStartDate.Text,
                     DueDate = TBDueDate.Text,
@@ -152,7 +152,7 @@ namespace TaskManagement.Views
         {
             if (
                 !string.IsNullOrEmpty(TBTitle.Text) && !string.IsNullOrEmpty(CBAssignTo.Text) &&
-                !string.IsNullOrEmpty(CBPriority.Text) && !string.IsNullOrEmpty(TBDivision.Text) &&
+                !string.IsNullOrEmpty(CBPriority.Text) && !string.IsNullOrEmpty(CBDivision.Text) &&
                 !string.IsNullOrEmpty(CBTaskStatus.Text) && !string.IsNullOrEmpty(TBStartDate.Text) &&
                 !string.IsNullOrEmpty(TBDueDate.Text) && !string.IsNullOrEmpty(TBDescription.Text) &&
                 !string.IsNullOrEmpty(CBCreator.Text)

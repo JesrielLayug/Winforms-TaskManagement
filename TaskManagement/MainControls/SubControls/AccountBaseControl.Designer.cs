@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeDetailsContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
+            this.BTNClear = new Guna.UI.WinForms.GunaButton();
+            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
             this.CBRole = new Guna.UI.WinForms.GunaComboBox();
             this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
             this.TBPassword = new Guna.UI.WinForms.GunaTextBox();
@@ -55,10 +57,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.GridContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.DGVUsers = new Guna.UI.WinForms.GunaDataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
-            this.BTNClear = new Guna.UI.WinForms.GunaButton();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +64,8 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userEditorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.EmployeeDetailsContainer.SuspendLayout();
             this.EmployeeDetailsPanel.SuspendLayout();
             this.GridContainer.SuspendLayout();
@@ -110,6 +110,61 @@
             this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
             this.EmployeeDetailsPanel.Size = new System.Drawing.Size(325, 509);
             this.EmployeeDetailsPanel.TabIndex = 2;
+            // 
+            // BTNClear
+            // 
+            this.BTNClear.AnimationHoverSpeed = 0.07F;
+            this.BTNClear.AnimationSpeed = 0.03F;
+            this.BTNClear.BackColor = System.Drawing.Color.Transparent;
+            this.BTNClear.BaseColor = System.Drawing.Color.White;
+            this.BTNClear.BorderColor = System.Drawing.Color.Red;
+            this.BTNClear.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNClear.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNClear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClear.ForeColor = System.Drawing.Color.Red;
+            this.BTNClear.Image = global::TaskManagement.Properties.Resources.reload;
+            this.BTNClear.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNClear.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNClear.Location = new System.Drawing.Point(253, 28);
+            this.BTNClear.Name = "BTNClear";
+            this.BTNClear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BTNClear.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNClear.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNClear.OnHoverImage = null;
+            this.BTNClear.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNClear.Radius = 5;
+            this.BTNClear.Size = new System.Drawing.Size(35, 29);
+            this.BTNClear.TabIndex = 35;
+            this.BTNClear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
+            // 
+            // BTNDelete
+            // 
+            this.BTNDelete.AnimationHoverSpeed = 0.07F;
+            this.BTNDelete.AnimationSpeed = 0.03F;
+            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.BaseColor = System.Drawing.Color.White;
+            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.BorderSize = 1;
+            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNDelete.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.Image = null;
+            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNDelete.Location = new System.Drawing.Point(40, 436);
+            this.BTNDelete.Name = "BTNDelete";
+            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverImage = null;
+            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNDelete.Radius = 5;
+            this.BTNDelete.Size = new System.Drawing.Size(116, 42);
+            this.BTNDelete.TabIndex = 34;
+            this.BTNDelete.Text = "Delete";
+            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
             // 
             // CBRole
             // 
@@ -396,27 +451,28 @@
             // 
             // DGVUsers
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsers.AutoGenerateColumns = false;
             this.DGVUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVUsers.BackgroundColor = System.Drawing.Color.White;
+            this.DGVUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVUsers.ColumnHeadersHeight = 45;
             this.DGVUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roleDataGridViewTextBoxColumn,
@@ -426,23 +482,23 @@
             this.emailDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.DGVUsers.DataSource = this.userEditorBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVUsers.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVUsers.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGVUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVUsers.EnableHeadersVisualStyles = false;
             this.DGVUsers.GridColor = System.Drawing.Color.White;
             this.DGVUsers.Location = new System.Drawing.Point(0, 0);
             this.DGVUsers.Name = "DGVUsers";
             this.DGVUsers.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            this.DGVUsers.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.DGVUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGVUsers.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVUsers.RowTemplate.Height = 40;
             this.DGVUsers.RowTemplate.ReadOnly = true;
@@ -473,98 +529,20 @@
             this.DGVUsers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsers_CellContentClick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label3.Location = new System.Drawing.Point(35, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 35);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Account Manager";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label5.Location = new System.Drawing.Point(37, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(738, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Here, you have full control over user accounts, ensuring smooth collaboration and" +
-    " efficient project management";
-            // 
-            // BTNDelete
-            // 
-            this.BTNDelete.AnimationHoverSpeed = 0.07F;
-            this.BTNDelete.AnimationSpeed = 0.03F;
-            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.BaseColor = System.Drawing.Color.White;
-            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.BorderSize = 1;
-            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNDelete.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.Image = null;
-            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNDelete.Location = new System.Drawing.Point(40, 436);
-            this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverImage = null;
-            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNDelete.Radius = 5;
-            this.BTNDelete.Size = new System.Drawing.Size(116, 42);
-            this.BTNDelete.TabIndex = 34;
-            this.BTNDelete.Text = "Delete";
-            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
-            // 
-            // BTNClear
-            // 
-            this.BTNClear.AnimationHoverSpeed = 0.07F;
-            this.BTNClear.AnimationSpeed = 0.03F;
-            this.BTNClear.BackColor = System.Drawing.Color.Transparent;
-            this.BTNClear.BaseColor = System.Drawing.Color.White;
-            this.BTNClear.BorderColor = System.Drawing.Color.Red;
-            this.BTNClear.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNClear.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNClear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNClear.ForeColor = System.Drawing.Color.Red;
-            this.BTNClear.Image = global::TaskManagement.Properties.Resources.reload;
-            this.BTNClear.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNClear.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNClear.Location = new System.Drawing.Point(253, 28);
-            this.BTNClear.Name = "BTNClear";
-            this.BTNClear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.BTNClear.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNClear.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNClear.OnHoverImage = null;
-            this.BTNClear.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNClear.Radius = 5;
-            this.BTNClear.Size = new System.Drawing.Size(35, 29);
-            this.BTNClear.TabIndex = 35;
-            this.BTNClear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
-            // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.roleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.roleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fullNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fullNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full Name";
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
             // 
@@ -595,6 +573,29 @@
             // userEditorBindingSource
             // 
             this.userEditorBindingSource.DataSource = typeof(TaskManagement.Models.UserEditor);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.label3.Location = new System.Drawing.Point(35, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(245, 35);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Account Manager";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.label5.Location = new System.Drawing.Point(37, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(738, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Here, you have full control over user accounts, ensuring smooth collaboration and" +
+    " efficient project management";
             // 
             // AccountBaseControl
             // 

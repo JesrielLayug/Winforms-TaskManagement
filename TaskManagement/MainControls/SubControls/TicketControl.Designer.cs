@@ -57,7 +57,7 @@
             this.gunaShadowPanel5.BaseColor = System.Drawing.Color.White;
             this.gunaShadowPanel5.Controls.Add(this.gunaShadowPanel6);
             this.gunaShadowPanel5.Controls.Add(this.label4);
-            this.gunaShadowPanel5.Location = new System.Drawing.Point(377, 3);
+            this.gunaShadowPanel5.Location = new System.Drawing.Point(368, 3);
             this.gunaShadowPanel5.Name = "gunaShadowPanel5";
             this.gunaShadowPanel5.Radius = 3;
             this.gunaShadowPanel5.ShadowColor = System.Drawing.Color.Silver;
@@ -101,14 +101,14 @@
             // 
             // FLPInProgress
             // 
-            this.FLPInProgress.Location = new System.Drawing.Point(377, 56);
+            this.FLPInProgress.Location = new System.Drawing.Point(368, 56);
             this.FLPInProgress.Name = "FLPInProgress";
             this.FLPInProgress.Size = new System.Drawing.Size(338, 605);
             this.FLPInProgress.TabIndex = 7;
             // 
             // FLPNextUp
             // 
-            this.FLPNextUp.Location = new System.Drawing.Point(19, 56);
+            this.FLPNextUp.Location = new System.Drawing.Point(3, 56);
             this.FLPNextUp.Name = "FLPNextUp";
             this.FLPNextUp.Size = new System.Drawing.Size(338, 605);
             this.FLPNextUp.TabIndex = 9;
@@ -119,7 +119,7 @@
             this.gunaShadowPanel7.BaseColor = System.Drawing.Color.White;
             this.gunaShadowPanel7.Controls.Add(this.gunaShadowPanel11);
             this.gunaShadowPanel7.Controls.Add(this.label12);
-            this.gunaShadowPanel7.Location = new System.Drawing.Point(19, 3);
+            this.gunaShadowPanel7.Location = new System.Drawing.Point(3, 3);
             this.gunaShadowPanel7.Name = "gunaShadowPanel7";
             this.gunaShadowPanel7.Radius = 3;
             this.gunaShadowPanel7.ShadowColor = System.Drawing.Color.Silver;

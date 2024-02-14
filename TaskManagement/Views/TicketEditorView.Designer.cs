@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.TBTitle = new Guna.UI.WinForms.GunaTextBox();
-            this.TBDivision = new Guna.UI.WinForms.GunaTextBox();
             this.CBAssignTo = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.BTNDueDate = new Guna.UI.WinForms.GunaButton();
             this.BTNStartDate = new Guna.UI.WinForms.GunaButton();
             this.CBCreator = new Guna.UI.WinForms.GunaComboBox();
+            this.CBDivision = new Guna.UI.WinForms.GunaComboBox();
             this.SuspendLayout();
             // 
             // TBTitle
@@ -70,24 +70,6 @@
             this.TBTitle.SelectedText = "";
             this.TBTitle.Size = new System.Drawing.Size(218, 39);
             this.TBTitle.TabIndex = 9;
-            // 
-            // TBDivision
-            // 
-            this.TBDivision.BackColor = System.Drawing.Color.Transparent;
-            this.TBDivision.BaseColor = System.Drawing.Color.White;
-            this.TBDivision.BorderColor = System.Drawing.Color.Silver;
-            this.TBDivision.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TBDivision.FocusedBaseColor = System.Drawing.Color.White;
-            this.TBDivision.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.TBDivision.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBDivision.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDivision.Location = new System.Drawing.Point(297, 288);
-            this.TBDivision.Name = "TBDivision";
-            this.TBDivision.PasswordChar = '\0';
-            this.TBDivision.Radius = 5;
-            this.TBDivision.SelectedText = "";
-            this.TBDivision.Size = new System.Drawing.Size(218, 39);
-            this.TBDivision.TabIndex = 11;
             // 
             // CBAssignTo
             // 
@@ -438,12 +420,45 @@
             this.CBCreator.Size = new System.Drawing.Size(218, 37);
             this.CBCreator.TabIndex = 32;
             // 
+            // CBDivision
+            // 
+            this.CBDivision.BackColor = System.Drawing.Color.Transparent;
+            this.CBDivision.BaseColor = System.Drawing.Color.White;
+            this.CBDivision.BorderColor = System.Drawing.Color.Silver;
+            this.CBDivision.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBDivision.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CBDivision.FocusedColor = System.Drawing.Color.Empty;
+            this.CBDivision.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBDivision.ForeColor = System.Drawing.Color.Black;
+            this.CBDivision.FormattingEnabled = true;
+            this.CBDivision.ItemHeight = 31;
+            this.CBDivision.Items.AddRange(new object[] {
+            "Infrastructure",
+            "Networking",
+            "Systems Administration",
+            "Database Administration (DBA)",
+            "Security",
+            "Software Development",
+            "Help Desk ",
+            "Project Management ",
+            "Data Analytics",
+            "Cloud Computing"});
+            this.CBDivision.Location = new System.Drawing.Point(296, 292);
+            this.CBDivision.Name = "CBDivision";
+            this.CBDivision.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.CBDivision.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.CBDivision.Radius = 5;
+            this.CBDivision.Size = new System.Drawing.Size(218, 37);
+            this.CBDivision.TabIndex = 33;
+            // 
             // TicketEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(568, 653);
+            this.Controls.Add(this.CBDivision);
             this.Controls.Add(this.CBCreator);
             this.Controls.Add(this.BTNDueDate);
             this.Controls.Add(this.BTNStartDate);
@@ -464,7 +479,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBAssignTo);
-            this.Controls.Add(this.TBDivision);
             this.Controls.Add(this.TBTitle);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -483,7 +497,6 @@
 
         #endregion
         private Guna.UI.WinForms.GunaTextBox TBTitle;
-        private Guna.UI.WinForms.GunaTextBox TBDivision;
         private Guna.UI.WinForms.GunaComboBox CBAssignTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -505,5 +518,6 @@
         private Guna.UI.WinForms.GunaButton BTNStartDate;
         private Guna.UI.WinForms.GunaButton BTNDueDate;
         private Guna.UI.WinForms.GunaComboBox CBCreator;
+        private Guna.UI.WinForms.GunaComboBox CBDivision;
     }
 }
