@@ -34,7 +34,7 @@ namespace TaskManagement.MainControls.SubControls
             {
                 var response = await userService.Add(new UserEditor
                 {
-                    Role = CBRole.Text,
+                    Role = "Employee",
                     Gender = CBGender.Text,
                     FullName = $"{TBFirstname.Text} {TBLastname.Text}",
                     Position = CBPosition.Text,
@@ -52,7 +52,7 @@ namespace TaskManagement.MainControls.SubControls
             {
                 var userTobeUpdate = new User
                 {
-                    Role = CBRole.Text,
+                    Role = "Employee",
                     Gender = CBGender.Text,
                     FullName = $"{TBFirstname.Text} {TBLastname.Text}",
                     Position = CBPosition.Text,
@@ -101,8 +101,6 @@ namespace TaskManagement.MainControls.SubControls
                 string[] words = user.FullName.Split(' ');
                 var firstname = words[0];
                 var lastname = words[1];
-
-                CBRole.SelectedItem = user.Role;
                 CBGender.SelectedItem = user.Gender;
                 TBFirstname.Text = firstname;
                 TBLastname.Text = lastname;
@@ -152,7 +150,6 @@ namespace TaskManagement.MainControls.SubControls
 
         public void ClearAllFields()
         {
-            CBRole.SelectedItem = null;
             CBGender.SelectedItem = null;
             TBFirstname.Text = string.Empty;
             TBLastname.Text = string.Empty;

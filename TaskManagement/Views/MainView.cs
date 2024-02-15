@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.MainControls;
 using TaskManagement.Services.Contracts;
 using TaskManagement.UserControls;
 
@@ -34,12 +35,23 @@ namespace TaskManagement.Views
 
         public void InitializeInRoleView()
         {
-            if(role == "Admin")
+            if (role == "Admin")
             {
                 AdminControl adminControl = new AdminControl(userService, taskService);
                 adminControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(adminControl);
             }
+            else
+            {
+                EmployeeControl employeeControl = new EmployeeControl();
+                employeeControl.Dock = DockStyle.Fill;
+                MainPanel.Controls.Add(employeeControl);
+            }
+        }
+
+        private void MainView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

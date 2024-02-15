@@ -34,7 +34,7 @@ namespace TaskManagement.UserControls.AdminSubControls
 
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            TicketEditorView create = new TicketEditorView(null, userService, ticketService);
+            AdminTicketEditorView create = new AdminTicketEditorView(null, userService, ticketService);
             create.TicketAdded += (s, ex) => { InitializeContainer(); };
             create.ShowDialog();
         }

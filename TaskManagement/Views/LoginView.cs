@@ -41,13 +41,18 @@ namespace TaskManagement.Views
                 MessageBox.Show(response.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if(response.Role == "Admin")
+                this.Hide();
+                this.ShowInTaskbar = false;
+
+                if (response.Role == "Admin")
                 {
                     MainView mainView = new MainView(response.Role, userService, taskService);
                     mainView.Show();
-
-                    this.Hide();
-                    this.ShowInTaskbar = false;
+                }
+                else
+                {
+                    MainView mainView = new MainView(response.Role, userService, taskService);
+                    mainView.Show();
                 }
             }
         }

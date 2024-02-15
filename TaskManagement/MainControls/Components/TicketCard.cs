@@ -47,7 +47,7 @@ namespace TaskManagement.UserControls.Components
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            TicketEditorView editor = new TicketEditorView(ticket, userService, ticketService);
+            AdminTicketEditorView editor = new AdminTicketEditorView(ticket, userService, ticketService);
             editor.ShowDialog();
             var dialog = editor.DialogResult;
 

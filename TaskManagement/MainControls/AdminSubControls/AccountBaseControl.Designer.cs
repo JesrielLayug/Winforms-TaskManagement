@@ -39,7 +39,6 @@
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
             this.BTNClear = new Guna.UI.WinForms.GunaButton();
             this.BTNDelete = new Guna.UI.WinForms.GunaButton();
-            this.CBRole = new Guna.UI.WinForms.GunaComboBox();
             this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
             this.TBPassword = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TBLastname = new Guna.UI.WinForms.GunaTextBox();
             this.TBEmail = new Guna.UI.WinForms.GunaTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.CBPosition = new Guna.UI.WinForms.GunaComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,19 +89,17 @@
             // 
             this.EmployeeDetailsPanel.Controls.Add(this.BTNClear);
             this.EmployeeDetailsPanel.Controls.Add(this.BTNDelete);
-            this.EmployeeDetailsPanel.Controls.Add(this.CBRole);
             this.EmployeeDetailsPanel.Controls.Add(this.BTNSubmit);
+            this.EmployeeDetailsPanel.Controls.Add(this.CBGender);
+            this.EmployeeDetailsPanel.Controls.Add(this.label7);
             this.EmployeeDetailsPanel.Controls.Add(this.TBPassword);
             this.EmployeeDetailsPanel.Controls.Add(this.label2);
             this.EmployeeDetailsPanel.Controls.Add(this.label1);
             this.EmployeeDetailsPanel.Controls.Add(this.label10);
             this.EmployeeDetailsPanel.Controls.Add(this.TBFirstname);
-            this.EmployeeDetailsPanel.Controls.Add(this.CBGender);
             this.EmployeeDetailsPanel.Controls.Add(this.label4);
-            this.EmployeeDetailsPanel.Controls.Add(this.label7);
             this.EmployeeDetailsPanel.Controls.Add(this.TBLastname);
             this.EmployeeDetailsPanel.Controls.Add(this.TBEmail);
-            this.EmployeeDetailsPanel.Controls.Add(this.label8);
             this.EmployeeDetailsPanel.Controls.Add(this.label9);
             this.EmployeeDetailsPanel.Controls.Add(this.CBPosition);
             this.EmployeeDetailsPanel.Controls.Add(this.label6);
@@ -168,30 +164,6 @@
             this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
             // 
-            // CBRole
-            // 
-            this.CBRole.BackColor = System.Drawing.Color.Transparent;
-            this.CBRole.BaseColor = System.Drawing.Color.WhiteSmoke;
-            this.CBRole.BorderColor = System.Drawing.Color.Transparent;
-            this.CBRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CBRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBRole.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CBRole.FocusedColor = System.Drawing.Color.Empty;
-            this.CBRole.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBRole.ForeColor = System.Drawing.Color.Black;
-            this.CBRole.FormattingEnabled = true;
-            this.CBRole.ItemHeight = 27;
-            this.CBRole.Items.AddRange(new object[] {
-            "Admin",
-            "Employee"});
-            this.CBRole.Location = new System.Drawing.Point(47, 82);
-            this.CBRole.Name = "CBRole";
-            this.CBRole.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.CBRole.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.CBRole.Radius = 5;
-            this.CBRole.Size = new System.Drawing.Size(114, 33);
-            this.CBRole.TabIndex = 23;
-            // 
             // BTNSubmit
             // 
             this.BTNSubmit.AnimationHoverSpeed = 0.07F;
@@ -242,7 +214,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label2.Location = new System.Drawing.Point(43, 127);
+            this.label2.Location = new System.Drawing.Point(45, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 14);
             this.label2.TabIndex = 15;
@@ -280,7 +252,7 @@
             this.TBFirstname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBFirstname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBFirstname.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFirstname.Location = new System.Drawing.Point(47, 143);
+            this.TBFirstname.Location = new System.Drawing.Point(46, 89);
             this.TBFirstname.Name = "TBFirstname";
             this.TBFirstname.PasswordChar = '\0';
             this.TBFirstname.Radius = 5;
@@ -305,12 +277,12 @@
             "Male",
             "Female",
             "Prefer not to say"});
-            this.CBGender.Location = new System.Drawing.Point(176, 82);
+            this.CBGender.Location = new System.Drawing.Point(45, 146);
             this.CBGender.Name = "CBGender";
             this.CBGender.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBGender.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.CBGender.Radius = 5;
-            this.CBGender.Size = new System.Drawing.Size(115, 33);
+            this.CBGender.Size = new System.Drawing.Size(239, 33);
             this.CBGender.TabIndex = 27;
             // 
             // label4
@@ -318,7 +290,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label4.Location = new System.Drawing.Point(173, 125);
+            this.label4.Location = new System.Drawing.Point(173, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 14);
             this.label4.TabIndex = 17;
@@ -329,7 +301,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label7.Location = new System.Drawing.Point(173, 66);
+            this.label7.Location = new System.Drawing.Point(45, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 14);
             this.label7.TabIndex = 28;
@@ -345,7 +317,7 @@
             this.TBLastname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBLastname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBLastname.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLastname.Location = new System.Drawing.Point(176, 143);
+            this.TBLastname.Location = new System.Drawing.Point(175, 89);
             this.TBLastname.Name = "TBLastname";
             this.TBLastname.PasswordChar = '\0';
             this.TBLastname.Radius = 5;
@@ -370,17 +342,6 @@
             this.TBEmail.SelectedText = "";
             this.TBEmail.Size = new System.Drawing.Size(245, 36);
             this.TBEmail.TabIndex = 29;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label8.Location = new System.Drawing.Point(45, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 14);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Role";
             // 
             // label9
             // 
@@ -638,8 +599,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaTextBox TBLastname;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI.WinForms.GunaComboBox CBRole;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaComboBox CBPosition;
         private Guna.UI.WinForms.GunaTextBox TBPassword;

@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.Views
 {
-    partial class TicketEditorView
+    partial class AdminTicketEditorView
     {
         /// <summary>
         /// Required designer variable.

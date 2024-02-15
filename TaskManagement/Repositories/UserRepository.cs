@@ -42,7 +42,7 @@ namespace TaskManagement.Repositories
 
         public async Task<IEnumerable<User>> GetAll()
         {
-            return await UserCollection.Find(x => true).ToListAsync();
+            return await UserCollection.Find(x => x.Role == "Employee").ToListAsync();
         }
 
         public async Task<User> GetByEmail(string email)

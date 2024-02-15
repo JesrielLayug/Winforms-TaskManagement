@@ -30,9 +30,9 @@ namespace TaskManagement.MainControls.SubControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.MainContainer = new System.Windows.Forms.Panel();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
             this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
@@ -47,23 +47,23 @@ namespace TaskManagement.MainControls.SubControls
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label10 = new System.Windows.Forms.Label();
             this.EmployeesContainer = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaCircleButton4 = new Guna.UI.WinForms.GunaCircleButton();
             this.LBEmployeesQuantity = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.CompletedContainer = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaCircleButton3 = new Guna.UI.WinForms.GunaCircleButton();
             this.LBCompletedQuantity = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.InProgressContainer = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaCircleButton2 = new Guna.UI.WinForms.GunaCircleButton();
             this.LBInProgressQuantity = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.NexUpContainer = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.LBNextUpQuantity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.gunaCircleButton4 = new Guna.UI.WinForms.GunaCircleButton();
-            this.gunaCircleButton3 = new Guna.UI.WinForms.GunaCircleButton();
-            this.gunaCircleButton2 = new Guna.UI.WinForms.GunaCircleButton();
-            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.MainContainer.SuspendLayout();
             this.gunaShadowPanel2.SuspendLayout();
             this.gunaShadowPanel1.SuspendLayout();
@@ -111,20 +111,20 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // cartesianChart2
             // 
-            this.cartesianChart2.Location = new System.Drawing.Point(38, 62);
+            this.cartesianChart2.Location = new System.Drawing.Point(38, 61);
             this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(654, 175);
+            this.cartesianChart2.Size = new System.Drawing.Size(643, 175);
             this.cartesianChart2.TabIndex = 15;
             this.cartesianChart2.Text = "cartesianChart2";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(34, 28);
+            this.label13.Location = new System.Drawing.Point(35, 33);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(165, 18);
+            this.label13.Size = new System.Drawing.Size(145, 15);
             this.label13.TabIndex = 14;
             this.label13.Text = "Division Task Analytics";
             // 
@@ -149,16 +149,16 @@ namespace TaskManagement.MainControls.SubControls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(19, 61);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(350, 186);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
@@ -166,11 +166,11 @@ namespace TaskManagement.MainControls.SubControls
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(26, 28);
+            this.label12.Location = new System.Drawing.Point(34, 32);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 18);
+            this.label12.Size = new System.Drawing.Size(110, 15);
             this.label12.TabIndex = 14;
             this.label12.Text = "Priority Analytics";
             // 
@@ -190,20 +190,20 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // pieChart1
             // 
-            this.pieChart1.Location = new System.Drawing.Point(27, 62);
+            this.pieChart1.Location = new System.Drawing.Point(45, 63);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(219, 241);
+            this.pieChart1.Size = new System.Drawing.Size(191, 212);
             this.pieChart1.TabIndex = 15;
             this.pieChart1.Text = "pieChart1";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(47, 29);
+            this.label11.Location = new System.Drawing.Point(52, 32);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(193, 18);
+            this.label11.Size = new System.Drawing.Size(168, 15);
             this.label11.TabIndex = 14;
             this.label11.Text = "Employee Completed Tasks";
             // 
@@ -223,20 +223,20 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(38, 62);
+            this.cartesianChart1.Location = new System.Drawing.Point(50, 74);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(753, 232);
+            this.cartesianChart1.Size = new System.Drawing.Size(731, 217);
             this.cartesianChart1.TabIndex = 14;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(35, 29);
+            this.label10.Location = new System.Drawing.Point(35, 34);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 18);
+            this.label10.Size = new System.Drawing.Size(176, 15);
             this.label10.TabIndex = 13;
             this.label10.Text = "Daily Created Task Analytics";
             // 
@@ -254,6 +254,29 @@ namespace TaskManagement.MainControls.SubControls
             this.EmployeesContainer.ShadowShift = 6;
             this.EmployeesContainer.Size = new System.Drawing.Size(271, 107);
             this.EmployeesContainer.TabIndex = 2;
+            // 
+            // gunaCircleButton4
+            // 
+            this.gunaCircleButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton4.AnimationSpeed = 0.03F;
+            this.gunaCircleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.gunaCircleButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.gunaCircleButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton4.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton4.Image = global::TaskManagement.Properties.Resources.multiple_users_silhouette;
+            this.gunaCircleButton4.ImageSize = new System.Drawing.Size(25, 25);
+            this.gunaCircleButton4.Location = new System.Drawing.Point(188, 28);
+            this.gunaCircleButton4.Name = "gunaCircleButton4";
+            this.gunaCircleButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.gunaCircleButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton4.OnHoverImage = null;
+            this.gunaCircleButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaCircleButton4.Size = new System.Drawing.Size(50, 48);
+            this.gunaCircleButton4.TabIndex = 16;
             // 
             // LBEmployeesQuantity
             // 
@@ -292,6 +315,29 @@ namespace TaskManagement.MainControls.SubControls
             this.CompletedContainer.Size = new System.Drawing.Size(273, 107);
             this.CompletedContainer.TabIndex = 2;
             // 
+            // gunaCircleButton3
+            // 
+            this.gunaCircleButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton3.AnimationSpeed = 0.03F;
+            this.gunaCircleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.gunaCircleButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.gunaCircleButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton3.Image = global::TaskManagement.Properties.Resources.check_green;
+            this.gunaCircleButton3.ImageSize = new System.Drawing.Size(25, 25);
+            this.gunaCircleButton3.Location = new System.Drawing.Point(194, 28);
+            this.gunaCircleButton3.Name = "gunaCircleButton3";
+            this.gunaCircleButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.gunaCircleButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton3.OnHoverImage = null;
+            this.gunaCircleButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaCircleButton3.Size = new System.Drawing.Size(50, 48);
+            this.gunaCircleButton3.TabIndex = 14;
+            // 
             // LBCompletedQuantity
             // 
             this.LBCompletedQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,6 +375,28 @@ namespace TaskManagement.MainControls.SubControls
             this.InProgressContainer.Size = new System.Drawing.Size(272, 107);
             this.InProgressContainer.TabIndex = 2;
             // 
+            // gunaCircleButton2
+            // 
+            this.gunaCircleButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton2.AnimationSpeed = 0.03F;
+            this.gunaCircleButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(194)))));
+            this.gunaCircleButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton2.Image = global::TaskManagement.Properties.Resources.configuration;
+            this.gunaCircleButton2.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaCircleButton2.Location = new System.Drawing.Point(191, 27);
+            this.gunaCircleButton2.Name = "gunaCircleButton2";
+            this.gunaCircleButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(194)))));
+            this.gunaCircleButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton2.OnHoverImage = null;
+            this.gunaCircleButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaCircleButton2.Size = new System.Drawing.Size(50, 48);
+            this.gunaCircleButton2.TabIndex = 13;
+            // 
             // LBInProgressQuantity
             // 
             this.LBInProgressQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,6 +433,28 @@ namespace TaskManagement.MainControls.SubControls
             this.NexUpContainer.ShadowShift = 6;
             this.NexUpContainer.Size = new System.Drawing.Size(280, 107);
             this.NexUpContainer.TabIndex = 1;
+            // 
+            // gunaCircleButton1
+            // 
+            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton1.AnimationSpeed = 0.03F;
+            this.gunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.Image = global::TaskManagement.Properties.Resources.check_circle;
+            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaCircleButton1.Location = new System.Drawing.Point(197, 27);
+            this.gunaCircleButton1.Name = "gunaCircleButton1";
+            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.OnHoverImage = null;
+            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.Size = new System.Drawing.Size(50, 48);
+            this.gunaCircleButton1.TabIndex = 12;
             // 
             // LBNextUpQuantity
             // 
@@ -408,96 +498,6 @@ namespace TaskManagement.MainControls.SubControls
             this.label2.Size = new System.Drawing.Size(157, 36);
             this.label2.TabIndex = 0;
             this.label2.Text = "Dashboard";
-            // 
-            // gunaCircleButton4
-            // 
-            this.gunaCircleButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton4.AnimationSpeed = 0.03F;
-            this.gunaCircleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.gunaCircleButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.gunaCircleButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton4.Image = global::TaskManagement.Properties.Resources.multiple_users_silhouette;
-            this.gunaCircleButton4.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaCircleButton4.Location = new System.Drawing.Point(188, 28);
-            this.gunaCircleButton4.Name = "gunaCircleButton4";
-            this.gunaCircleButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.gunaCircleButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton4.OnHoverImage = null;
-            this.gunaCircleButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton4.Size = new System.Drawing.Size(50, 48);
-            this.gunaCircleButton4.TabIndex = 16;
-            // 
-            // gunaCircleButton3
-            // 
-            this.gunaCircleButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton3.AnimationSpeed = 0.03F;
-            this.gunaCircleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.gunaCircleButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
-            this.gunaCircleButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton3.Image = global::TaskManagement.Properties.Resources.check_green;
-            this.gunaCircleButton3.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaCircleButton3.Location = new System.Drawing.Point(194, 28);
-            this.gunaCircleButton3.Name = "gunaCircleButton3";
-            this.gunaCircleButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
-            this.gunaCircleButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton3.OnHoverImage = null;
-            this.gunaCircleButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton3.Size = new System.Drawing.Size(50, 48);
-            this.gunaCircleButton3.TabIndex = 14;
-            // 
-            // gunaCircleButton2
-            // 
-            this.gunaCircleButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton2.AnimationSpeed = 0.03F;
-            this.gunaCircleButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(194)))));
-            this.gunaCircleButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton2.Image = global::TaskManagement.Properties.Resources.configuration;
-            this.gunaCircleButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaCircleButton2.Location = new System.Drawing.Point(191, 27);
-            this.gunaCircleButton2.Name = "gunaCircleButton2";
-            this.gunaCircleButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(194)))));
-            this.gunaCircleButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton2.OnHoverImage = null;
-            this.gunaCircleButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton2.Size = new System.Drawing.Size(50, 48);
-            this.gunaCircleButton2.TabIndex = 13;
-            // 
-            // gunaCircleButton1
-            // 
-            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.Image = global::TaskManagement.Properties.Resources.check_circle;
-            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(197, 27);
-            this.gunaCircleButton1.Name = "gunaCircleButton1";
-            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.OnHoverImage = null;
-            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.Size = new System.Drawing.Size(50, 48);
-            this.gunaCircleButton1.TabIndex = 12;
             // 
             // DashboardBaseControl
             // 

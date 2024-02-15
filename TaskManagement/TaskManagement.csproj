@@ -150,28 +150,34 @@
     <Compile Include="Data\DatabaseSetting.cs" />
     <Compile Include="Data\IDatabaseSetting.cs" />
     <Compile Include="Data\ServiceLocator.cs" />
-    <Compile Include="MainControls\SubControls\AccountBaseControl.cs">
+    <Compile Include="MainControls\EmployeeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\AccountBaseControl.Designer.cs">
+    <Compile Include="MainControls\EmployeeControl.Designer.cs">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainControls\AdminSubControls\AccountBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainControls\AdminSubControls\AccountBaseControl.Designer.cs">
       <DependentUpon>AccountBaseControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControls\SubControls\DashboardBaseControl.cs">
+    <Compile Include="MainControls\AdminSubControls\DashboardBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\DashboardBaseControl.Designer.cs">
+    <Compile Include="MainControls\AdminSubControls\DashboardBaseControl.Designer.cs">
       <DependentUpon>DashboardBaseControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControls\SubControls\PendingBaseControl.cs">
+    <Compile Include="MainControls\AdminSubControls\PendingBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\PendingBaseControl.Designer.cs">
+    <Compile Include="MainControls\AdminSubControls\PendingBaseControl.Designer.cs">
       <DependentUpon>PendingBaseControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControls\SubControls\SettingsBaseControl.cs">
+    <Compile Include="MainControls\AdminSubControls\SettingsBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\SettingsBaseControl.Designer.cs">
+    <Compile Include="MainControls\AdminSubControls\SettingsBaseControl.Designer.cs">
       <DependentUpon>SettingsBaseControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\TicketSubInfo.cs" />
@@ -210,16 +216,16 @@
     <Compile Include="MainControls\AdminControl.Designer.cs">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControls\SubControls\TicketBaseControl.cs">
+    <Compile Include="MainControls\AdminSubControls\TicketBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\TicketBaseControl.Designer.cs">
+    <Compile Include="MainControls\AdminSubControls\TicketBaseControl.Designer.cs">
       <DependentUpon>TicketBaseControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControls\SubControls\TicketControl.cs">
+    <Compile Include="MainControls\AdminSubControls\TicketControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainControls\SubControls\TicketControl.Designer.cs">
+    <Compile Include="MainControls\AdminSubControls\TicketControl.Designer.cs">
       <DependentUpon>TicketControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainControls\Components\TicketCard.cs">
@@ -242,11 +248,11 @@
     <Compile Include="Views\CalendarView.Designer.cs">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TicketEditorView.cs">
+    <Compile Include="Views\AdminTicketEditorView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\TicketEditorView.Designer.cs">
-      <DependentUpon>TicketEditorView.cs</DependentUpon>
+    <Compile Include="Views\AdminTicketEditorView.Designer.cs">
+      <DependentUpon>AdminTicketEditorView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
@@ -266,16 +272,19 @@
     <Compile Include="Views\TicketView.Designer.cs">
       <DependentUpon>TicketView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainControls\SubControls\AccountBaseControl.resx">
+    <EmbeddedResource Include="MainControls\EmployeeControl.resx">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainControls\AdminSubControls\AccountBaseControl.resx">
       <DependentUpon>AccountBaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControls\SubControls\DashboardBaseControl.resx">
+    <EmbeddedResource Include="MainControls\AdminSubControls\DashboardBaseControl.resx">
       <DependentUpon>DashboardBaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControls\SubControls\PendingBaseControl.resx">
+    <EmbeddedResource Include="MainControls\AdminSubControls\PendingBaseControl.resx">
       <DependentUpon>PendingBaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControls\SubControls\SettingsBaseControl.resx">
+    <EmbeddedResource Include="MainControls\AdminSubControls\SettingsBaseControl.resx">
       <DependentUpon>SettingsBaseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -289,10 +298,10 @@
     <EmbeddedResource Include="MainControls\AdminControl.resx">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControls\SubControls\TicketBaseControl.resx">
+    <EmbeddedResource Include="MainControls\AdminSubControls\TicketBaseControl.resx">
       <DependentUpon>TicketBaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControls\SubControls\TicketControl.resx">
+    <EmbeddedResource Include="MainControls\AdminSubControls\TicketControl.resx">
       <DependentUpon>TicketControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainControls\Components\TicketCard.resx">
@@ -304,8 +313,8 @@
     <EmbeddedResource Include="Views\CalendarView.resx">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TicketEditorView.resx">
-      <DependentUpon>TicketEditorView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AdminTicketEditorView.resx">
+      <DependentUpon>AdminTicketEditorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
@@ -339,6 +348,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\message-gray.png" />
+    <None Include="Resources\message.png" />
     <None Include="Resources\app.png" />
     <None Include="Resources\multiple-users-silhouette.png" />
     <None Include="Resources\check-green.png" />
@@ -371,7 +382,9 @@
     <None Include="Resources\Add notes-bro.png" />
     <None Include="Resources\Team work-amico.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MainControls\EmployeeSubControls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.NoItemContainer = new System.Windows.Forms.Panel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NoItem = new System.Windows.Forms.PictureBox();
@@ -39,7 +38,6 @@
             // 
             // NoItemContainer
             // 
-            this.NoItemContainer.Controls.Add(this.gunaButton1);
             this.NoItemContainer.Controls.Add(this.label2);
             this.NoItemContainer.Controls.Add(this.label1);
             this.NoItemContainer.Controls.Add(this.NoItem);
@@ -49,40 +47,14 @@
             this.NoItemContainer.Size = new System.Drawing.Size(1015, 592);
             this.NoItemContainer.TabIndex = 3;
             // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(145, 322);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 5;
-            this.gunaButton1.Size = new System.Drawing.Size(135, 42);
-            this.gunaButton1.TabIndex = 14;
-            this.gunaButton1.Text = "Create";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label2.Location = new System.Drawing.Point(70, 236);
+            this.label2.Location = new System.Drawing.Point(68, 274);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(305, 62);
+            this.label2.Size = new System.Drawing.Size(307, 58);
             this.label2.TabIndex = 9;
             this.label2.Text = "Unfortunately there are no \r\ntickets available";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,11 +62,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(127, 182);
+            this.label1.Location = new System.Drawing.Point(115, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 44);
+            this.label1.Size = new System.Drawing.Size(189, 42);
             this.label1.TabIndex = 8;
             this.label1.Text = "No Tickets";
             // 
@@ -127,7 +99,6 @@
         #endregion
 
         private System.Windows.Forms.Panel NoItemContainer;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox NoItem;
