@@ -22,18 +22,21 @@ namespace TaskManagement.UserControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IAuthenticationService authenticationService;
+        private readonly IEmployeeRequestService requestService;
         private ButtonColorChanger ButtonColorChanger;
         private UserControlChanger GetUserControlChanger;
 
         public AdminControl(
             IUserService userService,
             ITicketService ticketService,
-            IAuthenticationService authenticationService
+            IAuthenticationService authenticationService,
+            IEmployeeRequestService requestService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.authenticationService = authenticationService;
+            this.requestService = requestService;
             InitializeComponent();
             InitializeButtonEffect();
             InitializeMainControl();
@@ -44,7 +47,7 @@ namespace TaskManagement.UserControls
             List<UserControl> controls = new List<UserControl>()
             {
                 new DashboardBaseControl(userService, ticketService),
-                new TicketBaseControl(userService, ticketService),
+                new TicketBaseControl(userService, ticketService, requestService),
                 new PendingBaseControl(),
                 new AccountBaseControl(userService),
                 new SettingsBaseControl()

@@ -70,5 +70,10 @@ namespace TaskManagement.Views
         {
             TogglePasswordVisibility(TBPassword, CBShowPassword);
         }
+
+        private void LoginView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

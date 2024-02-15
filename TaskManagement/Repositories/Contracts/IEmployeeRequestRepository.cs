@@ -10,6 +10,8 @@ namespace TaskManagement.Repositories.Contracts
     public interface IEmployeeRequestRepository
     {
         Task Add(EmployeeRequest request);
+        Task Update(EmployeeRequest request, string Id);
         Task<IEnumerable<EmployeeRequest>> GetAll(string employeeId);
+        Task<EmployeeRequest> GetById(string id);
     }
 }

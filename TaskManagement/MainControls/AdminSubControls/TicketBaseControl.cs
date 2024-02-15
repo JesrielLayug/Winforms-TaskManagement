@@ -17,24 +17,25 @@ namespace TaskManagement.UserControls.AdminSubControls
     {
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
-
+        private readonly IEmployeeRequestService requestService;
         private IEnumerable<TicketInfo> Tickets = new List<TicketInfo>();
 
         public TicketBaseControl(
             IUserService userService,
-            ITicketService ticketService
+            ITicketService ticketService,
+            IEmployeeRequestService requestService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
-
+            this.requestService = requestService;
             InitializeComponent();
             InitializeContainer();
         }
 
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            TicketEditorView create = new TicketEditorView(null, userService, ticketService);
+            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService);
             create.TicketAdded += (s, ex) => { InitializeContainer(); };
             create.ShowDialog();
         }
@@ -47,7 +48,7 @@ namespace TaskManagement.UserControls.AdminSubControls
 
             if (Tickets != null && Tickets.Any())
             {
-                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService);
+                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService, requestService);
                 
                 ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
                 ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };

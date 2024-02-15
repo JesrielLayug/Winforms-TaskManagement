@@ -19,15 +19,21 @@ namespace TaskManagement.UserControls.Components
         public TicketInfo ticket;
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
+        private readonly IEmployeeRequestService requestService;
 
         public event EventHandler UpdateClick;
         public event EventHandler DeleteClick;
 
-        public AdminTicketCard(TicketInfo ticket, IUserService userService, ITicketService ticketService)
+        public AdminTicketCard(
+            TicketInfo ticket, 
+            IUserService userService, 
+            ITicketService ticketService,
+            IEmployeeRequestService requestService)
         {
             this.ticket = ticket;
             this.userService = userService;
             this.ticketService = ticketService;
+            this.requestService = requestService;
             InitializeComponent();
             InitializeTexts();
         }
@@ -47,7 +53,7 @@ namespace TaskManagement.UserControls.Components
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            TicketEditorView editor = new TicketEditorView(ticket, userService, ticketService);
+            TicketEditorView editor = new TicketEditorView(ticket, null, userService, ticketService, requestService);
             editor.ShowDialog();
             var dialog = editor.DialogResult;
 

@@ -43,7 +43,7 @@ namespace TaskManagement.Views
         {
             if (role == "Admin")
             {
-                AdminControl adminControl = new AdminControl(userService, taskService, authenticationService);
+                AdminControl adminControl = new AdminControl(userService, taskService, authenticationService, requestService);
                 adminControl.LogoutClick += (s, ex) => { this.Close(); };
                 adminControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(adminControl);

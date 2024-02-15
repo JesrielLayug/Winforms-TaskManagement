@@ -13,6 +13,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TaskManagement.MainControls.SubControls
 {
@@ -169,16 +170,29 @@ namespace TaskManagement.MainControls.SubControls
         {
             pieChart1.Series.Clear();
 
-            foreach(var item in countsByAssignUserName)
+            if (!countsByAssignUserName.Any())
             {
-                var series = new PieSeries
+                // Add an empty series to display an empty pie chart
+                pieChart1.Series.Add(new PieSeries
                 {
-                    Title = item.AssignUserName,
-                    Values = new ChartValues<int> { item.Count },
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 5 },
                     DataLabels = true
-                };
+                });
+            }
+            else
+            {
+                foreach (var item in countsByAssignUserName)
+                {
+                    var series = new PieSeries
+                    {
+                        Title = item.AssignUserName,
+                        Values = new ChartValues<int> { item.Count },
+                        DataLabels = true
+                    };
 
-                pieChart1.Series.Add(series);
+                    pieChart1.Series.Add(series);
+                }
             }
 
             pieChart1.LegendLocation = LegendLocation.Bottom;
@@ -190,7 +204,6 @@ namespace TaskManagement.MainControls.SubControls
 
         private async void InitializeCartesianChart()
         {
-            await RefreshTickets();
             InitializeDaysPerWeek();
 
             // Add X-axis with labels
@@ -219,12 +232,16 @@ namespace TaskManagement.MainControls.SubControls
         {
             // Initialize X-axis labels
             string[] xAxisLabels = new string[7];
-            DateTime previousDay;
+            DateTime previousDay = DateTime.Now; // Initialize previousDay outside the loop
 
             for (int i = 0; i < 7; i++)
             {
-                previousDay = DateTime.Now.AddDays(+i);
                 xAxisLabels[i] = previousDay.ToString("MMM d");
+
+                if (i == 6)
+                    previousDay = previousDay.AddDays(1); // Update previousDay after every 6 days
+                else
+                    previousDay = previousDay.AddDays(1); // Increment previousDay by 1 day
             }
 
             return xAxisLabels;
@@ -235,7 +252,6 @@ namespace TaskManagement.MainControls.SubControls
             {
                 Title = status,
                 Values = new ChartValues<int>(GetTicketCountByStatus(tickets, status)),
-                Fill = System.Windows.Media.Brushes.Transparent
             };
 
             // Add series to the chart
@@ -253,15 +269,14 @@ namespace TaskManagement.MainControls.SubControls
 
         private async void InitializeDivisionCartesianChart()
         {
-
             // Group tickets by division
             var groupByDivision = Tickets.GroupBy(t => t.Division);
 
             // Add X-axis with division labels
             cartesianChart2.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Division",
-                Labels = groupByDivision.Select(g => g.Key).ToArray()
+                Title = "Day",
+                Labels = InitializeDaysPerWeek()
             });
 
             // Set Y-axis minimum value to 0
@@ -274,6 +289,7 @@ namespace TaskManagement.MainControls.SubControls
             // Set legend location
             cartesianChart2.LegendLocation = LegendLocation.Bottom;
 
+
             // Create series for each division
             foreach (var divisionGroup in groupByDivision)
             {
@@ -281,13 +297,13 @@ namespace TaskManagement.MainControls.SubControls
             }
         }
 
+
         private void AddDivisionSeries(string division, IEnumerable<TicketInfo> tickets)
         {
             var series = new LineSeries
             {
                 Title = division,
                 Values = new ChartValues<int>(GetTicketCountByDivision(tickets, division)),
-                Fill = System.Windows.Media.Brushes.Transparent
             };
 
             // Add series to the chart
@@ -296,10 +312,11 @@ namespace TaskManagement.MainControls.SubControls
 
         private IEnumerable<int> GetTicketCountByDivision(IEnumerable<TicketInfo> tickets, string division)
         {
-            // Select tickets belonging to the specified division and count them
-            return Enumerable.Range(0, tickets.Max(t => t.DateCreated.Date.Day)) // Assuming you want to count tickets for each day
-                             .Select(day => tickets.Count(t => t.Division == division && t.DateCreated.Date == DateTime.Now.AddDays(-day).Date));
+            return Enumerable.Range(0, XAxisLabels.Length)
+                             .Select(i => tickets.Count(t => t.Division == division && t.DateCreated.Date == DateTime.Now.AddDays(-i).Date));
         }
+
+
         #endregion
     }
 }

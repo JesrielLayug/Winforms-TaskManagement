@@ -34,5 +34,15 @@ namespace TaskManagement.Repositories
         {
             return await RequestCollection.Find(x => x.RequestorId == employeeId && x.IsCancelled == false).ToListAsync();
         }
+
+        public async Task<EmployeeRequest> GetById(string id)
+        {
+            return await RequestCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task Update(EmployeeRequest request, string Id)
+        {
+            await RequestCollection.ReplaceOneAsync(x => x.Id == Id, request);
+        }
     }
 }

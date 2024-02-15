@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using TaskManagement.Models;
 using TaskManagement.Repositories.Contracts;
 using TaskManagement.Services.Contracts;
+using TaskManagement.Utilities;
 
 namespace TaskManagement.Services
 {
     public class EmployeeRequestService : IEmployeeRequestService
     {
-        private const string fileName = "app-settings.json";
-        private readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+        UserSettingsProvider settingsProvider = new UserSettingsProvider();
 
         private readonly IEmployeeRequestRepository employeeRequestRepository;
 
@@ -27,6 +27,9 @@ namespace TaskManagement.Services
         {
             try
             {
+                var currentUserId = settingsProvider.GetCurrentUserId();
+                var currentUserName = settingsProvider.GetCurrentUserName();
+
                 var newRequest = new EmployeeRequest
                 {
                     TicketId = request.TicketId,
@@ -40,9 +43,9 @@ namespace TaskManagement.Services
                     Description = request.Description,
                     IsApproved = false,
                     IsCancelled = false,
-                    RequestorId = GetCurrentUserId(),
+                    RequestorId = currentUserId,
                     DateRequestCreated = DateTime.Now,
-                    RequestorName = GetCurrentUserName(),
+                    RequestorName = currentUserName,
                 };
 
                 if (request.IsApproved == false)
@@ -70,34 +73,32 @@ namespace TaskManagement.Services
             {
                 List<EmployeeSubRequest> requests = new List<EmployeeSubRequest>();
 
-                if (File.Exists(filePath))
+                var currentUserId = settingsProvider.GetCurrentUserId();
+
+                var domainRequests = await employeeRequestRepository.GetAll(currentUserId);
+
+                foreach(var item in domainRequests)
                 {
-
-                    var domainRequests = await employeeRequestRepository.GetAll(GetCurrentUserId());
-
-                    foreach(var item in domainRequests)
+                    requests.Add(new EmployeeSubRequest
                     {
-                        requests.Add(new EmployeeSubRequest
-                        {
-                            TicketId = item.TicketId,
-                            Title = item.Title,
-                            AssignName = item.AssignName,
-                            Priority = item.Priority,
-                            Division = item.Division,
-                            TicketStatus = item.TicketStatus,
-                            StartDate = item.StartDate,
-                            DueDate = item.DueDate,
-                            Description = item.Description,
-                            IsApproved = item.IsApproved,
-                            DateRequestCreated = item.DateRequestCreated.ToString("MMM d"),
-                        });
-                    }
-
-                    return requests;
+                        Id = item.Id,
+                        TicketId = item.TicketId,
+                        Title = item.Title,
+                        AssignName = item.AssignName,
+                        Priority = item.Priority,
+                        Division = item.Division,
+                        TicketStatus = item.TicketStatus,
+                        StartDate = item.StartDate,
+                        DueDate = item.DueDate,
+                        Description = item.Description,
+                        IsApproved = item.IsApproved,
+                        DateRequestCreated = item.DateRequestCreated.ToString("MMM d"),
+                        RequestorName = item.RequestorName,
+                    });
                 }
 
-                return null;
-                //var domainRequests = await employeeRequestRepository.GetAll();
+                return requests;
+
             }
             catch
             {
@@ -105,22 +106,39 @@ namespace TaskManagement.Services
             }
         }
 
-        private string GetCurrentUserId()
+        public async Task<Response> Update(EmployeeSubRequest request)
         {
-            string jsonString = File.ReadAllText(filePath);
+            try
+            {
+                var existingRequest = await employeeRequestRepository.GetById(request.Id);
+                if(existingRequest != null)
+                {
+                    existingRequest.Title = request.Title;
+                    existingRequest.AssignName = request.AssignName;
+                    existingRequest.Priority = request.Priority;
+                    existingRequest.Division = request.Division;
+                    existingRequest.TicketStatus = request.Division;
+                    existingRequest.StartDate = request.StartDate;
+                    existingRequest.DueDate = request.DueDate;
+                    existingRequest.Description = request.Description;
 
-            User user = JsonSerializer.Deserialize<User>(jsonString);
-
-            return user.Id;
-        }
-
-        private string GetCurrentUserName()
-        {
-            string jsonString = File.ReadAllText(filePath);
-
-            User user = JsonSerializer.Deserialize<User>(jsonString);
-
-            return user.FullName;
+                    await employeeRequestRepository.Update(existingRequest, request.Id);
+                    return new Response
+                    {
+                        IsSuccess = true,
+                        Message = "Successfully Updated."
+                    };
+                }
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Failed to update."
+                };
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

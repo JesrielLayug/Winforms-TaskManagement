@@ -2,117 +2,62 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
 using TaskManagement.Services;
 using TaskManagement.Services.Contracts;
+using TaskManagement.Utilities;
 
 namespace TaskManagement.Views
 {
     public partial class TicketEditorView : Form
     {
-        public event EventHandler TicketAdded;
-        public event EventHandler TicketUpdated;
-
-        public TicketInfo Ticket;
-
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
+        private readonly IEmployeeRequestService requestService;
 
-        private IEnumerable<User> Users;
-
-        public TicketEditorView (
+        public TicketEditorView(
             TicketInfo Ticket,
-            IUserService userService, 
-            ITicketService taskService
+            EmployeeSubRequest Request,
+            IUserService userService,
+            ITicketService taskService,
+            IEmployeeRequestService requestService
             )
         {
             this.Ticket = Ticket;
+            this.Request = Request;
             this.userService = userService;
             this.ticketService = taskService;
+            this.requestService = requestService;
 
             InitializeComponent();
             InitializedAllUsers();
         }
-        
-        private async Task InitializedAllUsers()
-        {
-            Users = await userService.GetAll();
 
-            foreach(var user in Users)
-            {
-                CBAssignTo.Items.Add(user.FullName);
-                CBCreator.Items.Add(user.FullName);
-            }
+        #region Properties
 
-            InitializedTicketsFields();
+        public event EventHandler TicketAdded;
+        public event EventHandler TicketUpdated;
+        public event EventHandler TicketRequestAdded;
+        public event EventHandler TicketRequestUpdated;
 
-        }
-        private async void InitializedTicketsFields()
-        {
-            //await InitializedAllUsers();
+        public TicketInfo Ticket;
+        public EmployeeSubRequest Request;
+        private IEnumerable<User> Users;
 
-            if(Ticket != null && Users.Count() > 0)
-            {
-                TBTitle.Text = Ticket.Title;
-                CBAssignTo.SelectedItem = Ticket.AssignUserName;
-                CBDivision.SelectedItem = Ticket.Division;
-                CBTaskStatus.SelectedItem = Ticket.TicketStatus;
-                CBPriority.SelectedItem = Ticket.Priority;
-                TBStartDate.Text = Ticket.StartDate;
-                TBDueDate.Text = Ticket.DueDate;
-                TBDescription.Text = Ticket.Description;
-                CBCreator.SelectedItem = Ticket.CreatorFullName;
-            }
-        }
+        private UserSettingsProvider settingsProvider = new UserSettingsProvider();
 
-        private void BTNStartDate_Click(object sender, EventArgs e)
-        {
-            ShowCalendarForm(TBStartDate);
-        }
+        #endregion
 
-        private void BTNDueDate_Click(object sender, EventArgs e)
-        {
-            ShowCalendarForm(TBDueDate);
-        }
-
-        private async void BTNSubmit_Click(object sender, EventArgs e)
-        {
-            if (CheckAllFields())
-            {
-                var ticket = new TicketEditor
-                {
-                    Title = TBTitle.Text,
-                    AssignName = CBAssignTo.Text,
-                    Priority = CBPriority.Text,
-                    Division = CBDivision.Text,
-                    TicketStatus = CBTaskStatus.Text,
-                    StartDate = TBStartDate.Text,
-                    DueDate = TBDueDate.Text,
-                    Description = TBDescription.Text,
-                    CreatedBy = CBCreator.Text,
-                    IsApproved = true
-                };
-
-                if (Ticket == null)
-                {
-                    await AddTicket(ticket);
-                }
-                else
-                {
-                    await UpdateTicket(ticket, Ticket.Id);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please fill all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        #region Admin Methods
 
         private async Task AddTicket(TicketEditor ticket)
         {
@@ -134,6 +79,156 @@ namespace TaskManagement.Views
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+        }
+
+        #endregion
+
+        #region Employee Methods
+
+        private async Task RequestAddTicket(EmployeeSubRequest request)
+        {
+            var response = await requestService.Add(request);
+            if (response.IsSuccess)
+            {
+                TicketRequestAdded?.Invoke(this, EventArgs.Empty);
+                MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private async Task RequestUpdateTicket(EmployeeSubRequest request)
+        {
+            var response = await requestService.Update(request);
+            if (response.IsSuccess)
+            {
+                TicketRequestUpdated?.Invoke(this, EventArgs.Empty);
+                MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        #endregion
+
+        #region Click Events
+
+
+        private async void BTNSubmit_Click(object sender, EventArgs e)
+        {
+            if (CheckAllFields())
+            {
+                
+                var currentUserRole = settingsProvider.GetCurrentUserRole();
+
+                if(currentUserRole == "Admin")
+                {
+                    var ticket = new TicketEditor
+                    {
+                        Title = TBTitle.Text,
+                        AssignName = CBAssignTo.Text,
+                        Priority = CBPriority.Text,
+                        Division = CBDivision.Text,
+                        TicketStatus = CBTaskStatus.Text,
+                        StartDate = TBStartDate.Text,
+                        DueDate = TBDueDate.Text,
+                        Description = TBDescription.Text,
+                        CreatedBy = CBCreator.Text,
+                        IsApproved = true
+                    };
+
+                    if (Ticket == null)
+                        await AddTicket(ticket);
+                    else
+                        await UpdateTicket(ticket, Ticket.Id);
+                }
+
+                if(currentUserRole == "Employee")
+                {
+                    var ticket = new EmployeeSubRequest
+                    {
+                        Title = TBTitle.Text,
+                        AssignName = CBAssignTo.Text,
+                        Priority = CBPriority.Text,
+                        Division = CBDivision.Text,
+                        TicketStatus = CBTaskStatus.Text,
+                        StartDate = TBStartDate.Text,
+                        DueDate = TBDueDate.Text,
+                        Description = TBDescription.Text,
+                        IsApproved = false
+                    };
+
+                    if (Request == null)
+                        await RequestAddTicket(ticket);
+                    else
+                        await RequestUpdateTicket(ticket);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BTNStartDate_Click(object sender, EventArgs e)
+        {
+            ShowCalendarForm(TBStartDate);
+        }
+
+        private void BTNDueDate_Click(object sender, EventArgs e)
+        {
+            ShowCalendarForm(TBDueDate);
+        }
+
+        #endregion
+
+        #region Initialization and Utility Methods
+
+        private async Task InitializedAllUsers()
+        {
+            Users = await userService.GetAll();
+
+            foreach(var user in Users)
+            {
+                CBAssignTo.Items.Add(user.FullName);
+                CBCreator.Items.Add(user.FullName);
+            }
+
+            InitializedTicketsFields();
+
+        }
+
+        private async void InitializedTicketsFields()
+        {
+            //await InitializedAllUsers();
+
+            if(Ticket != null && Users.Count() > 0)
+            {
+                TBTitle.Text = Ticket.Title;
+                CBAssignTo.SelectedItem = Ticket.AssignUserName;
+                CBDivision.SelectedItem = Ticket.Division;
+                CBTaskStatus.SelectedItem = Ticket.TicketStatus;
+                CBPriority.SelectedItem = Ticket.Priority;
+                TBStartDate.Text = Ticket.StartDate;
+                TBDueDate.Text = Ticket.DueDate;
+                TBDescription.Text = Ticket.Description;
+                CBCreator.SelectedItem = Ticket.CreatorFullName;
+            }
+
+            if(Request != null  && Users.Count() > 0)
+            {
+                TBTitle.Text = Request.Title;
+                CBAssignTo.SelectedItem = Request.AssignName;
+                CBDivision.SelectedItem = Request.Division;
+                CBTaskStatus.SelectedItem = Request.TicketStatus;
+                CBPriority.SelectedItem = Request.Priority;
+                TBStartDate.Text = Request.StartDate;
+                TBDueDate.Text = Request.DueDate;
+                TBDescription.Text = Request.Description;
+                CBCreator.SelectedItem = Request.RequestorName;
+
+                CBCreator.Enabled = false;
             }
         }
 
@@ -163,6 +258,8 @@ namespace TaskManagement.Views
             return false;
         }
 
+
+        #endregion
 
     }
 }

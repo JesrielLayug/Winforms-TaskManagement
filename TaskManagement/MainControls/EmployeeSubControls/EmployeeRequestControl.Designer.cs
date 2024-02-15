@@ -29,21 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.Container = new System.Windows.Forms.Panel();
-            this.DGVRequests = new Guna.UI.WinForms.GunaDataGridView();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeSubRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MainContainer = new System.Windows.Forms.Panel();
+            this.ContentContainer = new System.Windows.Forms.Panel();
             this.TicketDetailsContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.TicketDetails = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,10 +65,20 @@
             this.LBDescription = new System.Windows.Forms.Label();
             this.LBTicketName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Container = new System.Windows.Forms.Panel();
+            this.DGVRequests = new Guna.UI.WinForms.GunaDataGridView();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
+            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
-            this.Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).BeginInit();
+            this.MainContainer.SuspendLayout();
+            this.ContentContainer.SuspendLayout();
             this.TicketDetailsContainer.SuspendLayout();
             this.TicketDetails.SuspendLayout();
             this.gunaShadowPanel8.SuspendLayout();
@@ -85,6 +89,8 @@
             this.gunaShadowPanel2.SuspendLayout();
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaShadowPanel4.SuspendLayout();
+            this.Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,155 +114,44 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Pending Tickets";
             // 
-            // Container
-            // 
-            this.Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Container.Controls.Add(this.DGVRequests);
-            this.Container.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Container.Location = new System.Drawing.Point(28, 82);
-            this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(781, 569);
-            this.Container.TabIndex = 18;
-            // 
-            // DGVRequests
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVRequests.AutoGenerateColumns = false;
-            this.DGVRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVRequests.BackgroundColor = System.Drawing.Color.White;
-            this.DGVRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DGVRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVRequests.ColumnHeadersHeight = 45;
-            this.DGVRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titleDataGridViewTextBoxColumn,
-            this.assignNameDataGridViewTextBoxColumn,
-            this.priorityDataGridViewTextBoxColumn,
-            this.ticketStatusDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.dateRequestCreatedDataGridViewTextBoxColumn});
-            this.DGVRequests.DataSource = this.employeeSubRequestBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DGVRequests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVRequests.EnableHeadersVisualStyles = false;
-            this.DGVRequests.GridColor = System.Drawing.Color.White;
-            this.DGVRequests.Location = new System.Drawing.Point(0, 0);
-            this.DGVRequests.Name = "DGVRequests";
-            this.DGVRequests.ReadOnly = true;
-            this.DGVRequests.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.DGVRequests.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DGVRequests.RowTemplate.Height = 40;
-            this.DGVRequests.RowTemplate.ReadOnly = true;
-            this.DGVRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVRequests.Size = new System.Drawing.Size(779, 567);
-            this.DGVRequests.TabIndex = 2;
-            this.DGVRequests.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.DGVRequests.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.DGVRequests.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DGVRequests.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVRequests.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DGVRequests.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVRequests.ThemeStyle.HeaderStyle.Height = 45;
-            this.DGVRequests.ThemeStyle.ReadOnly = true;
-            this.DGVRequests.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVRequests.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVRequests.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.ThemeStyle.RowsStyle.Height = 40;
-            this.DGVRequests.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVRequests.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVRequests_CellContentClick);
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // assignNameDataGridViewTextBoxColumn
-            // 
-            this.assignNameDataGridViewTextBoxColumn.DataPropertyName = "AssignName";
-            this.assignNameDataGridViewTextBoxColumn.HeaderText = "Assignee Name";
-            this.assignNameDataGridViewTextBoxColumn.Name = "assignNameDataGridViewTextBoxColumn";
-            this.assignNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priorityDataGridViewTextBoxColumn
-            // 
-            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "Priority";
-            this.priorityDataGridViewTextBoxColumn.HeaderText = "Priority";
-            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
-            this.priorityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ticketStatusDataGridViewTextBoxColumn
-            // 
-            this.ticketStatusDataGridViewTextBoxColumn.DataPropertyName = "TicketStatus";
-            this.ticketStatusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.ticketStatusDataGridViewTextBoxColumn.Name = "ticketStatusDataGridViewTextBoxColumn";
-            this.ticketStatusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateRequestCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateRequestCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateRequestCreated";
-            this.dateRequestCreatedDataGridViewTextBoxColumn.HeaderText = "Request Created";
-            this.dateRequestCreatedDataGridViewTextBoxColumn.Name = "dateRequestCreatedDataGridViewTextBoxColumn";
-            this.dateRequestCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // employeeSubRequestBindingSource
             // 
             this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeSubRequest);
+            // 
+            // MainContainer
+            // 
+            this.MainContainer.Controls.Add(this.ContentContainer);
+            this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainContainer.Location = new System.Drawing.Point(0, 59);
+            this.MainContainer.Name = "MainContainer";
+            this.MainContainer.Size = new System.Drawing.Size(1202, 622);
+            this.MainContainer.TabIndex = 18;
+            // 
+            // ContentContainer
+            // 
+            this.ContentContainer.BackColor = System.Drawing.Color.White;
+            this.ContentContainer.Controls.Add(this.BTNDelete);
+            this.ContentContainer.Controls.Add(this.BTNSubmit);
+            this.ContentContainer.Controls.Add(this.TicketDetailsContainer);
+            this.ContentContainer.Controls.Add(this.Container);
+            this.ContentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentContainer.Location = new System.Drawing.Point(0, 0);
+            this.ContentContainer.Name = "ContentContainer";
+            this.ContentContainer.Size = new System.Drawing.Size(1202, 622);
+            this.ContentContainer.TabIndex = 0;
             // 
             // TicketDetailsContainer
             // 
             this.TicketDetailsContainer.BackColor = System.Drawing.Color.Transparent;
             this.TicketDetailsContainer.BaseColor = System.Drawing.Color.White;
             this.TicketDetailsContainer.Controls.Add(this.TicketDetails);
-            this.TicketDetailsContainer.Location = new System.Drawing.Point(828, 66);
+            this.TicketDetailsContainer.Location = new System.Drawing.Point(831, 19);
             this.TicketDetailsContainer.Name = "TicketDetailsContainer";
             this.TicketDetailsContainer.Radius = 5;
             this.TicketDetailsContainer.ShadowColor = System.Drawing.Color.Gainsboro;
             this.TicketDetailsContainer.ShadowShift = 12;
             this.TicketDetailsContainer.Size = new System.Drawing.Size(340, 483);
-            this.TicketDetailsContainer.TabIndex = 20;
+            this.TicketDetailsContainer.TabIndex = 24;
             // 
             // TicketDetails
             // 
@@ -571,12 +466,196 @@
             this.label5.TabIndex = 47;
             this.label5.Text = "Issuer:";
             // 
+            // Container
+            // 
+            this.Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Container.Controls.Add(this.DGVRequests);
+            this.Container.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Container.Location = new System.Drawing.Point(31, 35);
+            this.Container.Name = "Container";
+            this.Container.Size = new System.Drawing.Size(781, 569);
+            this.Container.TabIndex = 23;
+            // 
+            // DGVRequests
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.DGVRequests.AutoGenerateColumns = false;
+            this.DGVRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVRequests.BackgroundColor = System.Drawing.Color.White;
+            this.DGVRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.DGVRequests.ColumnHeadersHeight = 45;
+            this.DGVRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titleDataGridViewTextBoxColumn,
+            this.assignNameDataGridViewTextBoxColumn,
+            this.priorityDataGridViewTextBoxColumn,
+            this.ticketStatusDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.dateRequestCreatedDataGridViewTextBoxColumn});
+            this.DGVRequests.DataSource = this.employeeSubRequestBindingSource;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle15;
+            this.DGVRequests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVRequests.EnableHeadersVisualStyles = false;
+            this.DGVRequests.GridColor = System.Drawing.Color.White;
+            this.DGVRequests.Location = new System.Drawing.Point(0, 0);
+            this.DGVRequests.Name = "DGVRequests";
+            this.DGVRequests.ReadOnly = true;
+            this.DGVRequests.RowHeadersVisible = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.DGVRequests.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DGVRequests.RowTemplate.Height = 40;
+            this.DGVRequests.RowTemplate.ReadOnly = true;
+            this.DGVRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVRequests.Size = new System.Drawing.Size(779, 567);
+            this.DGVRequests.TabIndex = 2;
+            this.DGVRequests.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVRequests.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.DGVRequests.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.DGVRequests.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGVRequests.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVRequests.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGVRequests.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVRequests.ThemeStyle.HeaderStyle.Height = 45;
+            this.DGVRequests.ThemeStyle.ReadOnly = true;
+            this.DGVRequests.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVRequests.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVRequests.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.ThemeStyle.RowsStyle.Height = 40;
+            this.DGVRequests.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVRequests.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // assignNameDataGridViewTextBoxColumn
+            // 
+            this.assignNameDataGridViewTextBoxColumn.DataPropertyName = "AssignName";
+            this.assignNameDataGridViewTextBoxColumn.HeaderText = "Assignee Name";
+            this.assignNameDataGridViewTextBoxColumn.Name = "assignNameDataGridViewTextBoxColumn";
+            this.assignNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priorityDataGridViewTextBoxColumn
+            // 
+            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
+            this.priorityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ticketStatusDataGridViewTextBoxColumn
+            // 
+            this.ticketStatusDataGridViewTextBoxColumn.DataPropertyName = "TicketStatus";
+            this.ticketStatusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.ticketStatusDataGridViewTextBoxColumn.Name = "ticketStatusDataGridViewTextBoxColumn";
+            this.ticketStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateRequestCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateRequestCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateRequestCreated";
+            this.dateRequestCreatedDataGridViewTextBoxColumn.HeaderText = "Request Created";
+            this.dateRequestCreatedDataGridViewTextBoxColumn.Name = "dateRequestCreatedDataGridViewTextBoxColumn";
+            this.dateRequestCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // BTNSubmit
+            // 
+            this.BTNSubmit.AnimationHoverSpeed = 0.07F;
+            this.BTNSubmit.AnimationSpeed = 0.03F;
+            this.BTNSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.BTNSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.BTNSubmit.BorderColor = System.Drawing.Color.Black;
+            this.BTNSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNSubmit.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNSubmit.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNSubmit.ForeColor = System.Drawing.Color.White;
+            this.BTNSubmit.Image = null;
+            this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNSubmit.Location = new System.Drawing.Point(839, 516);
+            this.BTNSubmit.Name = "BTNSubmit";
+            this.BTNSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.BTNSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNSubmit.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNSubmit.OnHoverImage = null;
+            this.BTNSubmit.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNSubmit.Radius = 5;
+            this.BTNSubmit.Size = new System.Drawing.Size(155, 36);
+            this.BTNSubmit.TabIndex = 34;
+            this.BTNSubmit.Text = "Update";
+            this.BTNSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BTNDelete
+            // 
+            this.BTNDelete.AnimationHoverSpeed = 0.07F;
+            this.BTNDelete.AnimationSpeed = 0.03F;
+            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.BaseColor = System.Drawing.Color.White;
+            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.BorderSize = 1;
+            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNDelete.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.Image = null;
+            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNDelete.Location = new System.Drawing.Point(1009, 516);
+            this.BTNDelete.Name = "BTNDelete";
+            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverImage = null;
+            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNDelete.Radius = 5;
+            this.BTNDelete.Size = new System.Drawing.Size(152, 36);
+            this.BTNDelete.TabIndex = 35;
+            this.BTNDelete.Text = "Cancel";
+            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // EmployeeRequestControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.TicketDetailsContainer);
-            this.Controls.Add(this.Container);
+            this.Controls.Add(this.MainContainer);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -584,9 +663,9 @@
             this.Size = new System.Drawing.Size(1202, 681);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).EndInit();
+            this.MainContainer.ResumeLayout(false);
+            this.ContentContainer.ResumeLayout(false);
             this.TicketDetailsContainer.ResumeLayout(false);
             this.TicketDetails.ResumeLayout(false);
             this.TicketDetails.PerformLayout();
@@ -598,6 +677,8 @@
             this.gunaShadowPanel2.ResumeLayout(false);
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel4.ResumeLayout(false);
+            this.Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,10 +687,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel Container;
-        private Guna.UI.WinForms.GunaDataGridView DGVRequests;
+        private System.Windows.Forms.BindingSource employeeSubRequestBindingSource;
+        private System.Windows.Forms.Panel MainContainer;
+        private System.Windows.Forms.Panel ContentContainer;
         private Guna.UI.WinForms.GunaShadowPanel TicketDetailsContainer;
         private System.Windows.Forms.Panel TicketDetails;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel8;
+        private System.Windows.Forms.Label LBRequestCreated;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel7;
@@ -632,15 +717,15 @@
         private System.Windows.Forms.Label LBDescription;
         private System.Windows.Forms.Label LBTicketName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel Container;
+        private Guna.UI.WinForms.GunaDataGridView DGVRequests;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn assignNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRequestCreatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeSubRequestBindingSource;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel8;
-        private System.Windows.Forms.Label LBRequestCreated;
+        private Guna.UI.WinForms.GunaButton BTNSubmit;
+        private Guna.UI.WinForms.GunaButton BTNDelete;
     }
 }

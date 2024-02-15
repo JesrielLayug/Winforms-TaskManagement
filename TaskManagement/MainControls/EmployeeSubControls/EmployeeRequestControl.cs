@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
+using TaskManagement.UserControls;
 
 namespace TaskManagement.MainControls.EmployeeSubControls
 {
@@ -29,16 +30,28 @@ namespace TaskManagement.MainControls.EmployeeSubControls
 
         private async void InitializeDataGridView()
         {
+            MainContainer.Controls.Clear();
             Tickets = await requestService.GetAll();
 
-            DGVRequests.DataSource = Tickets;
-
-            if(DGVRequests.Rows.Count > 0)
+            if(Tickets.Count() > 0 )
             {
-                var Ticket = (EmployeeSubRequest)DGVRequests.Rows[0].DataBoundItem;
+                MainContainer.Controls.Add(ContentContainer);
 
-               PopulateFields(Ticket);
+                DGVRequests.DataSource = Tickets;
+
+                if (DGVRequests.Rows.Count > 0)
+                {
+                    var Ticket = (EmployeeSubRequest)DGVRequests.Rows[0].DataBoundItem;
+                    PopulateFields(Ticket);
+                }
             }
+            else
+            {
+                EmptyControl empty = new EmptyControl();
+                empty.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(empty);
+            }
+
         }
 
         private void PopulateFields(EmployeeSubRequest Ticket)

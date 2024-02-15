@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using TaskManagement.Models;
 using TaskManagement.Repositories.Contracts;
 using TaskManagement.Services.Contracts;
+using TaskManagement.Utilities;
 
 namespace TaskManagement.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private const string fileName = "app-settings.json";
-        private readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+        UserSettingsProvider settingsProvider = new UserSettingsProvider();
 
         private readonly IUserRepository userRepository;
 
@@ -28,9 +28,7 @@ namespace TaskManagement.Services
                 if(existingUser.Password == password)
                 {
 
-                    string jsonString = JsonSerializer.Serialize(existingUser);
-
-                    File.WriteAllText(filePath, jsonString);
+                    settingsProvider.SaveUserToSettings(existingUser);
 
                     return new Response
                     {
@@ -54,20 +52,11 @@ namespace TaskManagement.Services
 
         public async Task<Response> Logout()
         {
-            if (File.Exists(filePath))
-            {
-                File.WriteAllText(filePath, string.Empty);
-
-                return new Response
-                {
-                    IsSuccess = true,
-                    Message = "Successfully logged out user."
-                };
-            }
+            settingsProvider.RemoveUserToSettings();
             return new Response
             {
-                IsSuccess = false,
-                Message = "Failed to log out user."
+                IsSuccess = true,
+                Message = "Successfully logged out user."
             };
         }
     }

@@ -8,6 +8,7 @@ namespace TaskManagement.Models
 {
     public class EmployeeSubRequest
     {
+        public string Id { get; set; }
         public string TicketId { get; set; }
         public string Title { get; set; }
         public string AssignName { get; set; }
@@ -18,6 +19,7 @@ namespace TaskManagement.Models
         public string DueDate { get; set; }
         public string Description { get; set; }
         public bool IsApproved {  get; set; }
+        public string RequestorName {  get; set; }
         public string DateRequestCreated {  get; set; }
     }
 }

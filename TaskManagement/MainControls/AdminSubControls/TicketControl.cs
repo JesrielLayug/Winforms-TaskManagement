@@ -22,17 +22,20 @@ namespace TaskManagement.UserControls.AdminSubControls
         public IEnumerable<TicketInfo> TicketInfos;
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
+        private readonly IEmployeeRequestService requestService;
 
         public TicketControl
             (
             IEnumerable<TicketInfo> ticketInfos,
             IUserService userService,
-            ITicketService ticketService
+            ITicketService ticketService,
+            IEmployeeRequestService requestService
             )
         {
             this.TicketInfos = ticketInfos;
             this.userService = userService;
             this.ticketService = ticketService;
+            this.requestService = requestService;
             InitializeComponent();
             InitializeAllFlowLayouts();
         }
@@ -63,7 +66,7 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (string.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService);
+                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService, requestService);
                     card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
                     card.UpdateClick += (s, e) => { UpdateClick?.Invoke(this, EventArgs.Empty); };
 
@@ -85,7 +88,7 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (String.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService); ;
+                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService, requestService); ;
                     card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
                     card.UpdateClick += (s, e) => { 
                         UpdateClick?.Invoke(this, EventArgs.Empty); 
@@ -110,7 +113,7 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (String.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService);
+                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService, requestService);
                     card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
                     card.UpdateClick += (s, e) => { UpdateClick?.Invoke(this, EventArgs.Empty); };
 

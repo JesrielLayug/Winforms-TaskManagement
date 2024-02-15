@@ -31,12 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
+            this.BTNCreate = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.BTNCreate);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -63,6 +65,34 @@
             this.Container.Size = new System.Drawing.Size(1148, 581);
             this.Container.TabIndex = 15;
             // 
+            // BTNCreate
+            // 
+            this.BTNCreate.AnimationHoverSpeed = 0.07F;
+            this.BTNCreate.AnimationSpeed = 0.03F;
+            this.BTNCreate.BackColor = System.Drawing.Color.Transparent;
+            this.BTNCreate.BaseColor = System.Drawing.Color.Transparent;
+            this.BTNCreate.BorderColor = System.Drawing.Color.White;
+            this.BTNCreate.BorderSize = 1;
+            this.BTNCreate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNCreate.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNCreate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNCreate.ForeColor = System.Drawing.Color.White;
+            this.BTNCreate.Image = null;
+            this.BTNCreate.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNCreate.Location = new System.Drawing.Point(1076, 12);
+            this.BTNCreate.Name = "BTNCreate";
+            this.BTNCreate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            this.BTNCreate.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.BTNCreate.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNCreate.OnHoverImage = null;
+            this.BTNCreate.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNCreate.Radius = 5;
+            this.BTNCreate.Size = new System.Drawing.Size(96, 36);
+            this.BTNCreate.TabIndex = 13;
+            this.BTNCreate.Text = "Create";
+            this.BTNCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNCreate.Click += new System.EventHandler(this.BTNCreate_Click);
+            // 
             // EmployeeTicketControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -85,5 +115,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Container;
+        private Guna.UI.WinForms.GunaButton BTNCreate;
     }
 }

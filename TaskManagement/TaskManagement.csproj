@@ -281,6 +281,7 @@
     </Compile>
     <Compile Include="Utilities\ButtonColorChanger.cs" />
     <Compile Include="Utilities\UserControlChanger.cs" />
+    <Compile Include="Utilities\UserSettingsProvider.cs" />
     <Compile Include="Views\CalendarView.cs">
       <SubType>Form</SubType>
     </Compile>

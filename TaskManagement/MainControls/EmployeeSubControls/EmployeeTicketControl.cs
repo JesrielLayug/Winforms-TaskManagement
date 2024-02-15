@@ -61,5 +61,12 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             }
 
         }
+
+        private void BTNCreate_Click(object sender, EventArgs e)
+        {
+            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService);
+            create.TicketRequestAdded += (s, ex) => { InitializeContainer(); };
+            create.ShowDialog();
+        }
     }
 }
