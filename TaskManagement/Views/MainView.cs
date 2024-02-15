@@ -17,16 +17,22 @@ namespace TaskManagement.Views
     {
         private readonly IUserService userService;
         private readonly ITicketService taskService;
+        private readonly IEmployeeRequestService requestService;
+        private readonly IAuthenticationService authenticationService;
 
         public string role { get; set; }
         public MainView(
             string role, 
             IUserService userService,
-            ITicketService taskService
+            ITicketService taskService,
+            IEmployeeRequestService requestService,
+            IAuthenticationService authenticationService
             )
         {
             this.userService = userService;
             this.taskService = taskService;
+            this.requestService = requestService;
+            this.authenticationService = authenticationService;
             this.role = role;
 
             InitializeComponent();
@@ -37,13 +43,15 @@ namespace TaskManagement.Views
         {
             if (role == "Admin")
             {
-                AdminControl adminControl = new AdminControl(userService, taskService);
+                AdminControl adminControl = new AdminControl(userService, taskService, authenticationService);
+                adminControl.LogoutClick += (s, ex) => { this.Close(); };
                 adminControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(adminControl);
             }
             else
             {
-                EmployeeControl employeeControl = new EmployeeControl();
+                EmployeeControl employeeControl = new EmployeeControl(userService, taskService, requestService, authenticationService);
+                employeeControl.LogoutClick += (s, ex) => { this.Close(); };
                 employeeControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(employeeControl);
             }
@@ -51,7 +59,8 @@ namespace TaskManagement.Views
 
         private void MainView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            LoginView loginView = new LoginView(authenticationService, userService, taskService, requestService);
+            loginView.Show();
         }
     }
 }

@@ -17,20 +17,23 @@ namespace TaskManagement.UserControls
 {
     public partial class AdminControl : UserControl
     {
+        public event EventHandler LogoutClick;
+
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
-
+        private readonly IAuthenticationService authenticationService;
         private ButtonColorChanger ButtonColorChanger;
         private UserControlChanger GetUserControlChanger;
 
         public AdminControl(
             IUserService userService,
-            ITicketService ticketService
+            ITicketService ticketService,
+            IAuthenticationService authenticationService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
-
+            this.authenticationService = authenticationService;
             InitializeComponent();
             InitializeButtonEffect();
             InitializeMainControl();
@@ -129,6 +132,8 @@ namespace TaskManagement.UserControls
         private void BTNLogout_Click(object sender, EventArgs e)
         {
             ButtonColorChanger.SelectedButton(BTNLogout);
+            authenticationService.Logout();
+            LogoutClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

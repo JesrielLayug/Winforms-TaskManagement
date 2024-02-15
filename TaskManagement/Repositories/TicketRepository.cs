@@ -37,7 +37,7 @@ namespace TaskManagement.Repositories
 
         public async Task<IEnumerable<Ticket>> GetAll()
         {
-            return await TicketCollection.Find(x => x.IsApprove == true).ToListAsync();
+            return await TicketCollection.Find(x => x.IsApproved == true).ToListAsync();
         }
 
         public async Task Update(Ticket ticket, string id)

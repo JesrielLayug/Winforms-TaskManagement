@@ -57,7 +57,7 @@
             this.gunaShadowPanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
             this.gunaShadowPanel5.Controls.Add(this.gunaShadowPanel6);
             this.gunaShadowPanel5.Controls.Add(this.label4);
-            this.gunaShadowPanel5.Location = new System.Drawing.Point(393, 3);
+            this.gunaShadowPanel5.Location = new System.Drawing.Point(396, 3);
             this.gunaShadowPanel5.Name = "gunaShadowPanel5";
             this.gunaShadowPanel5.Radius = 3;
             this.gunaShadowPanel5.ShadowColor = System.Drawing.Color.Silver;
@@ -102,9 +102,9 @@
             // FLPInProgress
             // 
             this.FLPInProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPInProgress.Location = new System.Drawing.Point(393, 56);
+            this.FLPInProgress.Location = new System.Drawing.Point(396, 56);
             this.FLPInProgress.Name = "FLPInProgress";
-            this.FLPInProgress.Size = new System.Drawing.Size(355, 478);
+            this.FLPInProgress.Size = new System.Drawing.Size(355, 525);
             this.FLPInProgress.TabIndex = 7;
             // 
             // FLPNextUp
@@ -112,7 +112,7 @@
             this.FLPNextUp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.FLPNextUp.Location = new System.Drawing.Point(3, 56);
             this.FLPNextUp.Name = "FLPNextUp";
-            this.FLPNextUp.Size = new System.Drawing.Size(355, 478);
+            this.FLPNextUp.Size = new System.Drawing.Size(355, 525);
             this.FLPNextUp.TabIndex = 9;
             // 
             // gunaShadowPanel7
@@ -167,9 +167,9 @@
             // FLPCompleted
             // 
             this.FLPCompleted.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPCompleted.Location = new System.Drawing.Point(781, 56);
+            this.FLPCompleted.Location = new System.Drawing.Point(791, 56);
             this.FLPCompleted.Name = "FLPCompleted";
-            this.FLPCompleted.Size = new System.Drawing.Size(355, 478);
+            this.FLPCompleted.Size = new System.Drawing.Size(355, 525);
             this.FLPCompleted.TabIndex = 11;
             // 
             // gunaShadowPanel9
@@ -178,12 +178,12 @@
             this.gunaShadowPanel9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
             this.gunaShadowPanel9.Controls.Add(this.gunaShadowPanel12);
             this.gunaShadowPanel9.Controls.Add(this.label15);
-            this.gunaShadowPanel9.Location = new System.Drawing.Point(781, 3);
+            this.gunaShadowPanel9.Location = new System.Drawing.Point(791, 3);
             this.gunaShadowPanel9.Name = "gunaShadowPanel9";
             this.gunaShadowPanel9.Radius = 3;
             this.gunaShadowPanel9.ShadowColor = System.Drawing.Color.Silver;
             this.gunaShadowPanel9.ShadowShift = 1;
-            this.gunaShadowPanel9.Size = new System.Drawing.Size(353, 45);
+            this.gunaShadowPanel9.Size = new System.Drawing.Size(353, 92);
             this.gunaShadowPanel9.TabIndex = 10;
             // 
             // gunaShadowPanel12
@@ -234,7 +234,7 @@
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TicketControl";
-            this.Size = new System.Drawing.Size(1138, 534);
+            this.Size = new System.Drawing.Size(1148, 581);
             this.gunaShadowPanel5.ResumeLayout(false);
             this.gunaShadowPanel5.PerformLayout();
             this.gunaShadowPanel6.ResumeLayout(false);

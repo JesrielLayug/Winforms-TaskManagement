@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.Views
 {
-    partial class TicketView
+    partial class AdminTicketView
     {
         /// <summary>
         /// Required designer variable.
@@ -35,10 +35,10 @@
             this.LBAssignee = new System.Windows.Forms.Label();
             this.LBDescription = new System.Windows.Forms.Label();
             this.gunaShadowPanel4 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.LBStartDate = new System.Windows.Forms.Label();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
             this.LBTicketName = new System.Windows.Forms.Label();
-            this.LBStartDate = new System.Windows.Forms.Label();
             this.gunaShadowPanel3 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaShadowPanel5 = new Guna.UI.WinForms.GunaShadowPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -137,6 +137,16 @@
             this.gunaShadowPanel4.Size = new System.Drawing.Size(56, 30);
             this.gunaShadowPanel4.TabIndex = 39;
             // 
+            // LBStartDate
+            // 
+            this.LBStartDate.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBStartDate.ForeColor = System.Drawing.Color.White;
+            this.LBStartDate.Location = new System.Drawing.Point(5, 8);
+            this.LBStartDate.Name = "LBStartDate";
+            this.LBStartDate.Size = new System.Drawing.Size(48, 14);
+            this.LBStartDate.TabIndex = 34;
+            this.LBStartDate.Text = "Feb 24";
+            // 
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -172,16 +182,6 @@
             this.LBTicketName.Size = new System.Drawing.Size(141, 33);
             this.LBTicketName.TabIndex = 31;
             this.LBTicketName.Text = "Lorem Ipsum";
-            // 
-            // LBStartDate
-            // 
-            this.LBStartDate.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBStartDate.ForeColor = System.Drawing.Color.White;
-            this.LBStartDate.Location = new System.Drawing.Point(5, 8);
-            this.LBStartDate.Name = "LBStartDate";
-            this.LBStartDate.Size = new System.Drawing.Size(48, 14);
-            this.LBStartDate.TabIndex = 34;
-            this.LBStartDate.Text = "Feb 24";
             // 
             // gunaShadowPanel3
             // 
@@ -317,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(408, 371);
+            this.ClientSize = new System.Drawing.Size(408, 375);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.gunaShadowPanel7);

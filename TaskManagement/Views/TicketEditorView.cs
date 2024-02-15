@@ -14,7 +14,7 @@ using TaskManagement.Services.Contracts;
 
 namespace TaskManagement.Views
 {
-    public partial class AdminTicketEditorView : Form
+    public partial class TicketEditorView : Form
     {
         public event EventHandler TicketAdded;
         public event EventHandler TicketUpdated;
@@ -26,7 +26,7 @@ namespace TaskManagement.Views
 
         private IEnumerable<User> Users;
 
-        public AdminTicketEditorView (
+        public TicketEditorView (
             TicketInfo Ticket,
             IUserService userService, 
             ITicketService taskService
@@ -96,7 +96,7 @@ namespace TaskManagement.Views
                     DueDate = TBDueDate.Text,
                     Description = TBDescription.Text,
                     CreatedBy = CBCreator.Text,
-                    IsApprove = true
+                    IsApproved = true
                 };
 
                 if (Ticket == null)
@@ -105,7 +105,6 @@ namespace TaskManagement.Views
                 }
                 else
                 {
-                    ticket.IsApprove = true;
                     await UpdateTicket(ticket, Ticket.Id);
                 }
             }

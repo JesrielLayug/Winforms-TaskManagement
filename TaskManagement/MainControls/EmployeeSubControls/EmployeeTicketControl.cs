@@ -9,34 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
+using TaskManagement.UserControls.AdminSubControls;
+using TaskManagement.UserControls;
 using TaskManagement.Views;
 
-namespace TaskManagement.UserControls.AdminSubControls
+namespace TaskManagement.MainControls.EmployeeSubControls
 {
-    public partial class TicketBaseControl : UserControl
+    public partial class EmployeeTicketControl : UserControl
     {
+
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
-
+        private readonly IEmployeeRequestService requestService;
         private IEnumerable<TicketInfo> Tickets = new List<TicketInfo>();
 
-        public TicketBaseControl(
-            IUserService userService,
-            ITicketService ticketService
+        public EmployeeTicketControl(
+            IUserService userService, 
+            ITicketService ticketService,
+            IEmployeeRequestService requestService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
-
+            this.requestService = requestService;
             InitializeComponent();
             InitializeContainer();
-        }
-
-        private void BTNCreate_Click(object sender, EventArgs e)
-        {
-            TicketEditorView create = new TicketEditorView(null, userService, ticketService);
-            create.TicketAdded += (s, ex) => { InitializeContainer(); };
-            create.ShowDialog();
         }
 
 
@@ -47,11 +44,12 @@ namespace TaskManagement.UserControls.AdminSubControls
 
             if (Tickets != null && Tickets.Any())
             {
-                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService);
-                
-                ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
-                ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };
-                
+                EmployeeTicketSubControl ticketControl = new EmployeeTicketSubControl(
+                    Tickets, 
+                    userService, 
+                    ticketService,
+                    requestService);
+
                 ticketControl.Dock = DockStyle.Fill;
                 Container.Controls.Add(ticketControl);
             }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,17 +18,19 @@ namespace TaskManagement.Views
         private readonly IAuthenticationService authenticationService;
         private readonly IUserService userService;
         private readonly ITicketService taskService;
+        private readonly IEmployeeRequestService requestService;
 
         public LoginView(
             IAuthenticationService authenticationService, 
             IUserService userService,
-            ITicketService taskService
+            ITicketService taskService,
+            IEmployeeRequestService requestService
             )
         {
             this.authenticationService = authenticationService;
             this.userService = userService;
             this.taskService = taskService;
-
+            this.requestService = requestService;
             InitializeComponent();
         }
 
@@ -44,14 +47,15 @@ namespace TaskManagement.Views
                 this.Hide();
                 this.ShowInTaskbar = false;
 
+
                 if (response.Role == "Admin")
                 {
-                    MainView mainView = new MainView(response.Role, userService, taskService);
+                    MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
                     mainView.Show();
                 }
                 else
                 {
-                    MainView mainView = new MainView(response.Role, userService, taskService);
+                    MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
                     mainView.Show();
                 }
             }

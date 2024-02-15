@@ -11,11 +11,11 @@ using TaskManagement.Models;
 
 namespace TaskManagement.Views
 {
-    public partial class TicketView : Form
+    public partial class AdminTicketView : Form
     {
         TicketInfo ticket;
 
-        public TicketView(TicketInfo ticket)
+        public AdminTicketView(TicketInfo ticket)
         {
             this.ticket = ticket;
 

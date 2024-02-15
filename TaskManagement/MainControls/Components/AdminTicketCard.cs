@@ -14,7 +14,7 @@ using TaskManagement.Views;
 
 namespace TaskManagement.UserControls.Components
 {
-    public partial class TicketCard : UserControl
+    public partial class AdminTicketCard : UserControl
     {
         public TicketInfo ticket;
         private readonly IUserService userService;
@@ -23,7 +23,7 @@ namespace TaskManagement.UserControls.Components
         public event EventHandler UpdateClick;
         public event EventHandler DeleteClick;
 
-        public TicketCard(TicketInfo ticket, IUserService userService, ITicketService ticketService)
+        public AdminTicketCard(TicketInfo ticket, IUserService userService, ITicketService ticketService)
         {
             this.ticket = ticket;
             this.userService = userService;
@@ -41,13 +41,13 @@ namespace TaskManagement.UserControls.Components
 
         private void BTNView_Click(object sender, EventArgs e)
         {
-            TicketView view = new TicketView(ticket);
+            AdminTicketView view = new AdminTicketView(ticket);
             view.ShowDialog();
         }
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            AdminTicketEditorView editor = new AdminTicketEditorView(ticket, userService, ticketService);
+            TicketEditorView editor = new TicketEditorView(ticket, userService, ticketService);
             editor.ShowDialog();
             var dialog = editor.DialogResult;
 

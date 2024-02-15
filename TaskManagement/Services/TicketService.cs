@@ -39,14 +39,14 @@ namespace TaskManagement.Services
                     DueDate = task.DueDate,
                     DateCreated = DateTime.Now,
                     Description = task.Description,
-                    IsDeleted = false,
+                    IsApproved = task.IsApproved,
                     CreatorId = creator.Id
                 };
 
-                if (creator.Role == "Admin")
-                    taskTobeAdded.IsApprove = true;
-                else
-                    taskTobeAdded.IsApprove = false;
+                //if (creator.Role == "Admin")
+                //    taskTobeAdded.IsApproved = true;
+                //else
+                //    taskTobeAdded.IsApproved = false;
 
                 await ticketRepository.Add(taskTobeAdded);
 
@@ -103,8 +103,7 @@ namespace TaskManagement.Services
                     DueDate = ticket.DueDate,
                     DateCreated = DateTime.Now,
                     Description = ticket.Description,
-                    IsApprove = ticket.IsApprove,
-                    IsDeleted = false,
+                    IsApproved = ticket.IsApproved,
                     CreatorId = creator.Id,
                 };
 
@@ -145,8 +144,7 @@ namespace TaskManagement.Services
                             DueDate = ticket.DueDate,
                             DateCreated = ticket.DateCreated,
                             Description = ticket.Description,
-                            IsApprove = ticket.IsApprove,
-                            IsDeleted = ticket.IsDeleted,
+                            IsApproved = ticket.IsApproved,
                             CreatorId = creatorUser.Id,
                             CreatorFullName = creatorUser.FullName,
                             CreatorRole = creatorUser.Role

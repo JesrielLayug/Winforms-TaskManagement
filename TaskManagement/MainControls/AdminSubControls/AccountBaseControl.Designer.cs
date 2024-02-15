@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeDetailsContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
             this.BTNClear = new Guna.UI.WinForms.GunaButton();
             this.BTNDelete = new Guna.UI.WinForms.GunaButton();
             this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
+            this.CBGender = new Guna.UI.WinForms.GunaComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.TBPassword = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TBFirstname = new Guna.UI.WinForms.GunaTextBox();
-            this.CBGender = new Guna.UI.WinForms.GunaComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.TBLastname = new Guna.UI.WinForms.GunaTextBox();
             this.TBEmail = new Guna.UI.WinForms.GunaTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -191,6 +191,42 @@
             this.BTNSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNSubmit.Click += new System.EventHandler(this.BTNSubmit_Click);
             // 
+            // CBGender
+            // 
+            this.CBGender.BackColor = System.Drawing.Color.Transparent;
+            this.CBGender.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.CBGender.BorderColor = System.Drawing.Color.Transparent;
+            this.CBGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBGender.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CBGender.FocusedColor = System.Drawing.Color.Empty;
+            this.CBGender.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBGender.ForeColor = System.Drawing.Color.Black;
+            this.CBGender.FormattingEnabled = true;
+            this.CBGender.ItemHeight = 27;
+            this.CBGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Prefer not to say"});
+            this.CBGender.Location = new System.Drawing.Point(45, 146);
+            this.CBGender.Name = "CBGender";
+            this.CBGender.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.CBGender.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.CBGender.Radius = 5;
+            this.CBGender.Size = new System.Drawing.Size(239, 33);
+            this.CBGender.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.label7.Location = new System.Drawing.Point(45, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 14);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Gender";
+            // 
             // TBPassword
             // 
             this.TBPassword.BackColor = System.Drawing.Color.Transparent;
@@ -260,31 +296,6 @@
             this.TBFirstname.Size = new System.Drawing.Size(114, 36);
             this.TBFirstname.TabIndex = 14;
             // 
-            // CBGender
-            // 
-            this.CBGender.BackColor = System.Drawing.Color.Transparent;
-            this.CBGender.BaseColor = System.Drawing.Color.WhiteSmoke;
-            this.CBGender.BorderColor = System.Drawing.Color.Transparent;
-            this.CBGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CBGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBGender.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CBGender.FocusedColor = System.Drawing.Color.Empty;
-            this.CBGender.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBGender.ForeColor = System.Drawing.Color.Black;
-            this.CBGender.FormattingEnabled = true;
-            this.CBGender.ItemHeight = 27;
-            this.CBGender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Prefer not to say"});
-            this.CBGender.Location = new System.Drawing.Point(45, 146);
-            this.CBGender.Name = "CBGender";
-            this.CBGender.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.CBGender.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.CBGender.Radius = 5;
-            this.CBGender.Size = new System.Drawing.Size(239, 33);
-            this.CBGender.TabIndex = 27;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -295,17 +306,6 @@
             this.label4.Size = new System.Drawing.Size(60, 14);
             this.label4.TabIndex = 17;
             this.label4.Text = "Lastname";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label7.Location = new System.Drawing.Point(45, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 14);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Gender";
             // 
             // TBLastname
             // 
@@ -415,28 +415,28 @@
             // 
             // DGVUsers
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVUsers.AutoGenerateColumns = false;
             this.DGVUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVUsers.BackgroundColor = System.Drawing.Color.White;
             this.DGVUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVUsers.ColumnHeadersHeight = 45;
             this.DGVUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roleDataGridViewTextBoxColumn,
@@ -446,14 +446,14 @@
             this.emailDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.DGVUsers.DataSource = this.userEditorBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVUsers.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVUsers.DefaultCellStyle = dataGridViewCellStyle11;
             this.DGVUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVUsers.EnableHeadersVisualStyles = false;
             this.DGVUsers.GridColor = System.Drawing.Color.White;
@@ -461,9 +461,9 @@
             this.DGVUsers.Name = "DGVUsers";
             this.DGVUsers.ReadOnly = true;
             this.DGVUsers.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.DGVUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.DGVUsers.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.DGVUsers.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVUsers.RowTemplate.Height = 40;
             this.DGVUsers.RowTemplate.ReadOnly = true;
@@ -497,9 +497,9 @@
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.roleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.roleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.ReadOnly = true;
@@ -507,8 +507,8 @@
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fullNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fullNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full Name";
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
             this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;

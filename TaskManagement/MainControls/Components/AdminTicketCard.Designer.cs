@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.UserControls.Components
 {
-    partial class TicketCard
+    partial class AdminTicketCard
     {
         /// <summary> 
         /// Required designer variable.

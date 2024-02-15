@@ -7,32 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.MainControls.Components;
 using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
 using TaskManagement.UserControls.Components;
-using TaskManagement.Views;
 
-namespace TaskManagement.UserControls.AdminSubControls
+namespace TaskManagement.MainControls.EmployeeSubControls
 {
-    public partial class TicketControl : UserControl
+    public partial class EmployeeTicketSubControl : UserControl
     {
-        public event EventHandler DeleteClick;
-        public event EventHandler UpdateClick;
-
         public IEnumerable<TicketInfo> TicketInfos;
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
+        private readonly IEmployeeRequestService requestService;
 
-        public TicketControl
-            (
-            IEnumerable<TicketInfo> ticketInfos,
-            IUserService userService,
-            ITicketService ticketService
+        public EmployeeTicketSubControl(
+            IEnumerable<TicketInfo> ticketInfos, 
+            IUserService userService, 
+            ITicketService ticketService,
+            IEmployeeRequestService requestService
             )
         {
             this.TicketInfos = ticketInfos;
             this.userService = userService;
             this.ticketService = ticketService;
+            this.requestService = requestService;
             InitializeComponent();
             InitializeAllFlowLayouts();
         }
@@ -63,9 +62,11 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (string.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService);
-                    card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
-                    card.UpdateClick += (s, e) => { UpdateClick?.Invoke(this, EventArgs.Empty); };
+                    EmployeeTicketCard card = new EmployeeTicketCard(
+                        ticket, 
+                        userService, 
+                        ticketService,
+                        requestService);
 
                     FLPNextUp.Controls.Add(card);
                 }
@@ -76,7 +77,7 @@ namespace TaskManagement.UserControls.AdminSubControls
         {
             FLPInProgress.Controls.Clear();
 
-            if(tickets != null)
+            if (tickets != null)
             {
                 InProgressCount.Text = tickets.Count.ToString();
 
@@ -85,11 +86,11 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (String.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService); ;
-                    card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
-                    card.UpdateClick += (s, e) => { 
-                        UpdateClick?.Invoke(this, EventArgs.Empty); 
-                    };
+                    EmployeeTicketCard card = new EmployeeTicketCard(
+                        ticket, 
+                        userService, 
+                        ticketService, 
+                        requestService); 
 
                     FLPInProgress.Controls.Add(card);
                 }
@@ -100,7 +101,7 @@ namespace TaskManagement.UserControls.AdminSubControls
         {
             FLPCompleted.Controls.Clear();
 
-            if(tickets != null)
+            if (tickets != null)
             {
                 CompletedCount.Text = tickets.Count.ToString();
 
@@ -110,24 +111,15 @@ namespace TaskManagement.UserControls.AdminSubControls
                     if (String.IsNullOrEmpty(ticket.Title))
                         continue;
 
-                    AdminTicketCard card = new AdminTicketCard(ticket, userService, ticketService);
-                    card.DeleteClick += (s, e) => HandleDeleteClick(ticket);
-                    card.UpdateClick += (s, e) => { UpdateClick?.Invoke(this, EventArgs.Empty); };
+                    EmployeeTicketCard card = new EmployeeTicketCard(
+                        ticket, 
+                        userService, 
+                        ticketService, 
+                        requestService);
 
                     FLPCompleted.Controls.Add(card);
                 }
             }
         }
-
-        private async void HandleDeleteClick(TicketInfo ticket)
-        {
-            var dialogResult = MessageBox.Show($"Are you sure you want to delete {ticket.Title}?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.OK)
-            {
-                await ticketService.Delete(ticket.Id);
-                DeleteClick?.Invoke(this, EventArgs.Empty);
-            }
-        }
-
     }
 }

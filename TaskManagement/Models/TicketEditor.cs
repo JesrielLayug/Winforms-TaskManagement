@@ -16,7 +16,7 @@ namespace TaskManagement.Models
         public string StartDate { get; set; }
         public string DueDate { get; set; }
         public string Description { get; set; }
-        public bool IsApprove { get; set; }
+        public bool IsApproved { get; set; }
         public string CreatedBy { get; set; } // the one who created it
     }
 }

@@ -7,9 +7,9 @@ using TaskManagement.Models;
 
 namespace TaskManagement.Services.Contracts
 {
-    public interface IAuthenticationService
+    public interface IEmployeeRequestService
     {
-        Task<Response> Login(string email, string password);
-        Task<Response> Logout();
+        Task<Response> Add(EmployeeSubRequest request);
+        Task<IEnumerable<EmployeeSubRequest>> GetAll();
     }
 }
