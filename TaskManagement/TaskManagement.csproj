@@ -339,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\app.png" />
     <None Include="Resources\multiple-users-silhouette.png" />
     <None Include="Resources\check-green.png" />
     <None Include="Resources\configuration.png" />
