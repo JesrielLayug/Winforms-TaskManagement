@@ -29,6 +29,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private IEnumerable<User> Employees;
         private IEnumerable<TicketInfo> Tickets;
         private IEnumerable<EmployeeTicketInfo> EmployeeTickets;
+        private IEnumerable<EmployeeTicketInfo> EmployeeTicketsRequest;
 
         public EmployeeDashboardControl(
             IUserService userService,
@@ -60,7 +61,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             LBNextUpQuantity.Text = nextUpQuantity;
             LBInProgressQuantity.Text = inProgressQuantity;
             LBCompletedQuantity.Text = completedQuantity;
-            LBEmployeesQuantity.Text = EmployeeTickets.Count().ToString();
+            LBEmployeesQuantity.Text = EmployeeTicketsRequest.Count().ToString();
 
         }
 
@@ -69,6 +70,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             Tickets = await ticketService.GetByAssignUser();
             Employees = await userService.GetAll();
             EmployeeTickets = await requestService.GetAllApproved();
+            EmployeeTicketsRequest = await requestService.GetAllUserRequest();
         }
 
         private string[] InitializeDaysPerWeek()

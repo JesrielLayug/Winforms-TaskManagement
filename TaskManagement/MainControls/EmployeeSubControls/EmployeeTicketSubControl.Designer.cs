@@ -62,7 +62,7 @@
             // gunaShadowPanel9
             // 
             this.gunaShadowPanel9.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.gunaShadowPanel9.BaseColor = System.Drawing.Color.White;
             this.gunaShadowPanel9.Controls.Add(this.gunaShadowPanel12);
             this.gunaShadowPanel9.Controls.Add(this.label15);
             this.gunaShadowPanel9.Location = new System.Drawing.Point(791, 1);
@@ -70,7 +70,7 @@
             this.gunaShadowPanel9.Radius = 3;
             this.gunaShadowPanel9.ShadowColor = System.Drawing.Color.Silver;
             this.gunaShadowPanel9.ShadowShift = 1;
-            this.gunaShadowPanel9.Size = new System.Drawing.Size(353, 92);
+            this.gunaShadowPanel9.Size = new System.Drawing.Size(353, 47);
             this.gunaShadowPanel9.TabIndex = 16;
             // 
             // gunaShadowPanel12
@@ -126,7 +126,7 @@
             // gunaShadowPanel7
             // 
             this.gunaShadowPanel7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel7.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.gunaShadowPanel7.BaseColor = System.Drawing.Color.White;
             this.gunaShadowPanel7.Controls.Add(this.gunaShadowPanel11);
             this.gunaShadowPanel7.Controls.Add(this.label12);
             this.gunaShadowPanel7.Location = new System.Drawing.Point(3, 1);
@@ -175,7 +175,7 @@
             // gunaShadowPanel5
             // 
             this.gunaShadowPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.gunaShadowPanel5.BaseColor = System.Drawing.Color.White;
             this.gunaShadowPanel5.Controls.Add(this.gunaShadowPanel6);
             this.gunaShadowPanel5.Controls.Add(this.label4);
             this.gunaShadowPanel5.Location = new System.Drawing.Point(396, 1);
@@ -224,6 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.FLPCompleted);
             this.Controls.Add(this.gunaShadowPanel9);
             this.Controls.Add(this.FLPInProgress);
@@ -231,7 +232,7 @@
             this.Controls.Add(this.gunaShadowPanel7);
             this.Controls.Add(this.gunaShadowPanel5);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeTicketSubControl";
             this.Size = new System.Drawing.Size(1148, 581);
             this.gunaShadowPanel9.ResumeLayout(false);

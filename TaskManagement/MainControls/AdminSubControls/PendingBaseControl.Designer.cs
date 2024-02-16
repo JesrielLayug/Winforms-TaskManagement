@@ -68,7 +68,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
             this.DGVRequests = new Guna.UI.WinForms.GunaDataGridView();
-            this.employeeTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +75,7 @@
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requestorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.MainContainer.SuspendLayout();
             this.ContentContainer.SuspendLayout();
@@ -126,7 +126,7 @@
             // 
             // ContentContainer
             // 
-            this.ContentContainer.BackColor = System.Drawing.Color.White;
+            this.ContentContainer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ContentContainer.Controls.Add(this.BTNCancel);
             this.ContentContainer.Controls.Add(this.BTNApproved);
             this.ContentContainer.Controls.Add(this.TicketDetailsContainer);
@@ -610,10 +610,6 @@
             this.DGVRequests.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVRequests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVRequests_CellContentClick);
             // 
-            // employeeTicketBindingSource
-            // 
-            this.employeeTicketBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicket);
-            // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
@@ -662,6 +658,10 @@
             this.dateRequestCreatedDataGridViewTextBoxColumn.HeaderText = "Request Made";
             this.dateRequestCreatedDataGridViewTextBoxColumn.Name = "dateRequestCreatedDataGridViewTextBoxColumn";
             this.dateRequestCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeTicketBindingSource
+            // 
+            this.employeeTicketBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicket);
             // 
             // PendingBaseControl
             // 

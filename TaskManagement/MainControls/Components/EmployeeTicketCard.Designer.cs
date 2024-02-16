@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.BTNDate = new Guna.UI.WinForms.GunaButton();
+            this.BTNPriority = new Guna.UI.WinForms.GunaButton();
             this.BTNView = new Guna.UI.WinForms.GunaButton();
             this.LBDescription = new System.Windows.Forms.Label();
             this.LBTitle = new System.Windows.Forms.Label();
-            this.BTNPriority = new Guna.UI.WinForms.GunaButton();
-            this.BTNDate = new Guna.UI.WinForms.GunaButton();
             this.gunaShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,89 +52,9 @@
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.Radius = 3;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.gunaShadowPanel1.ShadowShift = 10;
+            this.gunaShadowPanel1.ShadowShift = 0;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(357, 190);
             this.gunaShadowPanel1.TabIndex = 8;
-            // 
-            // BTNView
-            // 
-            this.BTNView.AnimationHoverSpeed = 0.07F;
-            this.BTNView.AnimationSpeed = 0.03F;
-            this.BTNView.BackColor = System.Drawing.Color.Transparent;
-            this.BTNView.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BTNView.BorderColor = System.Drawing.Color.Transparent;
-            this.BTNView.BorderSize = 1;
-            this.BTNView.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNView.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNView.Font = new System.Drawing.Font("Roboto Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNView.ForeColor = System.Drawing.Color.White;
-            this.BTNView.Image = null;
-            this.BTNView.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNView.ImageOffsetX = 5;
-            this.BTNView.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNView.Location = new System.Drawing.Point(279, 25);
-            this.BTNView.Name = "BTNView";
-            this.BTNView.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
-            this.BTNView.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNView.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNView.OnHoverImage = null;
-            this.BTNView.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNView.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.BTNView.Radius = 5;
-            this.BTNView.Size = new System.Drawing.Size(50, 28);
-            this.BTNView.TabIndex = 35;
-            this.BTNView.Text = "View";
-            this.BTNView.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNView.Click += new System.EventHandler(this.BTNView_Click);
-            // 
-            // LBDescription
-            // 
-            this.LBDescription.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBDescription.Location = new System.Drawing.Point(34, 65);
-            this.LBDescription.Name = "LBDescription";
-            this.LBDescription.Size = new System.Drawing.Size(291, 50);
-            this.LBDescription.TabIndex = 33;
-            this.LBDescription.Text = "Lorem ipsum dolor sit amet, \r\nconsectetur adipiscing elit, sed \r\ndo eiusmod tempo" +
-    "r incididunt ut labore et";
-            // 
-            // LBTitle
-            // 
-            this.LBTitle.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBTitle.Location = new System.Drawing.Point(34, 31);
-            this.LBTitle.Name = "LBTitle";
-            this.LBTitle.Size = new System.Drawing.Size(229, 22);
-            this.LBTitle.TabIndex = 6;
-            this.LBTitle.Text = "Sample";
-            // 
-            // BTNPriority
-            // 
-            this.BTNPriority.AnimationHoverSpeed = 0.07F;
-            this.BTNPriority.AnimationSpeed = 0.03F;
-            this.BTNPriority.BackColor = System.Drawing.Color.Transparent;
-            this.BTNPriority.BaseColor = System.Drawing.Color.Transparent;
-            this.BTNPriority.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BTNPriority.BorderSize = 1;
-            this.BTNPriority.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNPriority.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNPriority.Font = new System.Drawing.Font("Roboto Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BTNPriority.Image = null;
-            this.BTNPriority.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNPriority.ImageOffsetX = 5;
-            this.BTNPriority.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNPriority.Location = new System.Drawing.Point(105, 135);
-            this.BTNPriority.Name = "BTNPriority";
-            this.BTNPriority.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
-            this.BTNPriority.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNPriority.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNPriority.OnHoverImage = null;
-            this.BTNPriority.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNPriority.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.BTNPriority.Radius = 5;
-            this.BTNPriority.Size = new System.Drawing.Size(97, 28);
-            this.BTNPriority.TabIndex = 37;
-            this.BTNPriority.Text = "High Priority";
-            this.BTNPriority.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BTNDate
             // 
@@ -161,10 +81,90 @@
             this.BTNDate.OnPressedColor = System.Drawing.Color.Black;
             this.BTNDate.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.BTNDate.Radius = 5;
-            this.BTNDate.Size = new System.Drawing.Size(62, 28);
+            this.BTNDate.Size = new System.Drawing.Size(66, 28);
             this.BTNDate.TabIndex = 38;
             this.BTNDate.Text = "Aug 21";
             this.BTNDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BTNPriority
+            // 
+            this.BTNPriority.AnimationHoverSpeed = 0.07F;
+            this.BTNPriority.AnimationSpeed = 0.03F;
+            this.BTNPriority.BackColor = System.Drawing.Color.Transparent;
+            this.BTNPriority.BaseColor = System.Drawing.Color.Transparent;
+            this.BTNPriority.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.BTNPriority.BorderSize = 1;
+            this.BTNPriority.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNPriority.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNPriority.Font = new System.Drawing.Font("Roboto Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.BTNPriority.Image = null;
+            this.BTNPriority.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNPriority.ImageOffsetX = 5;
+            this.BTNPriority.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNPriority.Location = new System.Drawing.Point(105, 135);
+            this.BTNPriority.Name = "BTNPriority";
+            this.BTNPriority.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.BTNPriority.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNPriority.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNPriority.OnHoverImage = null;
+            this.BTNPriority.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNPriority.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.BTNPriority.Radius = 5;
+            this.BTNPriority.Size = new System.Drawing.Size(119, 28);
+            this.BTNPriority.TabIndex = 37;
+            this.BTNPriority.Text = "High Priority";
+            this.BTNPriority.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BTNView
+            // 
+            this.BTNView.AnimationHoverSpeed = 0.07F;
+            this.BTNView.AnimationSpeed = 0.03F;
+            this.BTNView.BackColor = System.Drawing.Color.Transparent;
+            this.BTNView.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.BTNView.BorderColor = System.Drawing.Color.Transparent;
+            this.BTNView.BorderSize = 1;
+            this.BTNView.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNView.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNView.Font = new System.Drawing.Font("Roboto Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNView.ForeColor = System.Drawing.Color.White;
+            this.BTNView.Image = null;
+            this.BTNView.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNView.ImageOffsetX = 5;
+            this.BTNView.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNView.Location = new System.Drawing.Point(279, 19);
+            this.BTNView.Name = "BTNView";
+            this.BTNView.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.BTNView.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNView.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNView.OnHoverImage = null;
+            this.BTNView.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNView.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.BTNView.Radius = 5;
+            this.BTNView.Size = new System.Drawing.Size(61, 34);
+            this.BTNView.TabIndex = 35;
+            this.BTNView.Text = "View";
+            this.BTNView.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNView.Click += new System.EventHandler(this.BTNView_Click);
+            // 
+            // LBDescription
+            // 
+            this.LBDescription.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBDescription.Location = new System.Drawing.Point(34, 65);
+            this.LBDescription.Name = "LBDescription";
+            this.LBDescription.Size = new System.Drawing.Size(291, 50);
+            this.LBDescription.TabIndex = 33;
+            this.LBDescription.Text = "Lorem ipsum dolor sit amet, \r\nconsectetur adipiscing elit, sed \r\ndo eiusmod tempo" +
+    "r incididunt ut labore et";
+            // 
+            // LBTitle
+            // 
+            this.LBTitle.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTitle.Location = new System.Drawing.Point(32, 26);
+            this.LBTitle.Name = "LBTitle";
+            this.LBTitle.Size = new System.Drawing.Size(229, 27);
+            this.LBTitle.TabIndex = 6;
+            this.LBTitle.Text = "Sample";
             // 
             // EmployeeTicketCard
             // 

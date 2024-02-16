@@ -44,6 +44,7 @@ namespace TaskManagement.Views
         {
             var requestTicket = new EmployeeTicketInfo
             {
+                Id = ticket.Id,
                 TicketId = ticket.Id,
                 Title = ticket.Title,
                 AssignName = ticket.AssignUserName,

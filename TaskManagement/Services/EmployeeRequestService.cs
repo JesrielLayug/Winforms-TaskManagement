@@ -29,37 +29,45 @@ namespace TaskManagement.Services
             {
                 var currentUserId = settingsProvider.GetCurrentUserId();
                 var currentUserName = settingsProvider.GetCurrentUserName();
+                var existingRequest = await employeeRequestRepository.GetById(request.Id);
 
-                var newRequest = new EmployeeTicket
+                if(existingRequest == null)
                 {
-                    TicketId = request.TicketId,
-                    Title = request.Title,
-                    AssignName = request.AssignName,
-                    Priority = request.Priority,
-                    Division = request.Division,
-                    TicketStatus = request.TicketStatus,
-                    StartDate = request.StartDate,
-                    DueDate = request.DueDate,
-                    Description = request.Description,
-                    IsApproved = false,
-                    IsCancelled = false,
-                    RequestorId = currentUserId,
-                    DateRequestCreated = DateTime.Now,
-                    RequestorName = currentUserName,
-                };
+                    var newRequest = new EmployeeTicket
+                    {
+                        TicketId = request.TicketId,
+                        Title = request.Title,
+                        AssignName = request.AssignName,
+                        Priority = request.Priority,
+                        Division = request.Division,
+                        TicketStatus = request.TicketStatus,
+                        StartDate = request.StartDate,
+                        DueDate = request.DueDate,
+                        Description = request.Description,
+                        IsApproved = false,
+                        IsCancelled = false,
+                        RequestorId = currentUserId,
+                        DateRequestCreated = DateTime.Now,
+                        RequestorName = currentUserName,
+                    };
 
-                if (request.IsApproved == false)
-                    newRequest.Request = "Add";
+                    if (request.IsApproved == false)
+                        newRequest.Request = "Add";
+                    else
+                        newRequest.Request = "Update";
+
+                    await employeeRequestRepository.Add(newRequest);
+                }
                 else
-                    newRequest.Request = "Update";
-
-                await employeeRequestRepository.Add(newRequest);
+                {
+                    existingRequest.TicketStatus = request.TicketStatus;
+                    await employeeRequestRepository.Update(existingRequest, request.Id);
+                }
                 return new Response
                 {
                     IsSuccess = true,
                     Message = "Ticket successfully requested."
                 };
-
             }
             catch
             {

@@ -273,6 +273,7 @@
     <Compile Include="MainControls\EmptyControl.Designer.cs">
       <DependentUpon>EmptyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ButtonClickHandler.cs" />
     <Compile Include="Utilities\ButtonColorChanger.cs" />
     <Compile Include="Utilities\UserControlChanger.cs" />
     <Compile Include="Utilities\UserSettingsProvider.cs" />

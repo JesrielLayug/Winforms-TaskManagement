@@ -50,7 +50,6 @@ namespace TaskManagement.UserControls
                 new TicketBaseControl(userService, ticketService, requestService),
                 new PendingBaseControl(userService, ticketService, requestService),
                 new AccountBaseControl(userService),
-                new SettingsBaseControl()
             };
 
             GetUserControlChanger = new UserControlChanger( controls, MainPanel );
@@ -68,29 +67,27 @@ namespace TaskManagement.UserControls
             Image defaultTask = Image.FromFile("..\\..\\Resources\\Task.png");
             Image defaultAccount = Image.FromFile("..\\..\\Resources\\account-gray.png");
             Image defaultTime = Image.FromFile("..\\..\\Resources\\file.png");
-            Image defaultSettings = Image.FromFile("..\\..\\Resources\\tool.png");
             Image defaultLogout = Image.FromFile("..\\..\\Resources\\door.png");
 
             Image newDashboard = Image.FromFile("..\\..\\Resources\\dashboard-white.png");
             Image newTask = Image.FromFile("..\\..\\Resources\\task-white.png");
             Image newAccount = Image.FromFile("..\\..\\Resources\\account-2-white.png");
             Image newTime = Image.FromFile("..\\..\\Resources\\file (1).png");
-            Image newSettings = Image.FromFile("..\\..\\Resources\\tool-white.png");
             Image newLogout = Image.FromFile("..\\..\\Resources\\door-white.png");
 
             List<Image> defaultImages = new List<Image>()
             {
-                defaultDashboard, defaultTask, defaultAccount, defaultTime, defaultSettings, defaultLogout
+                defaultDashboard, defaultTask, defaultAccount, defaultTime, defaultLogout
             };
 
             List<Image> newImages = new List<Image>
             {
-                newDashboard, newTask, newAccount, newTime, newSettings, newLogout
+                newDashboard, newTask, newAccount, newTime, newLogout
             };
 
             List<Button> buttons = new List<Button>()
             {
-                BTNDashboard, BTNTicket, BTNAccount, BTNPending, BTNSettings, BTNLogout
+                BTNDashboard, BTNTicket, BTNAccount, BTNPending, BTNLogout
             };
 
             ButtonColorChanger = new ButtonColorChanger(
@@ -127,12 +124,6 @@ namespace TaskManagement.UserControls
             InitializeMainControl();
             ButtonColorChanger.SelectedButton(BTNAccount);
             GetUserControlChanger.Display(3);
-        }
-
-        private void BTNSettings_Click(object sender, EventArgs e)
-        {
-            ButtonColorChanger.SelectedButton(BTNSettings);
-            GetUserControlChanger.Display(4);
         }
 
         private void BTNLogout_Click(object sender, EventArgs e)

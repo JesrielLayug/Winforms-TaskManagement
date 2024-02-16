@@ -11,11 +11,14 @@ using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 using TaskManagement.UserControls;
+using TaskManagement.Utilities;
 
 namespace TaskManagement.MainControls.SubControls
 {
     public partial class PendingBaseControl : UserControl
     {
+        private ButtonClickHandler ApprovedClickHandler;
+
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
@@ -31,6 +34,9 @@ namespace TaskManagement.MainControls.SubControls
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+
+            // handles buttons click
+            ApprovedClickHandler = new ButtonClickHandler();
 
             InitializeComponent();
             InitializeDataGridView();
@@ -137,6 +143,8 @@ namespace TaskManagement.MainControls.SubControls
                     InitializeDataGridView();
                 }
             }
+
+            ApprovedClickHandler.HandleButtonClick(sender, e);
         }
 
         private async void BTNCancel_Click(object sender, EventArgs e)

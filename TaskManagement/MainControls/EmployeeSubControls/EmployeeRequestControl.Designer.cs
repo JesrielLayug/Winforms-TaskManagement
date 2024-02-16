@@ -110,9 +110,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(2, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 36);
+            this.label2.Size = new System.Drawing.Size(244, 36);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Pending Tickets";
+            this.label2.Text = "Pending Requests";
             // 
             // employeeSubRequestBindingSource
             // 
@@ -129,7 +129,7 @@
             // 
             // ContentContainer
             // 
-            this.ContentContainer.BackColor = System.Drawing.Color.White;
+            this.ContentContainer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ContentContainer.Controls.Add(this.BTNDelete);
             this.ContentContainer.Controls.Add(this.BTNUpdate);
             this.ContentContainer.Controls.Add(this.TicketDetailsContainer);
@@ -528,7 +528,7 @@
             this.Container.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Container.Location = new System.Drawing.Point(31, 35);
             this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(781, 569);
+            this.Container.Size = new System.Drawing.Size(781, 542);
             this.Container.TabIndex = 23;
             // 
             // DGVRequests
@@ -586,7 +586,7 @@
             this.DGVRequests.RowTemplate.Height = 40;
             this.DGVRequests.RowTemplate.ReadOnly = true;
             this.DGVRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVRequests.Size = new System.Drawing.Size(779, 567);
+            this.DGVRequests.Size = new System.Drawing.Size(779, 540);
             this.DGVRequests.TabIndex = 2;
             this.DGVRequests.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DGVRequests.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

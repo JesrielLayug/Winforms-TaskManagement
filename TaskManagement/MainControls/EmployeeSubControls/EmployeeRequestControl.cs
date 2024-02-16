@@ -11,6 +11,7 @@ using TaskManagement.Models;
 using TaskManagement.Services;
 using TaskManagement.Services.Contracts;
 using TaskManagement.UserControls;
+using TaskManagement.Utilities;
 using TaskManagement.Views;
 
 namespace TaskManagement.MainControls.EmployeeSubControls
@@ -20,7 +21,10 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
-        
+
+        private ButtonClickHandler ApprovedClickHandler;
+
+
         IEnumerable<EmployeeTicketInfo> Tickets;
         EmployeeTicketInfo Ticket;
 
@@ -34,7 +38,16 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             this.ticketService = ticketService;
             this.requestService = requestService;
 
+            // Handles the Button Click
+            ApprovedClickHandler = new ButtonClickHandler();
+            ApprovedClickHandler.ButtonClicked += ApprovedClickHandler_ButtonClicked;
+
             InitializeComponent();
+            InitializeDataGridView();
+        }
+
+        private void ApprovedClickHandler_ButtonClicked(object sender, EventArgs e)
+        {
             InitializeDataGridView();
         }
 

@@ -38,6 +38,7 @@
             // 
             // NoItemContainer
             // 
+            this.NoItemContainer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NoItemContainer.Controls.Add(this.label2);
             this.NoItemContainer.Controls.Add(this.label1);
             this.NoItemContainer.Controls.Add(this.NoItem);

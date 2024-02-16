@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BTNCreate = new Guna.UI.WinForms.GunaButton();
             this.label2 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
-            this.BTNCreate = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,25 +45,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1202, 59);
             this.panel1.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(2, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 36);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Active Tickets";
-            // 
-            // Container
-            // 
-            this.Container.BackColor = System.Drawing.Color.White;
-            this.Container.Location = new System.Drawing.Point(24, 76);
-            this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(1148, 581);
-            this.Container.TabIndex = 15;
             // 
             // BTNCreate
             // 
@@ -93,11 +74,30 @@
             this.BTNCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNCreate.Click += new System.EventHandler(this.BTNCreate_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(2, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(192, 36);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Active Tickets";
+            // 
+            // Container
+            // 
+            this.Container.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Container.Location = new System.Drawing.Point(24, 76);
+            this.Container.Name = "Container";
+            this.Container.Size = new System.Drawing.Size(1148, 581);
+            this.Container.TabIndex = 15;
+            // 
             // EmployeeTicketControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Container);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
