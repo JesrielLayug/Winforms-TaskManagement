@@ -40,6 +40,11 @@ namespace TaskManagement.Repositories
             return await TicketCollection.Find(x => x.IsApproved == true).ToListAsync();
         }
 
+        public async Task<Ticket> GetById(string id)
+        {
+            return await TicketCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task Update(Ticket ticket, string id)
         {
             await TicketCollection.ReplaceOneAsync(x => x.Id == id, ticket);

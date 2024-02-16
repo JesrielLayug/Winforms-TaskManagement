@@ -13,5 +13,6 @@ namespace TaskManagement.Services.Contracts
         Task<Response> Delete(string id);
         Task<Response> Update(TicketEditor ticket, string id);
         Task<IEnumerable<TicketInfo>> GetAll();
+        Task<TicketInfo> GetById(string id);
     }
 }

@@ -391,6 +391,7 @@
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TaskManagement.Models.EmployeeSubRequest.datasource" />
+    <None Include="Properties\DataSources\TaskManagement.Models.EmployeeTicket.datasource" />
     <None Include="Properties\DataSources\TaskManagement.Models.TicketSubInfo.datasource" />
     <None Include="Properties\DataSources\TaskManagement.Models.UserEditor.datasource" />
     <None Include="Properties\Settings.settings">
