@@ -60,7 +60,7 @@ namespace TaskManagement.Services
                     Message = "Ticket successfully requested."
                 };
 
-            } 
+            }
             catch
             {
                 throw;
@@ -77,7 +77,7 @@ namespace TaskManagement.Services
 
                 var domainRequests = await employeeRequestRepository.GetAllUserRequest(currentUserId);
 
-                foreach(var item in domainRequests)
+                foreach (var item in domainRequests)
                 {
                     requests.Add(new EmployeeTicketInfo
                     {
@@ -112,7 +112,7 @@ namespace TaskManagement.Services
             try
             {
                 var existingRequest = await employeeRequestRepository.GetById(request.Id);
-                if(existingRequest != null)
+                if (existingRequest != null)
                 {
                     existingRequest.Title = request.Title;
                     existingRequest.AssignName = request.AssignName;
@@ -163,6 +163,39 @@ namespace TaskManagement.Services
             try
             {
                 var tickets = await employeeRequestRepository.GetAll();
+                var ticketInfos = new List<EmployeeTicketInfo>();
+
+                foreach (var ticket in tickets)
+                {
+                    ticketInfos.Add(new EmployeeTicketInfo
+                    {
+                        Id = ticket.Id,
+                        TicketId = ticket.TicketId,
+                        Title = ticket.Title,
+                        AssignName = ticket.AssignName,
+                        Priority = ticket.Priority,
+                        Division = ticket.Division,
+                        TicketStatus = ticket.TicketStatus,
+                        StartDate = ticket.StartDate,
+                        DueDate = ticket.DueDate,
+                        Description = ticket.Description,
+                        IsApproved = ticket.IsApproved,
+                        IsCancelled = ticket.IsCancelled,
+                        RequestorName = ticket.RequestorName,
+                        DateRequestCreated = ticket.DateRequestCreated.ToString("MMM d")
+                    });
+                }
+
+                return ticketInfos;
+            }
+            catch { throw; };
+        }
+
+        public async Task<IEnumerable<EmployeeTicketInfo>> GetAllApproved()
+        {
+            try
+            {
+                var tickets = await employeeRequestRepository.GetAllApproved();
                 var ticketInfos = new List<EmployeeTicketInfo>();
 
                 foreach (var ticket in tickets)

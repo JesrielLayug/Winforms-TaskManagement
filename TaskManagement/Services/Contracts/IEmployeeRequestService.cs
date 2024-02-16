@@ -14,5 +14,6 @@ namespace TaskManagement.Services.Contracts
         Task<Response> Delete(EmployeeTicketInfo request);
         Task<IEnumerable<EmployeeTicketInfo>> GetAllUserRequest();
         Task<IEnumerable<EmployeeTicketInfo>> GetAll();
+        Task<IEnumerable<EmployeeTicketInfo>> GetAllApproved();
     }
 }

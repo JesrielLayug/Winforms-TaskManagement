@@ -202,7 +202,7 @@ namespace TaskManagement.MainControls.SubControls
 
         #region Daily Carteisan
 
-        private async void InitializeCartesianChart()
+        private void InitializeCartesianChart()
         {
             InitializeDaysPerWeek();
 
@@ -231,20 +231,20 @@ namespace TaskManagement.MainControls.SubControls
         private string[] InitializeDaysPerWeek()
         {
             // Initialize X-axis labels
-            string[] xAxisLabels = new string[7];
+            XAxisLabels = new string[7];
             DateTime previousDay = DateTime.Now; // Initialize previousDay outside the loop
 
             for (int i = 0; i < 7; i++)
             {
-                xAxisLabels[i] = previousDay.ToString("MMM d");
+                XAxisLabels[i] = previousDay.ToString("MMM d");
 
                 if (i == 6)
                     previousDay = previousDay.AddDays(1); // Update previousDay after every 6 days
-                else
-                    previousDay = previousDay.AddDays(1); // Increment previousDay by 1 day
+                //else
+                //    previousDay = previousDay.AddDays(1); // Increment previousDay by 1 day
             }
 
-            return xAxisLabels;
+            return XAxisLabels;
         }
         private void AddSeries(string status, IEnumerable<TicketInfo> tickets)
         {

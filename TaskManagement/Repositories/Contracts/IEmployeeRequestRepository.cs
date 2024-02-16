@@ -15,5 +15,6 @@ namespace TaskManagement.Repositories.Contracts
         Task<IEnumerable<EmployeeTicket>> GetAllUserRequest(string employeeId);
         Task<IEnumerable<EmployeeTicket>> GetAll();
         Task<EmployeeTicket> GetById(string id);
+        Task<IEnumerable<EmployeeTicket>> GetAllApproved();
     }
 }

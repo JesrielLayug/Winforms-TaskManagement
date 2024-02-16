@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using TaskManagement.Models;
 using TaskManagement.Repositories.Contracts;
 using TaskManagement.Services.Contracts;
+using TaskManagement.Utilities;
 
 namespace TaskManagement.Services
 {
     public class TicketService : ITicketService
     {
+        UserSettingsProvider SettingsProvider = new UserSettingsProvider();
+
         private readonly ITicketRepository ticketRepository;
         private readonly IUserRepository userRepository;
 
@@ -190,6 +193,39 @@ namespace TaskManagement.Services
             {
                 throw;
             }
+        }
+
+        public async Task<IEnumerable<TicketInfo>> GetByAssignUser()
+        {
+            try
+            {
+                var currentUser = SettingsProvider.GetCurrentUserId();
+
+                List<TicketInfo> ticketInfos = new List<TicketInfo>();
+                var tickets = await ticketRepository.GetByAssignUser(currentUser);
+
+                foreach (var ticket in tickets)
+                {
+                    ticketInfos.Add(new TicketInfo
+                    {
+                        Id = ticket.Id,
+                        Title = ticket.Title,
+                        AssignUserId = ticket.AssignUserId,
+                        Priority = ticket.Priority,
+                        Division = ticket.Division,
+                        TicketStatus = ticket.TicketStatus,
+                        StartDate = ticket.StartDate,
+                        DueDate = ticket.DueDate,
+                        DateCreated = ticket.DateCreated,
+                        Description = ticket.Description,
+                        IsApproved=ticket.IsApproved,
+                        CreatorId = ticket.CreatorId
+                    });
+                }
+
+                return ticketInfos;
+            }
+            catch { throw;  }
         }
     }
 }

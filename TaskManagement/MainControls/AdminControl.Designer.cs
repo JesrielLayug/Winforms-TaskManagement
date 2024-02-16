@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNLogout = new System.Windows.Forms.Button();
-            this.BTNSettings = new System.Windows.Forms.Button();
             this.BTNAccount = new System.Windows.Forms.Button();
             this.BTNPending = new System.Windows.Forms.Button();
             this.BTNTicket = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.gunaShadowPanel1.Controls.Add(this.panel1);
             this.gunaShadowPanel1.Controls.Add(this.BTNLogout);
-            this.gunaShadowPanel1.Controls.Add(this.BTNSettings);
             this.gunaShadowPanel1.Controls.Add(this.BTNAccount);
             this.gunaShadowPanel1.Controls.Add(this.BTNPending);
             this.gunaShadowPanel1.Controls.Add(this.BTNTicket);
@@ -94,24 +92,12 @@
             this.BTNLogout.FlatAppearance.BorderSize = 0;
             this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
-            this.BTNLogout.Location = new System.Drawing.Point(-1, 276);
+            this.BTNLogout.Location = new System.Drawing.Point(-1, 235);
             this.BTNLogout.Name = "BTNLogout";
             this.BTNLogout.Size = new System.Drawing.Size(60, 41);
             this.BTNLogout.TabIndex = 5;
             this.BTNLogout.UseVisualStyleBackColor = true;
             this.BTNLogout.Click += new System.EventHandler(this.BTNLogout_Click);
-            // 
-            // BTNSettings
-            // 
-            this.BTNSettings.FlatAppearance.BorderSize = 0;
-            this.BTNSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSettings.Image = global::TaskManagement.Properties.Resources.tool;
-            this.BTNSettings.Location = new System.Drawing.Point(-2, 229);
-            this.BTNSettings.Name = "BTNSettings";
-            this.BTNSettings.Size = new System.Drawing.Size(61, 41);
-            this.BTNSettings.TabIndex = 4;
-            this.BTNSettings.UseVisualStyleBackColor = true;
-            this.BTNSettings.Click += new System.EventHandler(this.BTNSettings_Click);
             // 
             // BTNAccount
             // 
@@ -184,7 +170,6 @@
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private System.Windows.Forms.Button BTNDashboard;
         private System.Windows.Forms.Button BTNLogout;
-        private System.Windows.Forms.Button BTNSettings;
         private System.Windows.Forms.Button BTNAccount;
         private System.Windows.Forms.Button BTNPending;
         private System.Windows.Forms.Button BTNTicket;

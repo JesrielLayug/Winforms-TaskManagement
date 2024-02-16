@@ -28,23 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.MainContainer = new System.Windows.Forms.Panel();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
+            this.cartesianChart4 = new LiveCharts.WinForms.CartesianChart();
             this.label13 = new System.Windows.Forms.Label();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pieChart3 = new LiveCharts.WinForms.PieChart();
             this.label12 = new System.Windows.Forms.Label();
             this.seconChartContainer = new Guna.UI.WinForms.GunaShadowPanel();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.pieChart2 = new LiveCharts.WinForms.PieChart();
             this.label11 = new System.Windows.Forms.Label();
             this.firstChartContainer = new Guna.UI.WinForms.GunaShadowPanel();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.cartesianChart3 = new LiveCharts.WinForms.CartesianChart();
             this.label10 = new System.Windows.Forms.Label();
             this.EmployeesContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaCircleButton4 = new Guna.UI.WinForms.GunaCircleButton();
@@ -66,7 +63,6 @@
             this.MainContainer.SuspendLayout();
             this.gunaShadowPanel2.SuspendLayout();
             this.gunaShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.seconChartContainer.SuspendLayout();
             this.firstChartContainer.SuspendLayout();
             this.EmployeesContainer.SuspendLayout();
@@ -118,7 +114,7 @@
             // 
             this.gunaShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel2.BaseColor = System.Drawing.Color.White;
-            this.gunaShadowPanel2.Controls.Add(this.cartesianChart2);
+            this.gunaShadowPanel2.Controls.Add(this.cartesianChart4);
             this.gunaShadowPanel2.Controls.Add(this.label13);
             this.gunaShadowPanel2.Location = new System.Drawing.Point(434, 463);
             this.gunaShadowPanel2.Name = "gunaShadowPanel2";
@@ -128,13 +124,13 @@
             this.gunaShadowPanel2.Size = new System.Drawing.Size(730, 269);
             this.gunaShadowPanel2.TabIndex = 16;
             // 
-            // cartesianChart2
+            // cartesianChart4
             // 
-            this.cartesianChart2.Location = new System.Drawing.Point(38, 61);
-            this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(643, 175);
-            this.cartesianChart2.TabIndex = 15;
-            this.cartesianChart2.Text = "cartesianChart2";
+            this.cartesianChart4.Location = new System.Drawing.Point(38, 61);
+            this.cartesianChart4.Name = "cartesianChart4";
+            this.cartesianChart4.Size = new System.Drawing.Size(643, 175);
+            this.cartesianChart4.TabIndex = 15;
+            this.cartesianChart4.Text = "cartesianChart4";
             // 
             // label13
             // 
@@ -143,15 +139,15 @@
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(35, 33);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 15);
+            this.label13.Size = new System.Drawing.Size(174, 15);
             this.label13.TabIndex = 14;
-            this.label13.Text = "Division Task Analytics";
+            this.label13.Text = "Daily Priority Task Analytics";
             // 
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaShadowPanel1.Controls.Add(this.chart1);
+            this.gunaShadowPanel1.Controls.Add(this.pieChart3);
             this.gunaShadowPanel1.Controls.Add(this.label12);
             this.gunaShadowPanel1.Location = new System.Drawing.Point(38, 463);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
@@ -161,43 +157,30 @@
             this.gunaShadowPanel1.Size = new System.Drawing.Size(392, 269);
             this.gunaShadowPanel1.TabIndex = 15;
             // 
-            // chart1
+            // pieChart3
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(19, 61);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(350, 186);
-            this.chart1.TabIndex = 15;
-            this.chart1.Text = "chart1";
+            this.pieChart3.Location = new System.Drawing.Point(36, 63);
+            this.pieChart3.Name = "pieChart3";
+            this.pieChart3.Size = new System.Drawing.Size(280, 183);
+            this.pieChart3.TabIndex = 16;
+            this.pieChart3.Text = "pieChart3";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(34, 32);
+            this.label12.Location = new System.Drawing.Point(88, 32);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 15);
+            this.label12.Size = new System.Drawing.Size(172, 15);
             this.label12.TabIndex = 14;
-            this.label12.Text = "Priority Analytics";
+            this.label12.Text = "Approved Request Analytics";
             // 
             // seconChartContainer
             // 
             this.seconChartContainer.BackColor = System.Drawing.Color.Transparent;
             this.seconChartContainer.BaseColor = System.Drawing.Color.White;
-            this.seconChartContainer.Controls.Add(this.pieChart1);
+            this.seconChartContainer.Controls.Add(this.pieChart2);
             this.seconChartContainer.Controls.Add(this.label11);
             this.seconChartContainer.Location = new System.Drawing.Point(890, 130);
             this.seconChartContainer.Name = "seconChartContainer";
@@ -207,30 +190,30 @@
             this.seconChartContainer.Size = new System.Drawing.Size(276, 327);
             this.seconChartContainer.TabIndex = 13;
             // 
-            // pieChart1
+            // pieChart2
             // 
-            this.pieChart1.Location = new System.Drawing.Point(45, 63);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(191, 212);
-            this.pieChart1.TabIndex = 15;
-            this.pieChart1.Text = "pieChart1";
+            this.pieChart2.Location = new System.Drawing.Point(41, 74);
+            this.pieChart2.Name = "pieChart2";
+            this.pieChart2.Size = new System.Drawing.Size(200, 183);
+            this.pieChart2.TabIndex = 15;
+            this.pieChart2.Text = "pieChart2";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(52, 32);
+            this.label11.Location = new System.Drawing.Point(85, 34);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 15);
+            this.label11.Size = new System.Drawing.Size(108, 15);
             this.label11.TabIndex = 14;
-            this.label11.Text = "Employee Completed Tasks";
+            this.label11.Text = "Completed Tasks";
             // 
             // firstChartContainer
             // 
             this.firstChartContainer.BackColor = System.Drawing.Color.Transparent;
             this.firstChartContainer.BaseColor = System.Drawing.Color.White;
-            this.firstChartContainer.Controls.Add(this.cartesianChart1);
+            this.firstChartContainer.Controls.Add(this.cartesianChart3);
             this.firstChartContainer.Controls.Add(this.label10);
             this.firstChartContainer.Location = new System.Drawing.Point(38, 130);
             this.firstChartContainer.Name = "firstChartContainer";
@@ -240,13 +223,13 @@
             this.firstChartContainer.Size = new System.Drawing.Size(853, 327);
             this.firstChartContainer.TabIndex = 13;
             // 
-            // cartesianChart1
+            // cartesianChart3
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(50, 74);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(731, 217);
-            this.cartesianChart1.TabIndex = 14;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesianChart3.Location = new System.Drawing.Point(38, 74);
+            this.cartesianChart3.Name = "cartesianChart3";
+            this.cartesianChart3.Size = new System.Drawing.Size(776, 212);
+            this.cartesianChart3.TabIndex = 14;
+            this.cartesianChart3.Text = "cartesianChart3";
             // 
             // label10
             // 
@@ -255,9 +238,9 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(35, 34);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(176, 15);
+            this.label10.Size = new System.Drawing.Size(185, 15);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Daily Created Task Analytics";
+            this.label10.Text = "Daily Assigned Task Analytics";
             // 
             // EmployeesContainer
             // 
@@ -285,7 +268,7 @@
             this.gunaCircleButton4.FocusedColor = System.Drawing.Color.Empty;
             this.gunaCircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaCircleButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton4.Image = global::TaskManagement.Properties.Resources.multiple_users_silhouette;
+            this.gunaCircleButton4.Image = global::TaskManagement.Properties.Resources.purple_message;
             this.gunaCircleButton4.ImageSize = new System.Drawing.Size(25, 25);
             this.gunaCircleButton4.Location = new System.Drawing.Point(188, 28);
             this.gunaCircleButton4.Name = "gunaCircleButton4";
@@ -315,9 +298,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(34, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 14);
+            this.label9.Size = new System.Drawing.Size(59, 14);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Employees";
+            this.label9.Text = "Requests";
             // 
             // CompletedContainer
             // 
@@ -508,6 +491,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeDashboardControl";
             this.Size = new System.Drawing.Size(1202, 681);
+            this.Load += new System.EventHandler(this.EmployeeDashboardControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.MainContainer.ResumeLayout(false);
@@ -515,7 +499,6 @@
             this.gunaShadowPanel2.PerformLayout();
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.seconChartContainer.ResumeLayout(false);
             this.seconChartContainer.PerformLayout();
             this.firstChartContainer.ResumeLayout(false);
@@ -541,7 +524,6 @@
         private LiveCharts.WinForms.CartesianChart cartesianChart2;
         private System.Windows.Forms.Label label13;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label12;
         private Guna.UI.WinForms.GunaShadowPanel seconChartContainer;
         private LiveCharts.WinForms.PieChart pieChart1;
@@ -565,5 +547,9 @@
         private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
         private System.Windows.Forms.Label LBNextUpQuantity;
         private System.Windows.Forms.Label label1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart4;
+        private LiveCharts.WinForms.CartesianChart cartesianChart3;
+        private LiveCharts.WinForms.PieChart pieChart2;
+        private LiveCharts.WinForms.PieChart pieChart3;
     }
 }

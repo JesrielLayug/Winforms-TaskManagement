@@ -37,6 +37,27 @@ namespace TaskManagement.Services
             };
         }
 
+        public async Task<Response> ChangePassword(string email, string newPassword)
+        {
+            var existingUser = await userRepository.GetByEmail(email);
+
+            if(existingUser != null)
+            {
+                existingUser.Password = newPassword;
+                await userRepository.Update(existingUser, existingUser.Id);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = $"Successfully changed the password of {existingUser.Email} to {newPassword}. Log in now."
+                };
+            }
+            return new Response
+            {
+                IsSuccess = false,
+                Message = "Email does not exist."
+            };
+        }
+
         public async Task<Response> Delete(UserEditor user)
         {
             try

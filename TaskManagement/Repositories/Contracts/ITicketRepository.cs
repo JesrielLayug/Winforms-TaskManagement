@@ -14,5 +14,6 @@ namespace TaskManagement.Repositories.Contracts
         Task Update(Ticket ticket, string id);
         Task<IEnumerable<Ticket>> GetAll();
         Task<Ticket> GetById(string id);
+        Task<IEnumerable<Ticket>> GetByAssignUser(string userId);
     }
 }

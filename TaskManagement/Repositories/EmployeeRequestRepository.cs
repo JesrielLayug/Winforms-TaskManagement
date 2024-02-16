@@ -45,6 +45,7 @@ namespace TaskManagement.Repositories
             return await RequestCollection.Find(x => x.IsCancelled == false && x.IsApproved == false).ToListAsync();
         }
 
+
         public async Task<EmployeeTicket> GetById(string id)
         {
             return await RequestCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
@@ -53,6 +54,11 @@ namespace TaskManagement.Repositories
         public async Task Update(EmployeeTicket request, string Id)
         {
             await RequestCollection.ReplaceOneAsync(x => x.Id == Id, request);
+        }
+
+        public async Task<IEnumerable<EmployeeTicket>> GetAllApproved()
+        {
+            return await RequestCollection.Find(x => x.IsApproved).ToListAsync();
         }
     }
 }

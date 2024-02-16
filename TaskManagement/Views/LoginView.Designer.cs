@@ -38,6 +38,7 @@
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.TBEmail = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.LinkForgotPassword = new Guna.UI.WinForms.GunaLinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TaskManagement.Properties.Resources.Team_work_amico1;
-            this.pictureBox1.Location = new System.Drawing.Point(330, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(382, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(457, 472);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +84,7 @@
             this.BTNLogin.ForeColor = System.Drawing.Color.White;
             this.BTNLogin.Image = null;
             this.BTNLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNLogin.Location = new System.Drawing.Point(44, 317);
+            this.BTNLogin.Location = new System.Drawing.Point(44, 315);
             this.BTNLogin.Name = "BTNLogin";
             this.BTNLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -148,6 +149,7 @@
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.LinkForgotPassword);
             this.gunaShadowPanel1.Controls.Add(this.label5);
             this.gunaShadowPanel1.Controls.Add(this.label4);
             this.gunaShadowPanel1.Controls.Add(this.BTNLogin);
@@ -156,12 +158,12 @@
             this.gunaShadowPanel1.Controls.Add(this.TBPassword);
             this.gunaShadowPanel1.Controls.Add(this.label1);
             this.gunaShadowPanel1.Controls.Add(this.label2);
-            this.gunaShadowPanel1.Location = new System.Drawing.Point(22, 57);
+            this.gunaShadowPanel1.Location = new System.Drawing.Point(30, 60);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.Radius = 10;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Gainsboro;
             this.gunaShadowPanel1.ShadowShift = 12;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(283, 414);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(291, 429);
             this.gunaShadowPanel1.TabIndex = 10;
             // 
             // TBEmail
@@ -193,12 +195,26 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Email";
             // 
+            // LinkForgotPassword
+            // 
+            this.LinkForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.LinkForgotPassword.AutoSize = true;
+            this.LinkForgotPassword.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.LinkForgotPassword.Location = new System.Drawing.Point(88, 368);
+            this.LinkForgotPassword.Name = "LinkForgotPassword";
+            this.LinkForgotPassword.Size = new System.Drawing.Size(106, 14);
+            this.LinkForgotPassword.TabIndex = 10;
+            this.LinkForgotPassword.TabStop = true;
+            this.LinkForgotPassword.Text = "Forgot Password?";
+            this.LinkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkForgotPassword_LinkClicked);
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(807, 527);
+            this.ClientSize = new System.Drawing.Size(882, 545);
             this.Controls.Add(this.gunaShadowPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,5 +246,6 @@
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private Guna.UI.WinForms.GunaTextBox TBEmail;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaLinkLabel LinkForgotPassword;
     }
 }

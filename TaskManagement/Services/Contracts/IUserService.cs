@@ -13,5 +13,6 @@ namespace TaskManagement.Services.Contracts
         Task<Response> Update(User user, string name);
         Task<Response> Delete(UserEditor user);
         Task<IEnumerable<User>> GetAll();
+        Task<Response> ChangePassword(string email, string newPassword);
     }
 }

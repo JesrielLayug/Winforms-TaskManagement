@@ -75,5 +75,11 @@ namespace TaskManagement.Views
         {
             Application.Exit();
         }
+
+        private void LinkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword forgotPassword = new ForgotPassword(userService);
+            forgotPassword.ShowDialog();
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace TaskManagement.MainControls
         {
             List<UserControl> controls = new List<UserControl>()
             {
-                new EmployeeDashboardControl(),
+                new EmployeeDashboardControl(userService, ticketService, requestService),
                 new EmployeeTicketControl(userService, ticketService, requestService),
                 new EmployeeRequestControl(userService, ticketService, requestService)
             };
