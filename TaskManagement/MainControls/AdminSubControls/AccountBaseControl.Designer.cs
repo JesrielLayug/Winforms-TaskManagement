@@ -37,8 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeDetailsContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
+            this.CBAuthorization = new Guna.UI.WinForms.GunaComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.BTNClear = new Guna.UI.WinForms.GunaButton();
-            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
             this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
             this.CBGender = new Guna.UI.WinForms.GunaComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,15 +56,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.GridContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.DGVUsers = new Guna.UI.WinForms.GunaDataGridView();
+            this.userEditorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Authorization = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userEditorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.EmployeeDetailsContainer.SuspendLayout();
             this.EmployeeDetailsPanel.SuspendLayout();
             this.GridContainer.SuspendLayout();
@@ -82,13 +84,14 @@
             this.EmployeeDetailsContainer.Radius = 5;
             this.EmployeeDetailsContainer.ShadowColor = System.Drawing.Color.Gainsboro;
             this.EmployeeDetailsContainer.ShadowShift = 12;
-            this.EmployeeDetailsContainer.Size = new System.Drawing.Size(327, 443);
+            this.EmployeeDetailsContainer.Size = new System.Drawing.Size(327, 502);
             this.EmployeeDetailsContainer.TabIndex = 0;
             // 
             // EmployeeDetailsPanel
             // 
+            this.EmployeeDetailsPanel.Controls.Add(this.CBAuthorization);
+            this.EmployeeDetailsPanel.Controls.Add(this.label5);
             this.EmployeeDetailsPanel.Controls.Add(this.BTNClear);
-            this.EmployeeDetailsPanel.Controls.Add(this.BTNDelete);
             this.EmployeeDetailsPanel.Controls.Add(this.BTNSubmit);
             this.EmployeeDetailsPanel.Controls.Add(this.CBGender);
             this.EmployeeDetailsPanel.Controls.Add(this.label7);
@@ -106,8 +109,43 @@
             this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 0);
             this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
-            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(327, 443);
+            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(327, 502);
             this.EmployeeDetailsPanel.TabIndex = 2;
+            // 
+            // CBAuthorization
+            // 
+            this.CBAuthorization.BackColor = System.Drawing.Color.Transparent;
+            this.CBAuthorization.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.CBAuthorization.BorderColor = System.Drawing.Color.Transparent;
+            this.CBAuthorization.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBAuthorization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBAuthorization.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CBAuthorization.FocusedColor = System.Drawing.Color.Empty;
+            this.CBAuthorization.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBAuthorization.ForeColor = System.Drawing.Color.Black;
+            this.CBAuthorization.FormattingEnabled = true;
+            this.CBAuthorization.ItemHeight = 27;
+            this.CBAuthorization.Items.AddRange(new object[] {
+            "Allowed",
+            "Blocked"});
+            this.CBAuthorization.Location = new System.Drawing.Point(42, 96);
+            this.CBAuthorization.Name = "CBAuthorization";
+            this.CBAuthorization.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.CBAuthorization.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.CBAuthorization.Radius = 5;
+            this.CBAuthorization.Size = new System.Drawing.Size(243, 33);
+            this.CBAuthorization.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
+            this.label5.Location = new System.Drawing.Point(39, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 14);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Authorization";
             // 
             // BTNClear
             // 
@@ -136,34 +174,6 @@
             this.BTNClear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
             // 
-            // BTNDelete
-            // 
-            this.BTNDelete.AnimationHoverSpeed = 0.07F;
-            this.BTNDelete.AnimationSpeed = 0.03F;
-            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.BaseColor = System.Drawing.Color.White;
-            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.BorderSize = 1;
-            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNDelete.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.Image = null;
-            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNDelete.Location = new System.Drawing.Point(48, 368);
-            this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverImage = null;
-            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNDelete.Radius = 5;
-            this.BTNDelete.Size = new System.Drawing.Size(109, 36);
-            this.BTNDelete.TabIndex = 34;
-            this.BTNDelete.Text = "Delete";
-            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
-            // 
             // BTNSubmit
             // 
             this.BTNSubmit.AnimationHoverSpeed = 0.07F;
@@ -177,7 +187,7 @@
             this.BTNSubmit.ForeColor = System.Drawing.Color.White;
             this.BTNSubmit.Image = null;
             this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNSubmit.Location = new System.Drawing.Point(176, 368);
+            this.BTNSubmit.Location = new System.Drawing.Point(40, 433);
             this.BTNSubmit.Name = "BTNSubmit";
             this.BTNSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -185,7 +195,7 @@
             this.BTNSubmit.OnHoverImage = null;
             this.BTNSubmit.OnPressedColor = System.Drawing.Color.Black;
             this.BTNSubmit.Radius = 5;
-            this.BTNSubmit.Size = new System.Drawing.Size(108, 36);
+            this.BTNSubmit.Size = new System.Drawing.Size(245, 36);
             this.BTNSubmit.TabIndex = 33;
             this.BTNSubmit.Text = "Submit";
             this.BTNSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -208,12 +218,12 @@
             "Male",
             "Female",
             "Prefer not to say"});
-            this.CBGender.Location = new System.Drawing.Point(45, 146);
+            this.CBGender.Location = new System.Drawing.Point(40, 210);
             this.CBGender.Name = "CBGender";
             this.CBGender.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBGender.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
             this.CBGender.Radius = 5;
-            this.CBGender.Size = new System.Drawing.Size(239, 33);
+            this.CBGender.Size = new System.Drawing.Size(245, 33);
             this.CBGender.TabIndex = 27;
             // 
             // label7
@@ -221,7 +231,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label7.Location = new System.Drawing.Point(45, 130);
+            this.label7.Location = new System.Drawing.Point(40, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 14);
             this.label7.TabIndex = 28;
@@ -237,12 +247,12 @@
             this.TBPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPassword.Location = new System.Drawing.Point(48, 317);
+            this.TBPassword.Location = new System.Drawing.Point(40, 381);
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.PasswordChar = '\0';
             this.TBPassword.Radius = 5;
             this.TBPassword.SelectedText = "";
-            this.TBPassword.Size = new System.Drawing.Size(242, 36);
+            this.TBPassword.Size = new System.Drawing.Size(245, 36);
             this.TBPassword.TabIndex = 31;
             // 
             // label2
@@ -250,7 +260,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label2.Location = new System.Drawing.Point(45, 72);
+            this.label2.Location = new System.Drawing.Point(40, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 14);
             this.label2.TabIndex = 15;
@@ -272,7 +282,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label10.Location = new System.Drawing.Point(43, 299);
+            this.label10.Location = new System.Drawing.Point(38, 363);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 14);
             this.label10.TabIndex = 32;
@@ -288,7 +298,7 @@
             this.TBFirstname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBFirstname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBFirstname.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFirstname.Location = new System.Drawing.Point(46, 89);
+            this.TBFirstname.Location = new System.Drawing.Point(41, 153);
             this.TBFirstname.Name = "TBFirstname";
             this.TBFirstname.PasswordChar = '\0';
             this.TBFirstname.Radius = 5;
@@ -301,7 +311,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label4.Location = new System.Drawing.Point(173, 72);
+            this.label4.Location = new System.Drawing.Point(168, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 14);
             this.label4.TabIndex = 17;
@@ -317,7 +327,7 @@
             this.TBLastname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBLastname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBLastname.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLastname.Location = new System.Drawing.Point(175, 89);
+            this.TBLastname.Location = new System.Drawing.Point(170, 153);
             this.TBLastname.Name = "TBLastname";
             this.TBLastname.PasswordChar = '\0';
             this.TBLastname.Radius = 5;
@@ -335,7 +345,7 @@
             this.TBEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TBEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TBEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmail.Location = new System.Drawing.Point(45, 257);
+            this.TBEmail.Location = new System.Drawing.Point(40, 321);
             this.TBEmail.Name = "TBEmail";
             this.TBEmail.PasswordChar = '\0';
             this.TBEmail.Radius = 5;
@@ -348,7 +358,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label9.Location = new System.Drawing.Point(44, 240);
+            this.label9.Location = new System.Drawing.Point(39, 304);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 14);
             this.label9.TabIndex = 30;
@@ -380,7 +390,7 @@
             "Help Desk",
             "Project Manager",
             "Business Analyst"});
-            this.CBPosition.Location = new System.Drawing.Point(46, 200);
+            this.CBPosition.Location = new System.Drawing.Point(41, 264);
             this.CBPosition.Name = "CBPosition";
             this.CBPosition.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.CBPosition.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
@@ -393,7 +403,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.label6.Location = new System.Drawing.Point(43, 182);
+            this.label6.Location = new System.Drawing.Point(38, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 14);
             this.label6.TabIndex = 26;
@@ -406,11 +416,11 @@
             this.GridContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GridContainer.Controls.Add(this.DGVUsers);
             this.GridContainer.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridContainer.Location = new System.Drawing.Point(436, 96);
+            this.GridContainer.Location = new System.Drawing.Point(407, 96);
             this.GridContainer.Name = "GridContainer";
             this.GridContainer.ShadowColor = System.Drawing.Color.Gainsboro;
             this.GridContainer.ShadowShift = 0;
-            this.GridContainer.Size = new System.Drawing.Size(722, 492);
+            this.GridContainer.Size = new System.Drawing.Size(751, 492);
             this.GridContainer.TabIndex = 1;
             // 
             // DGVUsers
@@ -440,6 +450,7 @@
             this.DGVUsers.ColumnHeadersHeight = 45;
             this.DGVUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roleDataGridViewTextBoxColumn,
+            this.Authorization,
             this.fullNameDataGridViewTextBoxColumn,
             this.positionDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn,
@@ -468,7 +479,7 @@
             this.DGVUsers.RowTemplate.Height = 40;
             this.DGVUsers.RowTemplate.ReadOnly = true;
             this.DGVUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVUsers.Size = new System.Drawing.Size(720, 490);
+            this.DGVUsers.Size = new System.Drawing.Size(749, 490);
             this.DGVUsers.TabIndex = 1;
             this.DGVUsers.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DGVUsers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -494,6 +505,31 @@
             this.DGVUsers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsers_CellContentClick);
             // 
+            // userEditorBindingSource
+            // 
+            this.userEditorBindingSource.DataSource = typeof(TaskManagement.Models.UserEditor);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1205, 59);
+            this.panel1.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(2, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(243, 36);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Account Manager";
+            // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
@@ -503,6 +539,13 @@
             this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Authorization
+            // 
+            this.Authorization.DataPropertyName = "Authorization";
+            this.Authorization.HeaderText = "Authorization";
+            this.Authorization.Name = "Authorization";
+            this.Authorization.ReadOnly = true;
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -540,31 +583,6 @@
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userEditorBindingSource
-            // 
-            this.userEditorBindingSource.DataSource = typeof(TaskManagement.Models.UserEditor);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1205, 59);
-            this.panel1.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(2, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 36);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Account Manager";
             // 
             // AccountBaseControl
             // 
@@ -610,16 +628,18 @@
         private Guna.UI.WinForms.GunaButton BTNSubmit;
         private Guna.UI.WinForms.GunaDataGridView DGVUsers;
         private System.Windows.Forms.BindingSource userEditorBindingSource;
+        private System.Windows.Forms.Panel EmployeeDetailsPanel;
+        private Guna.UI.WinForms.GunaButton BTNClear;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaComboBox CBAuthorization;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Authorization;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel EmployeeDetailsPanel;
-        private Guna.UI.WinForms.GunaButton BTNDelete;
-        private Guna.UI.WinForms.GunaButton BTNClear;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
     }
 }

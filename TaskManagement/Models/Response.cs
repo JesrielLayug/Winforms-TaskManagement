@@ -12,6 +12,7 @@ namespace TaskManagement.Models
         public bool IsError { get; set; }
         public bool IsWrongPassword { get; set; }
         public bool IsWrongEmail { get; set; }
+        public bool IsAuthorized { get; set; }
         public string Message { get; set; }
         public string Role {  get; set; }
     }

@@ -27,6 +27,7 @@ namespace TaskManagement.Services
             newUser.Email = user.Email;
             newUser.Password = user.Password;
             newUser.Position = user.Position;
+            newUser.Authorization = user.Authorization;
 
             await userRepository.Add(newUser);
 
@@ -109,6 +110,7 @@ namespace TaskManagement.Services
                     existingUser.Position = user.Position;
                     existingUser.Email = user.Email;
                     existingUser.Password = user.Password;
+                    existingUser.Authorization = user.Authorization;
 
                     await userRepository.Update(existingUser, existingUser.Id);
                     return new Response

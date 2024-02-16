@@ -14,6 +14,7 @@ using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using LiveCharts.Definitions.Charts;
 
 namespace TaskManagement.MainControls.SubControls
 {
@@ -81,58 +82,95 @@ namespace TaskManagement.MainControls.SubControls
         #region Bar Chart
 
 
-        private async void InitializeBarChart()
+        private void InitializeBarChart()
         {
-            await RefreshTickets();
-
-            // Map priority strings to corresponding integer values
-            Dictionary<string, int> priorityMap = new Dictionary<string, int>
-             {
-                 { "Low Priority", 1 },
-                 { "Medium Priority", 2 },
-                 { "High Priority", 3 }
-             };
-
-            // Group tickets by priority and count them
-            var ticketCountsByPriority = Tickets.GroupBy(t => t.Priority)
-                                                .Select(g => new { Priority = g.Key, Count = g.Count() })
-                                                .OrderByDescending(x => priorityMap.ContainsKey(x.Priority) ? priorityMap[x.Priority] : int.MaxValue); 
-
-            // Clear existing series in the chart
-            chart1.Series.Clear();
-
-            // Iterate through each priority and add series if tickets exist
-            foreach (var ticketCount in ticketCountsByPriority)
+            if (Tickets.Any())
             {
-                // Check if the priority is in the map
-                if (priorityMap.ContainsKey(ticketCount.Priority))
+                // Map priority strings to corresponding integer values
+                Dictionary<string, int> priorityMap = new Dictionary<string, int>
                 {
-                    // Create a new series
-                    System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
-                    series.ChartType = SeriesChartType.Bar;
-                    series.LegendText = ticketCount.Priority;
+                    { "Low Priority", 1 },
+                    { "Medium Priority", 2 },
+                    { "High Priority", 3 }
+                };
 
-                    // Add the series to the chart
-                    chart1.Series.Add(series);
+                // Group tickets by priority and count them
+                var ticketCountsByPriority = Tickets.GroupBy(t => t.Priority)
+                                                    .Select(g => new { Priority = g.Key, Count = g.Count() })
+                                                    .OrderByDescending(x => priorityMap.ContainsKey(x.Priority) ? priorityMap[x.Priority] : int.MaxValue);
 
-                    // Add a data point for each ticket with its title and priority level
-                    foreach (var ticket in Tickets.Where(t => t.Priority == ticketCount.Priority))
+                // Clear existing series in the chart
+                chart1.Series.Clear();
+
+                // Iterate through each priority and add series if tickets exist
+                foreach (var ticketCount in ticketCountsByPriority)
+                {
+                    // Check if the priority is in the map
+                    if (priorityMap.ContainsKey(ticketCount.Priority))
                     {
-                        // Set data point values
-                        var dataPoint = new DataPoint();
-                        dataPoint.SetValueY(priorityMap[ticket.Priority]);
-                        dataPoint.AxisLabel = ticket.Title;
+                        // Create a new series
+                        System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
+                        series.ChartType = SeriesChartType.Bar;
+                        series.LegendText = ticketCount.Priority;
 
-                        // Add data point to the series
-                        series.Points.Add(dataPoint);
+                        // Add the series to the chart
+                        chart1.Series.Add(series);
+
+                        // Add a data point for each ticket with its title and priority level
+                        foreach (var ticket in Tickets.Where(t => t.Priority == ticketCount.Priority))
+                        {
+                            // Set data point values
+                            var dataPoint = new DataPoint();
+                            dataPoint.SetValueY(priorityMap[ticket.Priority]);
+                            dataPoint.AxisLabel = ticket.Title;
+
+                            // Add data point to the series
+                            series.Points.Add(dataPoint);
+                        }
                     }
                 }
-            }
 
-            // Set chart properties
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                // Set chart properties
+                chart1.ChartAreas[0].AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            }
+            else
+            {
+                // Clear existing series in the chart
+                chart1.Series.Clear();
+
+                // Generate dummy data
+                Random random = new Random();
+                int numberOfDummyDataPoints = 3; // You can adjust this as needed
+                for (int i = 0; i < numberOfDummyDataPoints; i++)
+                {
+                    // Create a dummy series
+                    System.Windows.Forms.DataVisualization.Charting.Series dummySeries = new System.Windows.Forms.DataVisualization.Charting.Series();
+                    dummySeries.ChartType = SeriesChartType.Bar;
+                    dummySeries.LegendText = $"Dummy Priority {i}";
+
+                    // Add the dummy series to the chart
+                    chart1.Series.Add(dummySeries);
+
+                    // Generate dummy data points
+                    for (int j = 0; j < 3; j++) // You can adjust the number of data points per series
+                    {
+                        // Set data point values
+                        var dummyDataPoint = new DataPoint();
+                        dummyDataPoint.SetValueY(random.Next(1, 4));
+                        dummyDataPoint.AxisLabel = $"Ticket {j + 1}";
+
+                        // Add data point to the series
+                        dummySeries.Points.Add(dummyDataPoint);
+                    }
+                }
+
+                // Set chart properties
+                chart1.ChartAreas[0].AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            }
         }
 
 
@@ -173,10 +211,33 @@ namespace TaskManagement.MainControls.SubControls
             if (!countsByAssignUserName.Any())
             {
                 // Add an empty series to display an empty pie chart
-                pieChart1.Series.Add(new PieSeries
+                pieChart1.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 10 },
+                    DataLabels = true
+                });
+
+                pieChart1.Series.Add(
+                new PieSeries
                 {
                     Title = "No Data",
                     Values = new ChartValues<int> { 5 },
+                    DataLabels = true
+                });
+                pieChart1.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 8 },
+                    DataLabels = true
+                });
+                pieChart1.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 3 },
                     DataLabels = true
                 });
             }
@@ -223,10 +284,20 @@ namespace TaskManagement.MainControls.SubControls
             // Set legend location
             cartesianChart1.LegendLocation = LegendLocation.Bottom;
 
-            // Create series for each status
-            AddSeries("Next Up", Tickets);
-            AddSeries("In Progress", Tickets);
-            AddSeries("Completed", Tickets);
+            if (Tickets.Any())
+            {
+                // Create series for each status
+                AddSeries("Next Up", Tickets);
+                AddSeries("In Progress", Tickets);
+                AddSeries("Completed", Tickets);
+            }
+            else
+            {
+                AddDailyDummySeries("No Data");
+                AddDailyDummySeries("Dummy");
+                AddDailyDummySeries("Dummies");
+            }
+            
         }
         private string[] InitializeDaysPerWeek()
         {
@@ -263,6 +334,28 @@ namespace TaskManagement.MainControls.SubControls
                              .Select(i => tickets.Count(t => t.TicketStatus == status && t.DateCreated.Date == DateTime.Now.AddDays(-i).Date));
         }
 
+        private void AddDailyDummySeries(string status)
+        {
+            int[] dummyData;
+
+            if (status == "No Data")
+                dummyData = new int[] { 7, 10, 2, 11, 4, 7, 3 };
+            else if (status == "Dummy")
+                dummyData = new int[] { 10, 2, 1, 5, 3, 2, 8 };
+            else if (status == "Dummies")
+                dummyData = new int[] { 5, 6, 0, 5, 4, 10, 5 };
+            else
+                dummyData = new int[0]; // Default case (empty array)
+
+            var series = new LineSeries
+            {
+                Title = "No Data",
+                Values = new ChartValues<int>(dummyData)
+            };
+
+            cartesianChart1.Series.Add(series);
+        }
+
         #endregion
 
         #region Division Carteisan
@@ -289,11 +382,19 @@ namespace TaskManagement.MainControls.SubControls
             // Set legend location
             cartesianChart2.LegendLocation = LegendLocation.Bottom;
 
-
-            // Create series for each division
-            foreach (var divisionGroup in groupByDivision)
+            if (Tickets.Any())
             {
-                AddDivisionSeries(divisionGroup.Key, divisionGroup);
+                // Create series for each division
+                foreach (var divisionGroup in groupByDivision)
+                {
+                    AddDivisionSeries(divisionGroup.Key, divisionGroup);
+                }
+            }
+            else
+            {
+                AddDummySeries("No Data");
+                AddDummySeries("Dummy");
+                AddDummySeries("Dummies");
             }
         }
 
@@ -314,6 +415,28 @@ namespace TaskManagement.MainControls.SubControls
         {
             return Enumerable.Range(0, XAxisLabels.Length)
                              .Select(i => tickets.Count(t => t.Division == division && t.DateCreated.Date == DateTime.Now.AddDays(-i).Date));
+        }
+
+        private void AddDummySeries(string status)
+        {
+            int[] dummyData;
+
+            if (status == "No Data")
+                dummyData = new int[] { 7, 10, 2, 11, 4, 7, 3 };
+            else if (status == "Dummy")
+                dummyData = new int[] { 10, 2, 1, 5, 3, 2, 8 };
+            else if (status == "Dummies")
+                dummyData = new int[] { 5, 6, 0, 5, 4, 10, 5 };
+            else
+                dummyData = new int[0]; // Default case (empty array)
+
+            var series = new LineSeries
+            {
+                Title = "No Data",
+                Values = new ChartValues<int>(dummyData)
+            };
+
+            cartesianChart2.Series.Add(series);
         }
 
 

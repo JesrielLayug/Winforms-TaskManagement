@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FLPCompleted = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaShadowPanel9 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaShadowPanel12 = new Guna.UI.WinForms.GunaShadowPanel();
             this.CompletedCount = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.FLPInProgress = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPNextUp = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaShadowPanel7 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaShadowPanel11 = new Guna.UI.WinForms.GunaShadowPanel();
             this.NextUpCount = new System.Windows.Forms.Label();
@@ -43,21 +40,22 @@
             this.gunaShadowPanel6 = new Guna.UI.WinForms.GunaShadowPanel();
             this.InProgressCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.NextUpContainer = new System.Windows.Forms.Panel();
+            this.FLPNextUp = new System.Windows.Forms.FlowLayoutPanel();
+            this.InProgressContainer = new System.Windows.Forms.Panel();
+            this.FLPInProgress = new System.Windows.Forms.FlowLayoutPanel();
+            this.CompletedContainer = new System.Windows.Forms.Panel();
+            this.FLPCompleted = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaShadowPanel9.SuspendLayout();
             this.gunaShadowPanel12.SuspendLayout();
             this.gunaShadowPanel7.SuspendLayout();
             this.gunaShadowPanel11.SuspendLayout();
             this.gunaShadowPanel5.SuspendLayout();
             this.gunaShadowPanel6.SuspendLayout();
+            this.NextUpContainer.SuspendLayout();
+            this.InProgressContainer.SuspendLayout();
+            this.CompletedContainer.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // FLPCompleted
-            // 
-            this.FLPCompleted.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPCompleted.Location = new System.Drawing.Point(791, 54);
-            this.FLPCompleted.Name = "FLPCompleted";
-            this.FLPCompleted.Size = new System.Drawing.Size(355, 525);
-            this.FLPCompleted.TabIndex = 17;
             // 
             // gunaShadowPanel9
             // 
@@ -106,22 +104,6 @@
             this.label15.Size = new System.Drawing.Size(70, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "Completed";
-            // 
-            // FLPInProgress
-            // 
-            this.FLPInProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPInProgress.Location = new System.Drawing.Point(396, 54);
-            this.FLPInProgress.Name = "FLPInProgress";
-            this.FLPInProgress.Size = new System.Drawing.Size(355, 525);
-            this.FLPInProgress.TabIndex = 13;
-            // 
-            // FLPNextUp
-            // 
-            this.FLPNextUp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPNextUp.Location = new System.Drawing.Point(3, 54);
-            this.FLPNextUp.Name = "FLPNextUp";
-            this.FLPNextUp.Size = new System.Drawing.Size(355, 525);
-            this.FLPNextUp.TabIndex = 15;
             // 
             // gunaShadowPanel7
             // 
@@ -220,15 +202,63 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "In Progress";
             // 
+            // NextUpContainer
+            // 
+            this.NextUpContainer.Controls.Add(this.FLPNextUp);
+            this.NextUpContainer.Location = new System.Drawing.Point(3, 54);
+            this.NextUpContainer.Name = "NextUpContainer";
+            this.NextUpContainer.Size = new System.Drawing.Size(355, 520);
+            this.NextUpContainer.TabIndex = 13;
+            // 
+            // FLPNextUp
+            // 
+            this.FLPNextUp.AutoScroll = true;
+            this.FLPNextUp.Location = new System.Drawing.Point(0, 1);
+            this.FLPNextUp.Name = "FLPNextUp";
+            this.FLPNextUp.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.FLPNextUp.Size = new System.Drawing.Size(375, 507);
+            this.FLPNextUp.TabIndex = 9;
+            // 
+            // InProgressContainer
+            // 
+            this.InProgressContainer.Controls.Add(this.FLPInProgress);
+            this.InProgressContainer.Location = new System.Drawing.Point(396, 52);
+            this.InProgressContainer.Name = "InProgressContainer";
+            this.InProgressContainer.Size = new System.Drawing.Size(358, 520);
+            this.InProgressContainer.TabIndex = 14;
+            // 
+            // FLPInProgress
+            // 
+            this.FLPInProgress.Location = new System.Drawing.Point(1, 0);
+            this.FLPInProgress.Name = "FLPInProgress";
+            this.FLPInProgress.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.FLPInProgress.Size = new System.Drawing.Size(388, 508);
+            this.FLPInProgress.TabIndex = 7;
+            // 
+            // CompletedContainer
+            // 
+            this.CompletedContainer.Controls.Add(this.FLPCompleted);
+            this.CompletedContainer.Location = new System.Drawing.Point(791, 52);
+            this.CompletedContainer.Name = "CompletedContainer";
+            this.CompletedContainer.Size = new System.Drawing.Size(358, 520);
+            this.CompletedContainer.TabIndex = 17;
+            // 
+            // FLPCompleted
+            // 
+            this.FLPCompleted.Location = new System.Drawing.Point(1, 1);
+            this.FLPCompleted.Name = "FLPCompleted";
+            this.FLPCompleted.Size = new System.Drawing.Size(382, 507);
+            this.FLPCompleted.TabIndex = 11;
+            // 
             // EmployeeTicketSubControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.FLPCompleted);
+            this.Controls.Add(this.CompletedContainer);
+            this.Controls.Add(this.InProgressContainer);
+            this.Controls.Add(this.NextUpContainer);
             this.Controls.Add(this.gunaShadowPanel9);
-            this.Controls.Add(this.FLPInProgress);
-            this.Controls.Add(this.FLPNextUp);
             this.Controls.Add(this.gunaShadowPanel7);
             this.Controls.Add(this.gunaShadowPanel5);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,19 +274,18 @@
             this.gunaShadowPanel5.ResumeLayout(false);
             this.gunaShadowPanel5.PerformLayout();
             this.gunaShadowPanel6.ResumeLayout(false);
+            this.NextUpContainer.ResumeLayout(false);
+            this.InProgressContainer.ResumeLayout(false);
+            this.CompletedContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel FLPCompleted;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel9;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel12;
         private System.Windows.Forms.Label CompletedCount;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.FlowLayoutPanel FLPInProgress;
-        private System.Windows.Forms.FlowLayoutPanel FLPNextUp;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel7;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel11;
         private System.Windows.Forms.Label NextUpCount;
@@ -265,5 +294,11 @@
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel6;
         private System.Windows.Forms.Label InProgressCount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel NextUpContainer;
+        private System.Windows.Forms.FlowLayoutPanel FLPNextUp;
+        private System.Windows.Forms.Panel InProgressContainer;
+        private System.Windows.Forms.FlowLayoutPanel FLPInProgress;
+        private System.Windows.Forms.Panel CompletedContainer;
+        private System.Windows.Forms.FlowLayoutPanel FLPCompleted;
     }
 }

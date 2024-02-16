@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
 
 namespace TaskManagement.Views
@@ -36,29 +37,45 @@ namespace TaskManagement.Views
 
         private async void BTNLogin_Click(object sender, EventArgs e)
         {
-            var response = await authenticationService.Login(TBEmail.Text, TBPassword.Text);
 
-            if(response.IsWrongEmail)
-                MessageBox.Show(response.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(response.IsWrongPassword)
-                MessageBox.Show(response.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            if (CheckAllFields())
             {
-                this.Hide();
-                this.ShowInTaskbar = false;
+                var response = await authenticationService.Login(TBEmail.Text, TBPassword.Text);
 
-
-                if (response.Role == "Admin")
-                {
-                    MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
-                    mainView.Show();
-                }
+                if (response.IsWrongEmail)
+                    MessageBox.Show(response.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (response.IsWrongPassword)
+                    MessageBox.Show(response.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (!response.IsAuthorized)
+                    MessageBox.Show(response.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
-                    mainView.Show();
+                    this.Hide();
+                    this.ShowInTaskbar = false;
+
+
+                    if (response.Role == "Admin")
+                    {
+                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
+                        mainView.Show();
+                    }
+                    else
+                    {
+                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
+                        mainView.Show();
+                    }
                 }
             }
+            else
+                MessageBox.Show("Please fill all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private bool CheckAllFields()
+        {
+            if (!string.IsNullOrEmpty(TBEmail.Text) && !string.IsNullOrEmpty(TBPassword.Text))
+                return true;
+            return false;
         }
 
         private void TogglePasswordVisibility(GunaTextBox textBox, GunaCheckBox checkBox)

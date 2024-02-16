@@ -30,45 +30,52 @@ namespace TaskManagement.MainControls.SubControls
 
         private async void BTNSubmit_Click(object sender, EventArgs e)
         {
-            if (Employee == null)
+            if (CheckAllFields())
             {
-                var response = await userService.Add(new UserEditor
+                if (Employee == null)
                 {
-                    Role = "Employee",
-                    Gender = CBGender.Text,
-                    FullName = $"{TBFirstname.Text} {TBLastname.Text}",
-                    Position = CBPosition.Text,
-                    Email = TBEmail.Text,
-                    Password = TBPassword.Text,
-                });
+                    var response = await userService.Add(new UserEditor
+                    {
+                        Role = "Employee",
+                        Gender = CBGender.Text,
+                        FullName = $"{TBFirstname.Text} {TBLastname.Text}",
+                        Position = CBPosition.Text,
+                        Email = TBEmail.Text,
+                        Password = TBPassword.Text,
+                        Authorization = CBAuthorization.Text
+                    });
 
-                if (response.IsSuccess)
+                    if (response.IsSuccess)
+                    {
+                        MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        InitializeDataGridView();
+                    }
+                }
+                else
                 {
-                    MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InitializeDataGridView();
+                    var userTobeUpdate = new User
+                    {
+                        Role = "Employee",
+                        Gender = CBGender.Text,
+                        FullName = $"{TBFirstname.Text} {TBLastname.Text}",
+                        Position = CBPosition.Text,
+                        Email = TBEmail.Text,
+                        Password = TBPassword.Text,
+                        Authorization = CBAuthorization.Text
+                    };
+
+                    var response = await userService.Update(userTobeUpdate, Employee.FullName);
+                    if (response.IsSuccess)
+                    {
+                        MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        InitializeDataGridView();
+                    }
                 }
             }
             else
-            {
-                var userTobeUpdate = new User
-                {
-                    Role = "Employee",
-                    Gender = CBGender.Text,
-                    FullName = $"{TBFirstname.Text} {TBLastname.Text}",
-                    Position = CBPosition.Text,
-                    Email = TBEmail.Text,
-                    Password = TBPassword.Text,
-                };
-
-                var response = await userService.Update(userTobeUpdate, Employee.FullName);
-                if (response.IsSuccess)
-                {
-                    MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InitializeDataGridView();
-                }
-            }
-
+                MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
         private async void InitializeDataGridView()
         {
             List<UserEditor> userEditors = new List<UserEditor>();
@@ -84,6 +91,7 @@ namespace TaskManagement.MainControls.SubControls
                     Position = user.Position,
                     Email = user.Email,
                     Password = user.Password,
+                    Authorization = user.Authorization,
                 });
             }
 
@@ -107,6 +115,7 @@ namespace TaskManagement.MainControls.SubControls
                 CBPosition.SelectedItem = user.Position;
                 TBEmail.Text = user.Email;
                 TBPassword.Text = user.Password;
+                CBAuthorization.SelectedItem = user.Authorization;
             }
         }
 
@@ -148,7 +157,7 @@ namespace TaskManagement.MainControls.SubControls
             }
         }
 
-        public void ClearAllFields()
+        private void ClearAllFields()
         {
             CBGender.SelectedItem = null;
             TBFirstname.Text = string.Empty;
@@ -156,6 +165,21 @@ namespace TaskManagement.MainControls.SubControls
             CBPosition.SelectedItem = null;
             TBEmail.Text = string.Empty;
             TBPassword.Text = string.Empty;
+            CBAuthorization.SelectedItem = null;
+        }
+
+        private bool CheckAllFields()
+        {
+            if (!string.IsNullOrEmpty(CBAuthorization.Text) &&
+               !string.IsNullOrEmpty(CBGender.Text) &&
+               !string.IsNullOrEmpty(CBPosition.Text) &&
+               !string.IsNullOrEmpty(TBFirstname.Text) &&
+               !string.IsNullOrEmpty(TBLastname.Text) &&
+               !string.IsNullOrEmpty(TBEmail.Text) &&
+               !string.IsNullOrEmpty(TBPassword.Text))
+                return true;
+
+            return false;
         }
     }
 }

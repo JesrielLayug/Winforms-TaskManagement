@@ -92,6 +92,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         {
             await RefreshTickets();
 
+            InitializeDaysPerWeek();
 
             InitializeQuantities();
             InitializeCarteisanChart();
@@ -120,10 +121,26 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             if (!countsByPriority.Any())
             {
                 // Add an empty series to display an empty pie chart
-                pieChart2.Series.Add(new PieSeries
+                pieChart2.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 10 },
+                    DataLabels = true
+                });
+
+                pieChart2.Series.Add(
+                new PieSeries
                 {
                     Title = "No Data",
                     Values = new ChartValues<int> { 5 },
+                    DataLabels = true
+                });
+                pieChart2.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 8 },
                     DataLabels = true
                 });
             }
@@ -165,10 +182,26 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             if (!countsByStatus.Any())
             {
                 // Add an empty series to display an empty pie chart
-                pieChart3.Series.Add(new PieSeries
+                pieChart3.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 10 },
+                    DataLabels = true
+                });
+
+                pieChart3.Series.Add(
+                new PieSeries
                 {
                     Title = "No Data",
                     Values = new ChartValues<int> { 5 },
+                    DataLabels = true
+                });
+                pieChart3.Series.Add(
+                new PieSeries
+                {
+                    Title = "No Data",
+                    Values = new ChartValues<int> { 8 },
                     DataLabels = true
                 });
             }
@@ -201,7 +234,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             cartesianChart3.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Day",
-                Labels = InitializeDaysPerWeek()
+                Labels = XAxisLabels
             });
 
             cartesianChart3.AxisY.Add(new LiveCharts.Wpf.Axis
@@ -220,9 +253,9 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             }
             else
             {
-                AddDummySeries("Next Up");
-                AddDummySeries("In Progress");
-                AddDummySeries("Completed");
+                AddDummySeries("No Data");
+                AddDummySeries("Dummy");
+                AddDummySeries("Dummies");
             }
         }
 
@@ -247,18 +280,18 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         {
             int[] dummyData;
 
-            if (status == "Next Up")
-                dummyData = new int[] { 7, 7, 7, 7, 7, 7, 7 };
-            else if (status == "In Progress")
-                dummyData = new int[] { 10, 10, 10, 10, 10, 10, 10 };
-            else if (status == "Completed")
-                dummyData = new int[] { 5, 5, 5, 5, 5, 5, 5 };
+            if (status == "No Data")
+                dummyData = new int[] { 7, 10, 2, 11, 4, 7, 3 };
+            else if (status == "Dummy")
+                dummyData = new int[] { 10, 2, 1, 5, 3, 2, 8 };
+            else if (status == "Dummies")
+                dummyData = new int[] { 5, 6, 0, 5, 4, 10, 5 };
             else
                 dummyData = new int[0]; // Default case (empty array)
 
             var series = new LineSeries
             {
-                Title = status,
+                Title = "No Data",
                 Values = new ChartValues<int>(dummyData)
             };
 
@@ -274,7 +307,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             cartesianChart4.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Day",
-                Labels = InitializeDaysPerWeek()
+                Labels = XAxisLabels
             });
 
             cartesianChart4.AxisY.Add(new LiveCharts.Wpf.Axis
@@ -293,9 +326,9 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             }
             else
             {
-                AddDummyPrioritySeries("High Priority");
-                AddDummyPrioritySeries("Medium Priority");
-                AddDummyPrioritySeries("Low Priority");
+                AddDummyPrioritySeries("No Data");
+                AddDummyPrioritySeries("Dummy");
+                AddDummyPrioritySeries("Dummies");
             }
         }
 
@@ -320,14 +353,14 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         {
             int[] dummyData;
 
-            if (status == "Low Priority")
-                dummyData = new int[] { 7, 7, 7, 7, 7, 7, 7 };
-            else if (status == "Medium Priority")
-                dummyData = new int[] { 10, 10, 10, 10, 10, 10, 10 };
-            else if (status == "High Priority")
-                dummyData = new int[] { 5, 5, 5, 5, 5, 5, 5 };
+            if (status == "No Data")
+                dummyData = new int[] { 7, 10, 2, 11, 4, 7, 3 };
+            else if (status == "Dummy")
+                dummyData = new int[] { 10, 2, 1, 5, 3, 2, 8 };
+            else if (status == "Dummies")
+                dummyData = new int[] { 5, 6, 0, 5, 4, 10, 5 };
             else
-                dummyData = new int[0]; // Default case (empty array)
+                dummyData = new int[0]; // Default case (empty array) // Default case (empty array)
 
             var series = new LineSeries
             {

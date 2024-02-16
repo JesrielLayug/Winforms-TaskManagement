@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.employeeSubRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainContainer = new System.Windows.Forms.Panel();
             this.ContentContainer = new System.Windows.Forms.Panel();
             this.BTNDelete = new Guna.UI.WinForms.GunaButton();
@@ -69,6 +69,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
             this.DGVRequests = new Guna.UI.WinForms.GunaDataGridView();
+            this.employeeSubRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +77,6 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).BeginInit();
             this.MainContainer.SuspendLayout();
             this.ContentContainer.SuspendLayout();
             this.TicketDetailsContainer.SuspendLayout();
@@ -91,6 +91,7 @@
             this.gunaShadowPanel4.SuspendLayout();
             this.Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,10 +114,6 @@
             this.label2.Size = new System.Drawing.Size(244, 36);
             this.label2.TabIndex = 0;
             this.label2.Text = "Pending Requests";
-            // 
-            // employeeSubRequestBindingSource
-            // 
-            this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicketInfo);
             // 
             // MainContainer
             // 
@@ -526,9 +523,9 @@
             this.Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Container.Controls.Add(this.DGVRequests);
             this.Container.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Container.Location = new System.Drawing.Point(31, 35);
+            this.Container.Location = new System.Drawing.Point(31, 36);
             this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(781, 542);
+            this.Container.Size = new System.Drawing.Size(781, 516);
             this.Container.TabIndex = 23;
             // 
             // DGVRequests
@@ -564,14 +561,14 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.dateRequestCreatedDataGridViewTextBoxColumn});
             this.DGVRequests.DataSource = this.employeeSubRequestBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGVRequests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVRequests.EnableHeadersVisualStyles = false;
             this.DGVRequests.GridColor = System.Drawing.Color.White;
@@ -579,14 +576,14 @@
             this.DGVRequests.Name = "DGVRequests";
             this.DGVRequests.ReadOnly = true;
             this.DGVRequests.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVRequests.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVRequests.RowTemplate.Height = 40;
             this.DGVRequests.RowTemplate.ReadOnly = true;
             this.DGVRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVRequests.Size = new System.Drawing.Size(779, 540);
+            this.DGVRequests.Size = new System.Drawing.Size(779, 514);
             this.DGVRequests.TabIndex = 2;
             this.DGVRequests.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DGVRequests.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -611,6 +608,10 @@
             this.DGVRequests.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.DGVRequests.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // employeeSubRequestBindingSource
+            // 
+            this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicketInfo);
+            // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
@@ -621,6 +622,8 @@
             // assignNameDataGridViewTextBoxColumn
             // 
             this.assignNameDataGridViewTextBoxColumn.DataPropertyName = "AssignName";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.assignNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.assignNameDataGridViewTextBoxColumn.HeaderText = "Assignee Name";
             this.assignNameDataGridViewTextBoxColumn.Name = "assignNameDataGridViewTextBoxColumn";
             this.assignNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -665,7 +668,6 @@
             this.Size = new System.Drawing.Size(1202, 681);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).EndInit();
             this.MainContainer.ResumeLayout(false);
             this.ContentContainer.ResumeLayout(false);
             this.TicketDetailsContainer.ResumeLayout(false);
@@ -681,6 +683,7 @@
             this.gunaShadowPanel4.ResumeLayout(false);
             this.Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVRequests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,13 +724,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel Container;
         private Guna.UI.WinForms.GunaDataGridView DGVRequests;
+        private Guna.UI.WinForms.GunaButton BTNUpdate;
+        private Guna.UI.WinForms.GunaButton BTNDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn assignNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRequestCreatedDataGridViewTextBoxColumn;
-        private Guna.UI.WinForms.GunaButton BTNUpdate;
-        private Guna.UI.WinForms.GunaButton BTNDelete;
     }
 }

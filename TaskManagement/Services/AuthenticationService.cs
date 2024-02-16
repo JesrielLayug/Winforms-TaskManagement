@@ -25,17 +25,48 @@ namespace TaskManagement.Services
             var existingUser = await userRepository.GetByEmail(email);
             if(existingUser != null)
             {
-                if(existingUser.Password == password)
+                if(existingUser.Role == "Admin")
                 {
-
-                    settingsProvider.SaveUserToSettings(existingUser);
-
-                    return new Response
+                    if (existingUser.Password == password)
                     {
-                        IsSuccess = true,
-                        Message = "Successfully login.",
-                        Role = existingUser.Role
-                    };
+
+                        settingsProvider.SaveUserToSettings(existingUser);
+
+                        return new Response
+                        {
+                            IsAuthorized = true,
+                            IsSuccess = true,
+                            Message = "Successfully login.",
+                            Role = existingUser.Role
+                        };
+                    }
+                }
+                else
+                {
+                    if (existingUser.Authorization == "Allowed")
+                    {
+                        if (existingUser.Password == password)
+                        {
+
+                            settingsProvider.SaveUserToSettings(existingUser);
+
+                            return new Response
+                            {
+                                IsAuthorized = true,
+                                IsSuccess = true,
+                                Message = "Successfully login.",
+                                Role = existingUser.Role
+                            };
+                        }
+                    }
+                    else
+                    {
+                        return new Response
+                        {
+                            IsAuthorized = false,
+                            Message = "Sorry you're account was blocked."
+                        };
+                    }
                 }
                 return new Response
                 {

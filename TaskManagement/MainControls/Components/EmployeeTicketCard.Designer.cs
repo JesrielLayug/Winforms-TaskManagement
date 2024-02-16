@@ -53,7 +53,7 @@
             this.gunaShadowPanel1.Radius = 3;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Gainsboro;
             this.gunaShadowPanel1.ShadowShift = 0;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(357, 190);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(350, 190);
             this.gunaShadowPanel1.TabIndex = 8;
             // 
             // BTNDate
@@ -132,7 +132,7 @@
             this.BTNView.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BTNView.ImageOffsetX = 5;
             this.BTNView.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNView.Location = new System.Drawing.Point(279, 19);
+            this.BTNView.Location = new System.Drawing.Point(267, 19);
             this.BTNView.Name = "BTNView";
             this.BTNView.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
             this.BTNView.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -175,7 +175,7 @@
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeTicketCard";
-            this.Size = new System.Drawing.Size(357, 190);
+            this.Size = new System.Drawing.Size(350, 190);
             this.gunaShadowPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

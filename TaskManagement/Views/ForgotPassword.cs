@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
 
 namespace TaskManagement.Views
@@ -27,21 +28,36 @@ namespace TaskManagement.Views
             textBox.PasswordChar = checkBox.Checked ? '\0' : '●';
         }
 
+        private bool CheckAllFields()
+        {
+            if(!string.IsNullOrEmpty(TBEmail.Text) && !string.IsNullOrEmpty(TBNewPassword.Text)) 
+                return true;
+
+            return false;
+        }
+
         private async void BTNSubmit_Click(object sender, EventArgs e)
         {
-            var response = await userService.ChangePassword(TBEmail.Text, TBNewPassword.Text);
-            if (response.IsSuccess)
+
+            if (CheckAllFields())
             {
-                var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if(dialog == DialogResult.OK)
-                    this.Close();
+                var response = await userService.ChangePassword(TBEmail.Text, TBNewPassword.Text);
+                if (response.IsSuccess)
+                {
+                    var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialog == DialogResult.OK)
+                        this.Close();
+                }
+                else
+                {
+                    var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialog == DialogResult.OK)
+                        this.Close();
+                }
             }
             else
-            {
-                var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dialog == DialogResult.OK)
-                    this.Close();
-            }
+
+                MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void CBShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -50,7 +50,6 @@
             this.gunaShadowPanel1.Controls.Add(this.gunaShadowPanel4);
             this.gunaShadowPanel1.Controls.Add(this.LBDescription);
             this.gunaShadowPanel1.Controls.Add(this.LBTitle);
-            this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaShadowPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
@@ -201,9 +200,9 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.gunaShadowPanel1);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.Name = "AdminTicketCard";
-            this.Size = new System.Drawing.Size(357, 190);
+            this.Size = new System.Drawing.Size(350, 190);
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel4.ResumeLayout(false);
             this.ResumeLayout(false);

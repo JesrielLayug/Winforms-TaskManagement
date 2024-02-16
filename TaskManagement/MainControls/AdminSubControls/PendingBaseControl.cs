@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 using TaskManagement.UserControls;
 using TaskManagement.Utilities;
 
