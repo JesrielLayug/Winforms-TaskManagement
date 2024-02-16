@@ -384,7 +384,7 @@
             this.CBCreator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCreator.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CBCreator.FocusedColor = System.Drawing.Color.Empty;
-            this.CBCreator.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBCreator.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCreator.ForeColor = System.Drawing.Color.Black;
             this.CBCreator.FormattingEnabled = true;
             this.CBCreator.ItemHeight = 27;

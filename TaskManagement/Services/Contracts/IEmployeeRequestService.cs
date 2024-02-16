@@ -12,6 +12,7 @@ namespace TaskManagement.Services.Contracts
         Task<Response> Add(EmployeeTicketInfo request);
         Task<Response> Update(EmployeeTicketInfo request);
         Task<Response> Delete(EmployeeTicketInfo request);
+        Task<IEnumerable<EmployeeTicketInfo>> GetAllUserRequest();
         Task<IEnumerable<EmployeeTicketInfo>> GetAll();
     }
 }

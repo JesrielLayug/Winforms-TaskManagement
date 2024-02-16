@@ -68,15 +68,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
             this.DGVRequests = new Guna.UI.WinForms.GunaDataGridView();
+            this.employeeTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.requestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requestorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.MainContainer.SuspendLayout();
             this.ContentContainer.SuspendLayout();
@@ -560,7 +559,6 @@
             this.divisionDataGridViewTextBoxColumn,
             this.ticketStatusDataGridViewTextBoxColumn,
             this.dueDateDataGridViewTextBoxColumn,
-            this.requestDataGridViewTextBoxColumn,
             this.requestorNameDataGridViewTextBoxColumn,
             this.dateRequestCreatedDataGridViewTextBoxColumn});
             this.DGVRequests.DataSource = this.employeeTicketBindingSource;
@@ -612,6 +610,10 @@
             this.DGVRequests.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVRequests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVRequests_CellContentClick);
             // 
+            // employeeTicketBindingSource
+            // 
+            this.employeeTicketBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicket);
+            // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
@@ -647,13 +649,6 @@
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
             this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // requestDataGridViewTextBoxColumn
-            // 
-            this.requestDataGridViewTextBoxColumn.DataPropertyName = "Request";
-            this.requestDataGridViewTextBoxColumn.HeaderText = "Request";
-            this.requestDataGridViewTextBoxColumn.Name = "requestDataGridViewTextBoxColumn";
-            this.requestDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // requestorNameDataGridViewTextBoxColumn
             // 
             this.requestorNameDataGridViewTextBoxColumn.DataPropertyName = "RequestorName";
@@ -667,10 +662,6 @@
             this.dateRequestCreatedDataGridViewTextBoxColumn.HeaderText = "Request Made";
             this.dateRequestCreatedDataGridViewTextBoxColumn.Name = "dateRequestCreatedDataGridViewTextBoxColumn";
             this.dateRequestCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeTicketBindingSource
-            // 
-            this.employeeTicketBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicket);
             // 
             // PendingBaseControl
             // 
@@ -742,14 +733,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel Container;
         private Guna.UI.WinForms.GunaDataGridView DGVRequests;
+        private System.Windows.Forms.BindingSource employeeTicketBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn requestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn requestorNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRequestCreatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeTicketBindingSource;
     }
 }

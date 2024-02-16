@@ -67,7 +67,7 @@ namespace TaskManagement.Services
             }
         }
 
-        public async Task<IEnumerable<EmployeeTicketInfo>> GetAll()
+        public async Task<IEnumerable<EmployeeTicketInfo>> GetAllUserRequest()
         {
             try
             {
@@ -75,7 +75,7 @@ namespace TaskManagement.Services
 
                 var currentUserId = settingsProvider.GetCurrentUserId();
 
-                var domainRequests = await employeeRequestRepository.GetAll(currentUserId);
+                var domainRequests = await employeeRequestRepository.GetAllUserRequest(currentUserId);
 
                 foreach(var item in domainRequests)
                 {
@@ -92,6 +92,7 @@ namespace TaskManagement.Services
                         DueDate = item.DueDate,
                         Description = item.Description,
                         IsApproved = item.IsApproved,
+                        IsCancelled = item.IsCancelled,
                         DateRequestCreated = item.DateRequestCreated.ToString("MMM d"),
                         RequestorName = item.RequestorName,
                     });
@@ -121,6 +122,8 @@ namespace TaskManagement.Services
                     existingRequest.StartDate = request.StartDate;
                     existingRequest.DueDate = request.DueDate;
                     existingRequest.Description = request.Description;
+                    existingRequest.IsApproved = request.IsApproved;
+                    existingRequest.IsCancelled = request.IsCancelled;
 
                     await employeeRequestRepository.Update(existingRequest, request.Id);
                     return new Response
@@ -153,6 +156,39 @@ namespace TaskManagement.Services
                 };
             }
             catch { throw; }
+        }
+
+        public async Task<IEnumerable<EmployeeTicketInfo>> GetAll()
+        {
+            try
+            {
+                var tickets = await employeeRequestRepository.GetAll();
+                var ticketInfos = new List<EmployeeTicketInfo>();
+
+                foreach (var ticket in tickets)
+                {
+                    ticketInfos.Add(new EmployeeTicketInfo
+                    {
+                        Id = ticket.Id,
+                        TicketId = ticket.TicketId,
+                        Title = ticket.Title,
+                        AssignName = ticket.AssignName,
+                        Priority = ticket.Priority,
+                        Division = ticket.Division,
+                        TicketStatus = ticket.TicketStatus,
+                        StartDate = ticket.StartDate,
+                        DueDate = ticket.DueDate,
+                        Description = ticket.Description,
+                        IsApproved = ticket.IsApproved,
+                        IsCancelled = ticket.IsCancelled,
+                        RequestorName = ticket.RequestorName,
+                        DateRequestCreated = ticket.DateRequestCreated.ToString("MMM d")
+                    });
+                }
+
+                return ticketInfos;
+            }
+            catch { throw; };
         }
     }
 }

@@ -41,7 +41,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private async void InitializeDataGridView()
         {
             MainContainer.Controls.Clear();
-            Tickets = await requestService.GetAll();
+            Tickets = await requestService.GetAllUserRequest();
 
             if(Tickets.Count() > 0 )
             {

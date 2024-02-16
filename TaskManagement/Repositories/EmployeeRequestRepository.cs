@@ -35,9 +35,14 @@ namespace TaskManagement.Repositories
             await RequestCollection.DeleteOneAsync(x => x.Id == id);
         }
 
-        public async Task<IEnumerable<EmployeeTicket>> GetAll(string employeeId)
+        public async Task<IEnumerable<EmployeeTicket>> GetAllUserRequest(string employeeId)
         {
-            return await RequestCollection.Find(x => x.RequestorId == employeeId && x.IsCancelled == false).ToListAsync();
+            return await RequestCollection.Find(x => x.RequestorId == employeeId && x.IsCancelled == false && x.IsApproved == false).ToListAsync();
+        }
+
+        public async Task<IEnumerable<EmployeeTicket>> GetAll()
+        {
+            return await RequestCollection.Find(x => x.IsCancelled == false && x.IsApproved == false).ToListAsync();
         }
 
         public async Task<EmployeeTicket> GetById(string id)

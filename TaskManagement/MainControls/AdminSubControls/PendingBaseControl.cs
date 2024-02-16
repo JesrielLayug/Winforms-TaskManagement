@@ -21,7 +21,7 @@ namespace TaskManagement.MainControls.SubControls
         private readonly IEmployeeRequestService requestService;
 
         IEnumerable<EmployeeTicketInfo> Tickets;
-        EmployeeTicketInfo Ticket;
+        EmployeeTicketInfo Ticket = new EmployeeTicketInfo();
 
         public PendingBaseControl(
             IUserService userService,
@@ -117,7 +117,7 @@ namespace TaskManagement.MainControls.SubControls
             if (existingApprovedTicket == null)
             {
                 var response = await ticketService.Add(newTicket);
-                if(response.IsSuccess)
+                if (response.IsSuccess)
                 {
                     await requestService.Delete(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -128,15 +128,26 @@ namespace TaskManagement.MainControls.SubControls
             }
             else
             {
-                await ticketService.Update(newTicket, Ticket.Id);
-                MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InitializeDataGridView();
+                var response = await ticketService.Update(newTicket, Ticket.TicketId);
+                if (response.IsSuccess)
+                {
+                    Ticket.IsApproved = true;
+                    await requestService.Update(Ticket);
+                    MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    InitializeDataGridView();
+                }
             }
         }
 
-        private void BTNCancel_Click(object sender, EventArgs e)
+        private async void BTNCancel_Click(object sender, EventArgs e)
         {
-
+            Ticket.IsCancelled = true;
+            var response = await requestService.Update(Ticket);
+            if(response.IsSuccess)
+            {
+                MessageBox.Show("Ticket is cancelled.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitializeDataGridView();
+            }
         }
     }
 }

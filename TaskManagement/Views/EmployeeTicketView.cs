@@ -67,5 +67,10 @@ namespace TaskManagement.Views
             else
                 MessageBox.Show("Unable to send request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void BTNCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

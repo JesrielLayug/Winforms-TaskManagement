@@ -48,7 +48,7 @@ namespace TaskManagement.UserControls
             {
                 new DashboardBaseControl(userService, ticketService),
                 new TicketBaseControl(userService, ticketService, requestService),
-                new PendingBaseControl(),
+                new PendingBaseControl(userService, ticketService, requestService),
                 new AccountBaseControl(userService),
                 new SettingsBaseControl()
             };
@@ -103,6 +103,7 @@ namespace TaskManagement.UserControls
 
         private void BTNTicket_Click(object sender, EventArgs e)
         {
+            InitializeMainControl();
             ButtonColorChanger.SelectedButton(BTNTicket);
             GetUserControlChanger.Display(1);
         }
@@ -116,12 +117,14 @@ namespace TaskManagement.UserControls
 
         private void BTNPending_Click(object sender, EventArgs e)
         {
+            InitializeMainControl();
             ButtonColorChanger.SelectedButton(BTNPending);
             GetUserControlChanger.Display(2);
         }
 
         private void BTNAccount_Click(object sender, EventArgs e)
         {
+            InitializeMainControl();
             ButtonColorChanger.SelectedButton(BTNAccount);
             GetUserControlChanger.Display(3);
         }

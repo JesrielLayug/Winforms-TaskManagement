@@ -373,6 +373,7 @@
             this.BTNCancel.TabIndex = 64;
             this.BTNCancel.Text = "Cancel";
             this.BTNCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNCancel.Click += new System.EventHandler(this.BTNCancel_Click);
             // 
             // EmployeeTicketView
             // 
@@ -398,7 +399,7 @@
             this.Controls.Add(this.LBTicketName);
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmployeeTicketView";

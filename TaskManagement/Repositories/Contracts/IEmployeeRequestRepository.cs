@@ -12,7 +12,8 @@ namespace TaskManagement.Repositories.Contracts
         Task Add(EmployeeTicket request);
         Task Update(EmployeeTicket request, string Id);
         Task Delete(string id);
-        Task<IEnumerable<EmployeeTicket>> GetAll(string employeeId);
+        Task<IEnumerable<EmployeeTicket>> GetAllUserRequest(string employeeId);
+        Task<IEnumerable<EmployeeTicket>> GetAll();
         Task<EmployeeTicket> GetById(string id);
     }
 }
