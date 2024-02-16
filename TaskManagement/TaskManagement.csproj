@@ -219,8 +219,8 @@
     <Compile Include="MainControls\EmployeeSubControls\EmployeeTicketSubControl.Designer.cs">
       <DependentUpon>EmployeeTicketSubControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeRequest.cs" />
-    <Compile Include="Models\EmployeeSubRequest.cs" />
+    <Compile Include="Models\EmployeeTicket.cs" />
+    <Compile Include="Models\EmployeeTicketInfo.cs" />
     <Compile Include="Models\TicketSubInfo.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketEditor.cs" />

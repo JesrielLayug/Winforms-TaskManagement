@@ -8,20 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
+using TaskManagement.Services;
 using TaskManagement.Services.Contracts;
 using TaskManagement.UserControls;
+using TaskManagement.Views;
 
 namespace TaskManagement.MainControls.EmployeeSubControls
 {
     public partial class EmployeeRequestControl : UserControl
     {
+        private readonly IUserService userService;
+        private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
         
-        IEnumerable<EmployeeSubRequest> Tickets;
+        IEnumerable<EmployeeTicketInfo> Tickets;
+        EmployeeTicketInfo Ticket;
 
-
-        public EmployeeRequestControl(IEmployeeRequestService requestService)
+        public EmployeeRequestControl(
+            IUserService userService,
+            ITicketService ticketService,
+            IEmployeeRequestService requestService
+            )
         {
+            this.userService = userService;
+            this.ticketService = ticketService;
             this.requestService = requestService;
 
             InitializeComponent();
@@ -41,7 +51,8 @@ namespace TaskManagement.MainControls.EmployeeSubControls
 
                 if (DGVRequests.Rows.Count > 0)
                 {
-                    var Ticket = (EmployeeSubRequest)DGVRequests.Rows[0].DataBoundItem;
+                    Ticket = (EmployeeTicketInfo)DGVRequests.Rows[0].DataBoundItem;
+                    
                     PopulateFields(Ticket);
                 }
             }
@@ -54,7 +65,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
 
         }
 
-        private void PopulateFields(EmployeeSubRequest Ticket)
+        private void PopulateFields(EmployeeTicketInfo Ticket)
         {
             LBTicketName.Text = Ticket.Title;
             LBStatus.Text = Ticket.TicketStatus;
@@ -73,9 +84,9 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             {
                 DataGridViewRow selected = DGVRequests.SelectedRows[0];
 
-                if(selected.DataBoundItem is EmployeeSubRequest)
+                if(selected.DataBoundItem is EmployeeTicketInfo)
                 {
-                    EmployeeSubRequest clickedTicket = (EmployeeSubRequest)selected.DataBoundItem;
+                    EmployeeTicketInfo clickedTicket = (EmployeeTicketInfo)selected.DataBoundItem;
                     PopulateFields (clickedTicket);
 
                     if (!TicketDetailsContainer.Controls.Contains(TicketDetails))
@@ -84,6 +95,24 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                         TicketDetailsContainer.Controls.Add(TicketDetails);
                     }
                 }
+            }
+        }
+
+        private void BTNUpdate_Click(object sender, EventArgs e)
+        {
+            TicketEditorView editor = new TicketEditorView(null, Ticket, userService, ticketService, requestService);
+            editor.TicketRequestUpdated += (s, es) => { InitializeDataGridView(); }; 
+            editor.ShowDialog();
+        }
+
+        private async void BTNDelete_Click(object sender, EventArgs e)
+        {
+            var dialog = MessageBox.Show("Are you sure you wan't to delete this request? This can't be undone.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if(dialog == DialogResult.OK)
+            {
+                var response = await requestService.Delete(Ticket);
+                MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitializeDataGridView();
             }
         }
     }

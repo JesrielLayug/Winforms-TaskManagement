@@ -42,7 +42,7 @@ namespace TaskManagement.Views
 
         private async void BTNSubmit_Click(object sender, EventArgs e)
         {
-            var requestTicket = new EmployeeSubRequest
+            var requestTicket = new EmployeeTicketInfo
             {
                 TicketId = ticket.Id,
                 Title = ticket.Title,

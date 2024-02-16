@@ -26,7 +26,7 @@ namespace TaskManagement.Views
 
         public TicketEditorView(
             TicketInfo Ticket,
-            EmployeeSubRequest Request,
+            EmployeeTicketInfo Request,
             IUserService userService,
             ITicketService taskService,
             IEmployeeRequestService requestService
@@ -50,7 +50,7 @@ namespace TaskManagement.Views
         public event EventHandler TicketRequestUpdated;
 
         public TicketInfo Ticket;
-        public EmployeeSubRequest Request;
+        public EmployeeTicketInfo Request;
         private IEnumerable<User> Users;
 
         private UserSettingsProvider settingsProvider = new UserSettingsProvider();
@@ -86,7 +86,7 @@ namespace TaskManagement.Views
 
         #region Employee Methods
 
-        private async Task RequestAddTicket(EmployeeSubRequest request)
+        private async Task RequestAddTicket(EmployeeTicketInfo request)
         {
             var response = await requestService.Add(request);
             if (response.IsSuccess)
@@ -98,7 +98,7 @@ namespace TaskManagement.Views
             }
         }
 
-        private async Task RequestUpdateTicket(EmployeeSubRequest request)
+        private async Task RequestUpdateTicket(EmployeeTicketInfo request)
         {
             var response = await requestService.Update(request);
             if (response.IsSuccess)
@@ -146,8 +146,9 @@ namespace TaskManagement.Views
 
                 if(currentUserRole == "Employee")
                 {
-                    var ticket = new EmployeeSubRequest
+                    var ticket = new EmployeeTicketInfo
                     {
+                        Id = Request.Id,
                         Title = TBTitle.Text,
                         AssignName = CBAssignTo.Text,
                         Priority = CBPriority.Text,

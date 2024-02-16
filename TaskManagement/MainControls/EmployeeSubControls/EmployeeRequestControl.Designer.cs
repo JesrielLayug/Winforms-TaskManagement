@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.employeeSubRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainContainer = new System.Windows.Forms.Panel();
             this.ContentContainer = new System.Windows.Forms.Panel();
+            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
+            this.BTNUpdate = new Guna.UI.WinForms.GunaButton();
             this.TicketDetailsContainer = new Guna.UI.WinForms.GunaShadowPanel();
             this.TicketDetails = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.ticketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BTNSubmit = new Guna.UI.WinForms.GunaButton();
-            this.BTNDelete = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSubRequestBindingSource)).BeginInit();
             this.MainContainer.SuspendLayout();
@@ -116,7 +116,7 @@
             // 
             // employeeSubRequestBindingSource
             // 
-            this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeSubRequest);
+            this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicketInfo);
             // 
             // MainContainer
             // 
@@ -131,7 +131,7 @@
             // 
             this.ContentContainer.BackColor = System.Drawing.Color.White;
             this.ContentContainer.Controls.Add(this.BTNDelete);
-            this.ContentContainer.Controls.Add(this.BTNSubmit);
+            this.ContentContainer.Controls.Add(this.BTNUpdate);
             this.ContentContainer.Controls.Add(this.TicketDetailsContainer);
             this.ContentContainer.Controls.Add(this.Container);
             this.ContentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -139,6 +139,61 @@
             this.ContentContainer.Name = "ContentContainer";
             this.ContentContainer.Size = new System.Drawing.Size(1202, 622);
             this.ContentContainer.TabIndex = 0;
+            // 
+            // BTNDelete
+            // 
+            this.BTNDelete.AnimationHoverSpeed = 0.07F;
+            this.BTNDelete.AnimationSpeed = 0.03F;
+            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.BaseColor = System.Drawing.Color.White;
+            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.BorderSize = 1;
+            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNDelete.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.Image = null;
+            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNDelete.Location = new System.Drawing.Point(1009, 516);
+            this.BTNDelete.Name = "BTNDelete";
+            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
+            this.BTNDelete.OnHoverImage = null;
+            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNDelete.Radius = 5;
+            this.BTNDelete.Size = new System.Drawing.Size(152, 36);
+            this.BTNDelete.TabIndex = 35;
+            this.BTNDelete.Text = "Delete";
+            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
+            // 
+            // BTNUpdate
+            // 
+            this.BTNUpdate.AnimationHoverSpeed = 0.07F;
+            this.BTNUpdate.AnimationSpeed = 0.03F;
+            this.BTNUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.BTNUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.BTNUpdate.BorderColor = System.Drawing.Color.Black;
+            this.BTNUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNUpdate.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNUpdate.ForeColor = System.Drawing.Color.White;
+            this.BTNUpdate.Image = null;
+            this.BTNUpdate.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNUpdate.Location = new System.Drawing.Point(839, 516);
+            this.BTNUpdate.Name = "BTNUpdate";
+            this.BTNUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.BTNUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNUpdate.OnHoverImage = null;
+            this.BTNUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNUpdate.Radius = 5;
+            this.BTNUpdate.Size = new System.Drawing.Size(155, 36);
+            this.BTNUpdate.TabIndex = 34;
+            this.BTNUpdate.Text = "Update";
+            this.BTNUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 
             // TicketDetailsContainer
             // 
@@ -478,28 +533,28 @@
             // 
             // DGVRequests
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVRequests.AutoGenerateColumns = false;
             this.DGVRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVRequests.BackgroundColor = System.Drawing.Color.White;
             this.DGVRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVRequests.ColumnHeadersHeight = 45;
             this.DGVRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn,
@@ -509,14 +564,14 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.dateRequestCreatedDataGridViewTextBoxColumn});
             this.DGVRequests.DataSource = this.employeeSubRequestBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVRequests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVRequests.EnableHeadersVisualStyles = false;
             this.DGVRequests.GridColor = System.Drawing.Color.White;
@@ -524,9 +579,9 @@
             this.DGVRequests.Name = "DGVRequests";
             this.DGVRequests.ReadOnly = true;
             this.DGVRequests.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVRequests.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVRequests.RowTemplate.Height = 40;
             this.DGVRequests.RowTemplate.ReadOnly = true;
@@ -597,59 +652,6 @@
             this.dateRequestCreatedDataGridViewTextBoxColumn.HeaderText = "Request Created";
             this.dateRequestCreatedDataGridViewTextBoxColumn.Name = "dateRequestCreatedDataGridViewTextBoxColumn";
             this.dateRequestCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // BTNSubmit
-            // 
-            this.BTNSubmit.AnimationHoverSpeed = 0.07F;
-            this.BTNSubmit.AnimationSpeed = 0.03F;
-            this.BTNSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.BTNSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BTNSubmit.BorderColor = System.Drawing.Color.Black;
-            this.BTNSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNSubmit.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNSubmit.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNSubmit.ForeColor = System.Drawing.Color.White;
-            this.BTNSubmit.Image = null;
-            this.BTNSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNSubmit.Location = new System.Drawing.Point(839, 516);
-            this.BTNSubmit.Name = "BTNSubmit";
-            this.BTNSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
-            this.BTNSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNSubmit.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNSubmit.OnHoverImage = null;
-            this.BTNSubmit.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNSubmit.Radius = 5;
-            this.BTNSubmit.Size = new System.Drawing.Size(155, 36);
-            this.BTNSubmit.TabIndex = 34;
-            this.BTNSubmit.Text = "Update";
-            this.BTNSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BTNDelete
-            // 
-            this.BTNDelete.AnimationHoverSpeed = 0.07F;
-            this.BTNDelete.AnimationSpeed = 0.03F;
-            this.BTNDelete.BackColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.BaseColor = System.Drawing.Color.White;
-            this.BTNDelete.BorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.BorderSize = 1;
-            this.BTNDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNDelete.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNDelete.ForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.Image = null;
-            this.BTNDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNDelete.Location = new System.Drawing.Point(1009, 516);
-            this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.BTNDelete.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverForeColor = System.Drawing.Color.Red;
-            this.BTNDelete.OnHoverImage = null;
-            this.BTNDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNDelete.Radius = 5;
-            this.BTNDelete.Size = new System.Drawing.Size(152, 36);
-            this.BTNDelete.TabIndex = 35;
-            this.BTNDelete.Text = "Cancel";
-            this.BTNDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // EmployeeRequestControl
             // 
@@ -725,7 +727,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRequestCreatedDataGridViewTextBoxColumn;
-        private Guna.UI.WinForms.GunaButton BTNSubmit;
+        private Guna.UI.WinForms.GunaButton BTNUpdate;
         private Guna.UI.WinForms.GunaButton BTNDelete;
     }
 }

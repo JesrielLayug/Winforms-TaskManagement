@@ -9,8 +9,9 @@ namespace TaskManagement.Services.Contracts
 {
     public interface IEmployeeRequestService
     {
-        Task<Response> Add(EmployeeSubRequest request);
-        Task<Response> Update(EmployeeSubRequest request);
-        Task<IEnumerable<EmployeeSubRequest>> GetAll();
+        Task<Response> Add(EmployeeTicketInfo request);
+        Task<Response> Update(EmployeeTicketInfo request);
+        Task<Response> Delete(EmployeeTicketInfo request);
+        Task<IEnumerable<EmployeeTicketInfo>> GetAll();
     }
 }

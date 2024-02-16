@@ -14,7 +14,7 @@ namespace TaskManagement.Repositories
     {
         private readonly IMongoClient mongoClient;
         private readonly IDatabaseSetting setting;
-        private readonly IMongoCollection<EmployeeRequest> RequestCollection;
+        private readonly IMongoCollection<EmployeeTicket> RequestCollection;
 
         public EmployeeRequestRepository(IMongoClient mongoClient, IDatabaseSetting setting)
         {
@@ -22,25 +22,30 @@ namespace TaskManagement.Repositories
             this.setting = setting;
 
             var database = mongoClient.GetDatabase("TaskManagement");
-            RequestCollection = database.GetCollection<EmployeeRequest>("Requests");
+            RequestCollection = database.GetCollection<EmployeeTicket>("Requests");
         }
 
-        public async Task Add(EmployeeRequest request)
+        public async Task Add(EmployeeTicket request)
         {
             await RequestCollection.InsertOneAsync(request);
         }
 
-        public async Task<IEnumerable<EmployeeRequest>> GetAll(string employeeId)
+        public async Task Delete(string id)
+        {
+            await RequestCollection.DeleteOneAsync(x => x.Id == id);
+        }
+
+        public async Task<IEnumerable<EmployeeTicket>> GetAll(string employeeId)
         {
             return await RequestCollection.Find(x => x.RequestorId == employeeId && x.IsCancelled == false).ToListAsync();
         }
 
-        public async Task<EmployeeRequest> GetById(string id)
+        public async Task<EmployeeTicket> GetById(string id)
         {
             return await RequestCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task Update(EmployeeRequest request, string Id)
+        public async Task Update(EmployeeTicket request, string Id)
         {
             await RequestCollection.ReplaceOneAsync(x => x.Id == Id, request);
         }

@@ -23,14 +23,14 @@ namespace TaskManagement.Services
             this.employeeRequestRepository = employeeRequestRepository;
         }
 
-        public async Task<Response> Add(EmployeeSubRequest request)
+        public async Task<Response> Add(EmployeeTicketInfo request)
         {
             try
             {
                 var currentUserId = settingsProvider.GetCurrentUserId();
                 var currentUserName = settingsProvider.GetCurrentUserName();
 
-                var newRequest = new EmployeeRequest
+                var newRequest = new EmployeeTicket
                 {
                     TicketId = request.TicketId,
                     Title = request.Title,
@@ -67,11 +67,11 @@ namespace TaskManagement.Services
             }
         }
 
-        public async Task<IEnumerable<EmployeeSubRequest>> GetAll()
+        public async Task<IEnumerable<EmployeeTicketInfo>> GetAll()
         {
             try
             {
-                List<EmployeeSubRequest> requests = new List<EmployeeSubRequest>();
+                List<EmployeeTicketInfo> requests = new List<EmployeeTicketInfo>();
 
                 var currentUserId = settingsProvider.GetCurrentUserId();
 
@@ -79,7 +79,7 @@ namespace TaskManagement.Services
 
                 foreach(var item in domainRequests)
                 {
-                    requests.Add(new EmployeeSubRequest
+                    requests.Add(new EmployeeTicketInfo
                     {
                         Id = item.Id,
                         TicketId = item.TicketId,
@@ -106,7 +106,7 @@ namespace TaskManagement.Services
             }
         }
 
-        public async Task<Response> Update(EmployeeSubRequest request)
+        public async Task<Response> Update(EmployeeTicketInfo request)
         {
             try
             {
@@ -117,7 +117,7 @@ namespace TaskManagement.Services
                     existingRequest.AssignName = request.AssignName;
                     existingRequest.Priority = request.Priority;
                     existingRequest.Division = request.Division;
-                    existingRequest.TicketStatus = request.Division;
+                    existingRequest.TicketStatus = request.TicketStatus;
                     existingRequest.StartDate = request.StartDate;
                     existingRequest.DueDate = request.DueDate;
                     existingRequest.Description = request.Description;
@@ -139,6 +139,20 @@ namespace TaskManagement.Services
             {
                 throw;
             }
+        }
+
+        public async Task<Response> Delete(EmployeeTicketInfo request)
+        {
+            try
+            {
+                await employeeRequestRepository.Delete(request.Id);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successfully Deleted."
+                };
+            }
+            catch { throw; }
         }
     }
 }

@@ -49,7 +49,7 @@ namespace TaskManagement.MainControls
             {
                 new EmployeeDashboardControl(),
                 new EmployeeTicketControl(userService, ticketService, requestService),
-                new EmployeeRequestControl(requestService)
+                new EmployeeRequestControl(userService, ticketService, requestService)
             };
 
             GetUserControlChanger = new UserControlChanger(controls, MainPanel);
