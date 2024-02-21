@@ -41,7 +41,7 @@ namespace TaskManagement.Views
 
         public void InitializeInRoleView()
         {
-            if (role == "Admin")
+            if (role == "Admin" || role == "Super Admin")
             {
                 AdminControl adminControl = new AdminControl(userService, taskService, authenticationService, requestService);
                 adminControl.LogoutClick += (s, ex) => { this.Close(); };

@@ -93,7 +93,7 @@
             this.BTNLogout.FlatAppearance.BorderSize = 0;
             this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
-            this.BTNLogout.Location = new System.Drawing.Point(-1, 235);
+            this.BTNLogout.Location = new System.Drawing.Point(0, 232);
             this.BTNLogout.Name = "BTNLogout";
             this.BTNLogout.Size = new System.Drawing.Size(60, 41);
             this.BTNLogout.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.BTNAccount.FlatAppearance.BorderSize = 0;
             this.BTNAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNAccount.Image = global::TaskManagement.Properties.Resources.account;
-            this.BTNAccount.Location = new System.Drawing.Point(-2, 186);
+            this.BTNAccount.Location = new System.Drawing.Point(-1, 189);
             this.BTNAccount.Name = "BTNAccount";
             this.BTNAccount.Size = new System.Drawing.Size(61, 41);
             this.BTNAccount.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.BTNPending.FlatAppearance.BorderSize = 0;
             this.BTNPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNPending.Image = global::TaskManagement.Properties.Resources.file;
-            this.BTNPending.Location = new System.Drawing.Point(-2, 144);
+            this.BTNPending.Location = new System.Drawing.Point(-3, 144);
             this.BTNPending.Name = "BTNPending";
             this.BTNPending.Size = new System.Drawing.Size(61, 41);
             this.BTNPending.TabIndex = 2;

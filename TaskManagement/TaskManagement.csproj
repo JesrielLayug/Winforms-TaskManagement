@@ -15,17 +15,18 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
+    <PublishUrl>C:\publish\</PublishUrl>
+    <Install>false</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <UpdateUrl>http://localhost/TaskManagement/</UpdateUrl>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -187,6 +188,12 @@
     <Compile Include="Data\DatabaseSetting.cs" />
     <Compile Include="Data\IDatabaseSetting.cs" />
     <Compile Include="Data\ServiceLocator.cs" />
+    <Compile Include="DummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DummyForm.Designer.cs">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainControls\Components\EmployeeTicketCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +248,12 @@
     <Compile Include="MainControls\EmployeeSubControls\EmployeeTicketSubControl.Designer.cs">
       <DependentUpon>EmployeeTicketSubControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainControls\GlobalComponents\LogsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainControls\GlobalComponents\LogsControl.Designer.cs">
+      <DependentUpon>LogsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmployeeTicket.cs" />
     <Compile Include="Models\EmployeeTicketInfo.cs" />
     <Compile Include="Models\TicketSubInfo.cs" />
@@ -250,6 +263,8 @@
     <Compile Include="Models\UserEditor.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserLogs.cs" />
+    <Compile Include="Models\UserLogsEditor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -317,6 +332,18 @@
     <Compile Include="Views\ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterView.Designer.cs">
+      <DependentUpon>RegisterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuperRegisterView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SuperRegisterView.Designer.cs">
+      <DependentUpon>SuperRegisterView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TicketEditorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +374,9 @@
     <Compile Include="Views\AdminTicketView.Designer.cs">
       <DependentUpon>AdminTicketView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DummyForm.resx">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainControls\Components\EmployeeTicketCard.resx">
       <DependentUpon>EmployeeTicketCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +404,9 @@
     <EmbeddedResource Include="MainControls\EmployeeSubControls\EmployeeTicketSubControl.resx">
       <DependentUpon>EmployeeTicketSubControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainControls\GlobalComponents\LogsControl.resx">
+      <DependentUpon>LogsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -399,6 +432,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegisterView.resx">
+      <DependentUpon>RegisterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SuperRegisterView.resx">
+      <DependentUpon>SuperRegisterView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TicketEditorView.resx">
       <DependentUpon>TicketEditorView.cs</DependentUpon>
@@ -442,6 +481,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\logged-white.png" />
+    <None Include="Resources\logged-gray.png" />
+    <None Include="Resources\log-white.png" />
+    <None Include="Resources\log-gray.png" />
+    <None Include="Resources\Sign up-amico.png" />
+    <None Include="Resources\register-white.png" />
+    <None Include="Resources\register-gray.png" />
+    <None Include="Resources\message-white.png" />
     <None Include="Resources\purple-message.png" />
     <None Include="Resources\message-gray.png" />
     <None Include="Resources\message.png" />

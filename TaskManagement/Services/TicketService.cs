@@ -128,7 +128,7 @@ namespace TaskManagement.Services
             try
             {
                 var tickets = await ticketRepository.GetAll();
-                var users = await userRepository.GetAll();
+                var users = await userRepository.GetAllEmployee();
 
                 return (from ticket in tickets
                         join creatorUser in users on ticket.CreatorId equals creatorUser.Id

@@ -54,7 +54,7 @@ namespace TaskManagement.MainControls.SubControls
         private async Task RefreshTickets()
         {
             Tickets = await ticketService.GetAll();
-            Employees = await userService.GetAll();
+            Employees = await userService.GetAllEmployee();
         }
 
         private async void InitializeQuantities()

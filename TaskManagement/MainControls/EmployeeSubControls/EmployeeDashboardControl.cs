@@ -68,7 +68,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private async Task RefreshTickets()
         {
             Tickets = await ticketService.GetByAssignUser();
-            Employees = await userService.GetAll();
+            Employees = await userService.GetAllEmployee();
             EmployeeTickets = await requestService.GetAllApproved();
             EmployeeTicketsRequest = await requestService.GetAllUserRequest();
         }

@@ -156,5 +156,19 @@ namespace TaskManagement.MainControls.SubControls
                 InitializeDataGridView();
             }
         }
+
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = TBSearch.Text.ToLower();
+
+            var filteredUsers = Tickets.Where(ticket =>
+                ticket.Description.ToLower().Contains(searchText) ||
+                ticket.Title.ToLower().Contains(searchText) ||
+                ticket.Division.ToLower().Contains(searchText) ||
+                ticket.Priority.ToLower().Contains(searchText)
+            ).ToList();
+
+            DGVRequests.DataSource = filteredUsers;
+        }
     }
 }

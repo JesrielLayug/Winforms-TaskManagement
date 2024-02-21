@@ -49,7 +49,7 @@ namespace TaskManagement.UserControls
                 new DashboardBaseControl(userService, ticketService),
                 new TicketBaseControl(userService, ticketService, requestService),
                 new PendingBaseControl(userService, ticketService, requestService),
-                new AccountBaseControl(userService),
+                new AccountBaseControl(userService, authenticationService),
             };
 
             GetUserControlChanger = new UserControlChanger( controls, MainPanel );
@@ -63,31 +63,31 @@ namespace TaskManagement.UserControls
             Color newBackColor = Color.FromArgb(64, 123, 255);
             Color newForeColor = Color.FromArgb(64, 123, 255);
 
-            Image defaultDashboard = Image.FromFile("..\\..\\Resources\\dashboard-3.png");
-            Image defaultTask = Image.FromFile("..\\..\\Resources\\Task.png");
-            Image defaultAccount = Image.FromFile("..\\..\\Resources\\account-gray.png");
-            Image defaultTime = Image.FromFile("..\\..\\Resources\\file.png");
-            Image defaultLogout = Image.FromFile("..\\..\\Resources\\door.png");
+            Image defaultDashboard = Properties.Resources.dashboard_3;
+            Image defaultTask = Properties.Resources.task;
+            Image defaultAccount = Properties.Resources.account;
+            Image defaultTime = Properties.Resources.file;
+            Image defaultLogout = Properties.Resources.door;
 
-            Image newDashboard = Image.FromFile("..\\..\\Resources\\dashboard-white.png");
-            Image newTask = Image.FromFile("..\\..\\Resources\\task-white.png");
-            Image newAccount = Image.FromFile("..\\..\\Resources\\account-2-white.png");
-            Image newTime = Image.FromFile("..\\..\\Resources\\file (1).png");
-            Image newLogout = Image.FromFile("..\\..\\Resources\\door-white.png");
+            Image newDashboard = Properties.Resources.dashboard_3_white;
+            Image newTask = Properties.Resources.task_white;
+            Image newAccount = Properties.Resources.account_2_white;
+            Image newTime = Properties.Resources.file__1_;
+            Image newLogout = Properties.Resources.door_white;
 
             List<Image> defaultImages = new List<Image>()
             {
-                defaultDashboard, defaultTask, defaultAccount, defaultTime, defaultLogout
+                defaultDashboard, defaultTask, defaultTime, defaultAccount, defaultLogout
             };
 
             List<Image> newImages = new List<Image>
             {
-                newDashboard, newTask, newAccount, newTime, newLogout
+                newDashboard, newTask, newTime, newAccount, newLogout
             };
 
             List<Button> buttons = new List<Button>()
             {
-                BTNDashboard, BTNTicket, BTNAccount, BTNPending, BTNLogout
+                BTNDashboard, BTNTicket, BTNPending, BTNAccount, BTNLogout
             };
 
             ButtonColorChanger = new ButtonColorChanger(

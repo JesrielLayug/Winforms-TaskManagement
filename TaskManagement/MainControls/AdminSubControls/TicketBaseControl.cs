@@ -64,5 +64,34 @@ namespace TaskManagement.UserControls.AdminSubControls
             }
 
         }
+
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = TBSearch.Text.Trim().ToLower(); 
+
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                List<TicketInfo> filteredTickets = Tickets.Where(ticket =>
+                    ticket.Description.ToLower().Contains(searchText) || 
+                    ticket.Title.ToLower().Contains(searchText) ||
+                    ticket.Division.ToLower().Contains(searchText) ||
+                    ticket.AssignUserName.ToLower().Contains(searchText) || 
+                    ticket.Priority.ToLower().Contains(searchText)
+                ).ToList();
+
+                TicketControl ticketControl = new TicketControl(filteredTickets, userService, ticketService, requestService);
+
+                ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
+                ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };
+
+                ticketControl.Dock = DockStyle.Fill;
+                Container.Controls.Clear(); 
+                Container.Controls.Add(ticketControl);
+            }
+            else
+            {
+                InitializeContainer();
+            }
+        }
     }
 }

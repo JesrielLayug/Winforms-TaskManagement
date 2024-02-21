@@ -64,29 +64,31 @@ namespace TaskManagement.MainControls
             Color newBackColor = Color.FromArgb(0, 141, 255);
             Color newForeColor = Color.FromArgb(64, 123, 255);
 
-            Image defaultDashboard = Image.FromFile("..\\..\\Resources\\dashboard-3.png");
-            Image defaultTask = Image.FromFile("..\\..\\Resources\\Task.png");
-            Image defaultRequest = Image.FromFile("..\\..\\Resources\\message-gray.png");
-            Image defaultLogout = Image.FromFile("..\\..\\Resources\\door.png");
+            Image defaultDashboard = Properties.Resources.dashboard_3;
+            Image defaultTask = Properties.Resources.task;
+            Image defaultRequest = Properties.Resources.message_gray;
+            Image defaultLogout = Properties.Resources.door;
+            Image defaultLogged = Properties.Resources.logged_gray;
 
-            Image newDashboard = Image.FromFile("..\\..\\Resources\\dashboard-white.png");
-            Image newTask = Image.FromFile("..\\..\\Resources\\task-white.png");
-            Image newRequest = Image.FromFile("..\\..\\Resources\\message-white.png");
-            Image newLogout = Image.FromFile("..\\..\\Resources\\door-white.png");
+            Image newDashboard = Properties.Resources.dashboard_3_white;
+            Image newTask = Properties.Resources.task_white;
+            Image newRequest = Properties.Resources.message_white;
+            Image newLogout = Properties.Resources.door_white;
+            Image newLogged = Properties.Resources.logged_white;
 
             List<Image> defaultImages = new List<Image>
             {
-                defaultDashboard, defaultTask, defaultRequest, defaultLogout
+                defaultDashboard, defaultTask, defaultRequest, defaultLogged, defaultLogout
             };
 
             List<Image> newImages = new List<Image>
             {
-                newDashboard, newTask, newRequest, newLogout
+                newDashboard, newTask, newRequest, newLogged, newLogout
             };
 
             List<Button> buttons = new List<Button>
             {
-                BTNDashboard, BTNTicket, BTNRequest, BTNLogout
+                BTNDashboard, BTNTicket, BTNRequest, BTNLogs, BTNLogout
             };
 
             ButtonColorChanger = new ButtonColorChanger(

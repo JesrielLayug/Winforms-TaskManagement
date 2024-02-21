@@ -30,12 +30,13 @@
         {
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.BTNLogs = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNLogout = new System.Windows.Forms.Button();
             this.BTNRequest = new System.Windows.Forms.Button();
             this.BTNTicket = new System.Windows.Forms.Button();
             this.BTNDashboard = new System.Windows.Forms.Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.gunaShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,6 +46,7 @@
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.BTNLogs);
             this.gunaShadowPanel1.Controls.Add(this.panel1);
             this.gunaShadowPanel1.Controls.Add(this.BTNLogout);
             this.gunaShadowPanel1.Controls.Add(this.BTNRequest);
@@ -69,6 +71,25 @@
             this.panel1.Size = new System.Drawing.Size(62, 59);
             this.panel1.TabIndex = 0;
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(62, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1202, 681);
+            this.MainPanel.TabIndex = 5;
+            // 
+            // BTNLogs
+            // 
+            this.BTNLogs.FlatAppearance.BorderSize = 0;
+            this.BTNLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNLogs.Image = global::TaskManagement.Properties.Resources.logged_gray;
+            this.BTNLogs.Location = new System.Drawing.Point(-3, 183);
+            this.BTNLogs.Name = "BTNLogs";
+            this.BTNLogs.Size = new System.Drawing.Size(63, 41);
+            this.BTNLogs.TabIndex = 6;
+            this.BTNLogs.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TaskManagement.Properties.Resources.app;
@@ -84,7 +105,7 @@
             this.BTNLogout.FlatAppearance.BorderSize = 0;
             this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
-            this.BTNLogout.Location = new System.Drawing.Point(-2, 187);
+            this.BTNLogout.Location = new System.Drawing.Point(-3, 225);
             this.BTNLogout.Name = "BTNLogout";
             this.BTNLogout.Size = new System.Drawing.Size(63, 41);
             this.BTNLogout.TabIndex = 5;
@@ -96,7 +117,7 @@
             this.BTNRequest.FlatAppearance.BorderSize = 0;
             this.BTNRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNRequest.Image = global::TaskManagement.Properties.Resources.message_gray;
-            this.BTNRequest.Location = new System.Drawing.Point(-2, 146);
+            this.BTNRequest.Location = new System.Drawing.Point(-2, 142);
             this.BTNRequest.Name = "BTNRequest";
             this.BTNRequest.Size = new System.Drawing.Size(64, 41);
             this.BTNRequest.TabIndex = 4;
@@ -108,7 +129,7 @@
             this.BTNTicket.FlatAppearance.BorderSize = 0;
             this.BTNTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNTicket.Image = global::TaskManagement.Properties.Resources.task;
-            this.BTNTicket.Location = new System.Drawing.Point(-1, 102);
+            this.BTNTicket.Location = new System.Drawing.Point(-1, 100);
             this.BTNTicket.Name = "BTNTicket";
             this.BTNTicket.Size = new System.Drawing.Size(63, 41);
             this.BTNTicket.TabIndex = 1;
@@ -120,20 +141,12 @@
             this.BTNDashboard.FlatAppearance.BorderSize = 0;
             this.BTNDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNDashboard.Image = global::TaskManagement.Properties.Resources.dashboard_3;
-            this.BTNDashboard.Location = new System.Drawing.Point(0, 60);
+            this.BTNDashboard.Location = new System.Drawing.Point(0, 57);
             this.BTNDashboard.Name = "BTNDashboard";
             this.BTNDashboard.Size = new System.Drawing.Size(62, 41);
             this.BTNDashboard.TabIndex = 0;
             this.BTNDashboard.UseVisualStyleBackColor = true;
             this.BTNDashboard.Click += new System.EventHandler(this.BTNDashboard_Click);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(62, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1202, 681);
-            this.MainPanel.TabIndex = 5;
             // 
             // EmployeeControl
             // 
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Button BTNTicket;
         private System.Windows.Forms.Button BTNDashboard;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button BTNLogs;
     }
 }

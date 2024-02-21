@@ -67,7 +67,8 @@ namespace TaskManagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginView(authenticationService, userService, ticketService, requestService));
-            
+            //Application.Run(new DummyForm(authenticationService));
+
         }
     }
 }

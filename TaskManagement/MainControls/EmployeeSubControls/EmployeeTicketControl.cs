@@ -68,5 +68,35 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             create.TicketRequestAdded += (s, ex) => { InitializeContainer(); };
             create.ShowDialog();
         }
+
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = TBSearch.Text.Trim().ToLower();
+
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                List<TicketInfo> filteredTickets = Tickets.Where(ticket =>
+                    ticket.Description.ToLower().Contains(searchText) ||
+                    ticket.Title.ToLower().Contains(searchText) ||
+                    ticket.Division.ToLower().Contains(searchText) ||
+                    ticket.AssignUserName.ToLower().Contains(searchText) ||
+                    ticket.Priority.ToLower().Contains(searchText)
+                ).ToList();
+
+                EmployeeTicketSubControl ticketControl = new EmployeeTicketSubControl(
+                    filteredTickets,
+                    userService,
+                    ticketService,
+                    requestService);
+
+                ticketControl.Dock = DockStyle.Fill;
+                Container.Controls.Clear();
+                Container.Controls.Add(ticketControl);
+            }
+            else
+            {
+                InitializeContainer();
+            }
+        }
     }
 }

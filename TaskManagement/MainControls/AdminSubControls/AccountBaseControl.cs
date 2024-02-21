@@ -9,21 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.Models;
 using TaskManagement.Services.Contracts;
+using TaskManagement.Utilities;
+using TaskManagement.Views;
 
 namespace TaskManagement.MainControls.SubControls
 {
     public partial class AccountBaseControl : UserControl
     {
+        private UserSettingsProvider SettingsProvider = new UserSettingsProvider();
+
         private UserEditor Employee;
 
         private readonly IUserService userService;
-
+        private readonly IAuthenticationService authenticationService;
         private IEnumerable<User> Employees;
+        private List<UserEditor> userEditors;
 
-        public AccountBaseControl(IUserService userService)
+        public AccountBaseControl(IUserService userService, IAuthenticationService authenticationService)
         {
             this.userService = userService;
-
+            this.authenticationService = authenticationService;
             InitializeComponent();
             InitializeDataGridView();
         }
@@ -32,27 +37,24 @@ namespace TaskManagement.MainControls.SubControls
         {
             if (CheckAllFields())
             {
-                if (Employee == null)
+                if (Employee != null)
                 {
-                    var response = await userService.Add(new UserEditor
-                    {
-                        Role = "Employee",
-                        Gender = CBGender.Text,
-                        FullName = $"{TBFirstname.Text} {TBLastname.Text}",
-                        Position = CBPosition.Text,
-                        Email = TBEmail.Text,
-                        Password = TBPassword.Text,
-                        Authorization = CBAuthorization.Text
-                    });
+                    //var response = await authenticationService.Register(new UserEditor
+                    //{
+                    //    Role = "Employee",
+                    //    Gender = CBGender.Text,
+                    //    FullName = $"{TBFirstname.Text} {TBLastname.Text}",
+                    //    Position = CBPosition.Text,
+                    //    Email = TBEmail.Text,
+                    //    Password = TBPassword.Text,
+                    //    Authorization = CBAuthorization.Text
+                    //});
 
-                    if (response.IsSuccess)
-                    {
-                        MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        InitializeDataGridView();
-                    }
-                }
-                else
-                {
+                    //if (response.IsSuccess)
+                    //{
+                    //    MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    InitializeDataGridView();
+                    //}
                     var userTobeUpdate = new User
                     {
                         Role = "Employee",
@@ -60,7 +62,6 @@ namespace TaskManagement.MainControls.SubControls
                         FullName = $"{TBFirstname.Text} {TBLastname.Text}",
                         Position = CBPosition.Text,
                         Email = TBEmail.Text,
-                        Password = TBPassword.Text,
                         Authorization = CBAuthorization.Text
                     };
 
@@ -78,28 +79,46 @@ namespace TaskManagement.MainControls.SubControls
 
         private async void InitializeDataGridView()
         {
-            List<UserEditor> userEditors = new List<UserEditor>();
-            var users = await GetUsers();
+            userEditors = new List<UserEditor>();
 
-            foreach (var user in users)
+            var role = SettingsProvider.GetCurrentUserRole();
+            if(role == "Admin")
             {
-                userEditors.Add(new UserEditor
+                var users = await userService.GetAllEmployee();
+
+                foreach (var user in users)
                 {
-                    Role = user.Role,
-                    FullName = user.FullName,
-                    Gender = user.Gender,
-                    Position = user.Position,
-                    Email = user.Email,
-                    Password = user.Password,
-                    Authorization = user.Authorization,
-                });
+                    userEditors.Add(new UserEditor
+                    {
+                        Role = user.Role,
+                        FullName = user.FullName,
+                        Gender = user.Gender,
+                        Position = user.Position,
+                        Email = user.Email,
+                        Authorization = user.Authorization,
+                    });
+                }
             }
+            else
+            {
+                var users = await userService.GetAllAdminAndEmployee();
+
+                foreach (var user in users)
+                {
+                    userEditors.Add(new UserEditor
+                    {
+                        Role = user.Role,
+                        FullName = user.FullName,
+                        Gender = user.Gender,
+                        Position = user.Position,
+                        Email = user.Email,
+                        Authorization = user.Authorization,
+                    });
+                }
+            }
+            
 
             DGVUsers.DataSource = userEditors;
-        }
-        private async Task<IEnumerable<User>> GetUsers()
-        {
-            return Employees = await userService.GetAll();
         }
         private void PopulateTextBoxes(UserEditor user)
         {
@@ -114,7 +133,6 @@ namespace TaskManagement.MainControls.SubControls
                 TBLastname.Text = lastname;
                 CBPosition.SelectedItem = user.Position;
                 TBEmail.Text = user.Email;
-                TBPassword.Text = user.Password;
                 CBAuthorization.SelectedItem = user.Authorization;
             }
         }
@@ -164,7 +182,6 @@ namespace TaskManagement.MainControls.SubControls
             TBLastname.Text = string.Empty;
             CBPosition.SelectedItem = null;
             TBEmail.Text = string.Empty;
-            TBPassword.Text = string.Empty;
             CBAuthorization.SelectedItem = null;
         }
 
@@ -175,11 +192,43 @@ namespace TaskManagement.MainControls.SubControls
                !string.IsNullOrEmpty(CBPosition.Text) &&
                !string.IsNullOrEmpty(TBFirstname.Text) &&
                !string.IsNullOrEmpty(TBLastname.Text) &&
-               !string.IsNullOrEmpty(TBEmail.Text) &&
-               !string.IsNullOrEmpty(TBPassword.Text))
+               !string.IsNullOrEmpty(TBEmail.Text))
                 return true;
 
             return false;
+        }
+
+        private void BTNRegister_Click(object sender, EventArgs e)
+        {
+            var role = SettingsProvider.GetCurrentUserRole();
+            if(role == "Super Admin")
+            {
+                SuperRegisterView superRegister = new SuperRegisterView(authenticationService);
+                superRegister.RegisterClick += async (s, ex) => { InitializeDataGridView(); };
+                superRegister.ShowDialog();
+            }
+            else
+            {
+                RegisterView register = new RegisterView(authenticationService);
+                register.RegisterClick += async (s, ex) => { InitializeDataGridView(); };
+                register.ShowDialog();
+            }
+        }
+
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = TBSearch.Text.ToLower();
+
+            var filteredUsers = userEditors.Where(user =>
+                user.Role.ToLower().Contains(searchTerm) ||
+                user.FullName.ToLower().Contains(searchTerm) ||
+                user.Gender.ToLower().Contains(searchTerm) ||
+                user.Position.ToLower().Contains(searchTerm) ||
+                user.Email.ToLower().Contains(searchTerm) ||
+                user.Authorization.ToLower().Contains(searchTerm) 
+            ).ToList();
+
+            DGVUsers.DataSource = filteredUsers;
         }
     }
 }

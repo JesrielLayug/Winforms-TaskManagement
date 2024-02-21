@@ -16,10 +16,12 @@ namespace TaskManagement.Views
     public partial class ForgotPassword : Form
     {
         private readonly IUserService userService;
+        private readonly IAuthenticationService authenticationService;
 
-        public ForgotPassword(IUserService userService)
+        public ForgotPassword(IUserService userService, IAuthenticationService authenticationService)
         {
             this.userService = userService;
+            this.authenticationService = authenticationService;
             InitializeComponent();
         }
 
@@ -41,7 +43,7 @@ namespace TaskManagement.Views
 
             if (CheckAllFields())
             {
-                var response = await userService.ChangePassword(TBEmail.Text, TBNewPassword.Text);
+                var response = await authenticationService.ResetPassword(TBEmail.Text, TBNewPassword.Text);
                 if (response.IsSuccess)
                 {
                     var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

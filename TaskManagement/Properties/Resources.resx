@@ -124,8 +124,17 @@
   <data name="task" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="register-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="message-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\message-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="register-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +154,17 @@
   <data name="dashboard-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Team work-amico1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Team work-amico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="log-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="task-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\task-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logged-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logged-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +190,9 @@
   <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="log-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="door-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\door-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,16 +208,22 @@
   <data name="tool-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tool-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add notes-bro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add notes-bro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Add notes-bro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add notes-bro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sign up-amico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sign up-amico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Team work-amico1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team work-amico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="purple-message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\purple-message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logged-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logged-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

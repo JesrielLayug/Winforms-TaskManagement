@@ -231,7 +231,7 @@
             this.NextUpContainer.Controls.Add(this.FLPNextUp);
             this.NextUpContainer.Location = new System.Drawing.Point(3, 58);
             this.NextUpContainer.Name = "NextUpContainer";
-            this.NextUpContainer.Size = new System.Drawing.Size(355, 520);
+            this.NextUpContainer.Size = new System.Drawing.Size(355, 511);
             this.NextUpContainer.TabIndex = 12;
             // 
             // InProgressContainer
@@ -239,7 +239,7 @@
             this.InProgressContainer.Controls.Add(this.FLPInProgress);
             this.InProgressContainer.Location = new System.Drawing.Point(396, 58);
             this.InProgressContainer.Name = "InProgressContainer";
-            this.InProgressContainer.Size = new System.Drawing.Size(358, 520);
+            this.InProgressContainer.Size = new System.Drawing.Size(358, 511);
             this.InProgressContainer.TabIndex = 13;
             // 
             // CompletedContainer
@@ -247,7 +247,7 @@
             this.CompletedContainer.Controls.Add(this.FLPCompleted);
             this.CompletedContainer.Location = new System.Drawing.Point(791, 58);
             this.CompletedContainer.Name = "CompletedContainer";
-            this.CompletedContainer.Size = new System.Drawing.Size(358, 520);
+            this.CompletedContainer.Size = new System.Drawing.Size(358, 511);
             this.CompletedContainer.TabIndex = 14;
             // 
             // TicketControl
@@ -264,7 +264,7 @@
             this.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TicketControl";
-            this.Size = new System.Drawing.Size(1148, 581);
+            this.Size = new System.Drawing.Size(1148, 569);
             this.gunaShadowPanel5.ResumeLayout(false);
             this.gunaShadowPanel5.PerformLayout();
             this.gunaShadowPanel6.ResumeLayout(false);

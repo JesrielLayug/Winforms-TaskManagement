@@ -15,6 +15,7 @@ namespace TaskManagement.Repositories.Contracts
         Task<User> GetByEmail(string email);
         Task<User> GetByName(string name);
         Task<User> GetById(string id);
-        Task<IEnumerable<User>> GetAll();
+        Task<IEnumerable<User>> GetAllEmployee();
+        Task<IEnumerable<User>> GetAllAdminAndEmployee();
     }
 }

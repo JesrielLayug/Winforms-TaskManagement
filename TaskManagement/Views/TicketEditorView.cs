@@ -188,7 +188,7 @@ namespace TaskManagement.Views
 
         private async Task InitializedAllUsers()
         {
-            Users = await userService.GetAll();
+            Users = await userService.GetAllEmployee();
 
             foreach(var user in Users)
             {

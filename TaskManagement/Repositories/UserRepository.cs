@@ -40,9 +40,14 @@ namespace TaskManagement.Repositories
             await UserCollection.ReplaceOneAsync(x => x.Id == id, user);
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<User>> GetAllEmployee()
         {
             return await UserCollection.Find(x => x.Role == "Employee").ToListAsync();
+        }
+
+        public async Task<IEnumerable<User>> GetAllAdminAndEmployee()
+        {
+            return await UserCollection.Find(x => x.Role == "Employee" || x.Role == "Admin").ToListAsync();
         }
 
         public async Task<User> GetByEmail(string email)

@@ -54,7 +54,7 @@ namespace TaskManagement.Views
                     this.ShowInTaskbar = false;
 
 
-                    if (response.Role == "Admin")
+                    if (response.Role == "Admin" || response.Role == "Super Admin")
                     {
                         MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
                         mainView.Show();
@@ -95,7 +95,7 @@ namespace TaskManagement.Views
 
         private void LinkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword forgotPassword = new ForgotPassword(userService);
+            ForgotPassword forgotPassword = new ForgotPassword(userService, authenticationService);
             forgotPassword.ShowDialog();
         }
     }
