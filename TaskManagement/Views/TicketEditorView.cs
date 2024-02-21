@@ -20,6 +20,8 @@ namespace TaskManagement.Views
 {
     public partial class TicketEditorView : Form
     {
+        UserSettingsProvider SettingsProvider = new UserSettingsProvider();
+
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
@@ -66,10 +68,11 @@ namespace TaskManagement.Views
             var response = await ticketService.Add(ticket);
             if (response.IsSuccess)
             {
-                await logsService.Add($"Created the ticket: {Ticket.Title}.");
-                TicketAdded?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                TicketAdded?.Invoke(this, EventArgs.Empty);
+
+                await logsService.Add($"Created the ticket: {ticket.Title}.");
             }
         }
 
@@ -78,11 +81,12 @@ namespace TaskManagement.Views
             var response = await ticketService.Update(ticket, id);
             if (response.IsSuccess)
             {
-                await logsService.Add($"Updated the ticket: {Ticket.Title}.");
-                TicketUpdated?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                TicketUpdated?.Invoke(this, EventArgs.Empty);
+
+                await logsService.Add($"Updated the ticket: {ticket.Title}.");
             }
         }
 
@@ -95,25 +99,27 @@ namespace TaskManagement.Views
             var response = await requestService.Add(request);
             if (response.IsSuccess)
             {
-                await logsService.Add($"Requested to add the ticket: {Ticket.Title}.");
-                TicketRequestAdded?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                TicketRequestAdded?.Invoke(this, EventArgs.Empty);
+
+                await logsService.Add($"Requested to add the ticket: {request.Title}.");
             }
         }
 
         private async Task RequestUpdateTicket(EmployeeTicketInfo request)
         {
-            await logsService.Add($"Requested to update the ticket: {Ticket.Title}.");
             var response = await requestService.Update(request);
             if (response.IsSuccess)
             {
-                TicketRequestUpdated?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                TicketRequestUpdated?.Invoke(this, EventArgs.Empty);
             }
+
+            await logsService.Add($"Requested to update the ticket: {request.Title}.");
         }
 
         #endregion
@@ -128,7 +134,7 @@ namespace TaskManagement.Views
                 
                 var currentUserRole = settingsProvider.GetCurrentUserRole();
 
-                if(currentUserRole == "Admin")
+                if(currentUserRole == "Admin" || currentUserRole == "Super Admin")
                 {
                     var ticket = new TicketEditor
                     {
@@ -158,7 +164,6 @@ namespace TaskManagement.Views
                 {
                     var ticket = new EmployeeTicketInfo
                     {
-                        Id = Request.Id,
                         Title = TBTitle.Text,
                         AssignName = CBAssignTo.Text,
                         Priority = CBPriority.Text,
@@ -173,7 +178,10 @@ namespace TaskManagement.Views
                     if (Request == null)
                         await RequestAddTicket(ticket);
                     else
+                    {
+                        ticket.Id = Request.Id;
                         await RequestUpdateTicket(ticket);
+                    }
                 }
             }
             else
@@ -198,7 +206,10 @@ namespace TaskManagement.Views
 
         private async Task InitializedAllUsers()
         {
-            Users = await userService.GetAllEmployee();
+            if(SettingsProvider.GetCurrentUserRole() == "Admin" || SettingsProvider.GetCurrentUserRole() == "Super Admin")
+                Users = await userService.GetAllAdminAndEmployee();
+            else
+                Users = await userService.GetAllEmployee();
 
             foreach(var user in Users)
             {

@@ -123,14 +123,14 @@ namespace TaskManagement.MainControls.SubControls
 
             if (existingApprovedTicket == null)
             {
-                await logsService.Add($"Approved the ticket: {Ticket.Title}.");
                 var response = await ticketService.Add(newTicket);
                 if (response.IsSuccess)
                 {
-                    await logsService.Add($"Approved to add the ticket: {Ticket.Title}");
                     await requestService.Delete(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     InitializeDataGridView();
+
+                    await logsService.Add($"Approved to add the ticket: {Ticket.Title}");
                 }
                 else
                     MessageBox.Show("Failed to approve the ticket", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,10 +141,11 @@ namespace TaskManagement.MainControls.SubControls
                 if (response.IsSuccess)
                 {
                     Ticket.IsApproved = true;
-                    await logsService.Add($"Approved to update the ticket: {Ticket.Title}");
                     await requestService.Update(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     InitializeDataGridView();
+
+                    await logsService.Add($"Approved to update the ticket: {Ticket.Title}");
                 }
             }
 

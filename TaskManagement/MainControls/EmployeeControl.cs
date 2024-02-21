@@ -133,6 +133,8 @@ namespace TaskManagement.MainControls
             ButtonColorChanger.SelectedButton(BTNLogout);
             authenticationService.Logout();
             LogoutClick?.Invoke(this, EventArgs.Empty);
+
+            logsService.Add("Logged out.");
         }
 
         #endregion

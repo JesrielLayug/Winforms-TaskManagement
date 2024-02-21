@@ -51,10 +51,11 @@ namespace TaskManagement.Views
                 var response = await authenticationService.ResetPassword(TBEmail.Text, TBNewPassword.Text);
                 if (response.IsSuccess)
                 {
-                    await logsService.Add("Changed Password");
                     var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dialog == DialogResult.OK)
                         this.Close();
+
+                    logsService.Add("Changed Password");
                 }
                 else
                 {

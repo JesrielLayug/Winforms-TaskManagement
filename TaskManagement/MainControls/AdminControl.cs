@@ -138,6 +138,8 @@ namespace TaskManagement.UserControls
             ButtonColorChanger.SelectedButton(BTNLogout);
             authenticationService.Logout();
             LogoutClick?.Invoke(this, EventArgs.Empty);
+
+            logsService.Add("Logged out.");
         }
 
         private void BTNLogs_Click(object sender, EventArgs e)

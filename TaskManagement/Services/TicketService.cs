@@ -128,7 +128,7 @@ namespace TaskManagement.Services
             try
             {
                 var tickets = await ticketRepository.GetAll();
-                var users = await userRepository.GetAllEmployee();
+                var users = await userRepository.GetAllAdminAndEmployee();
 
                 return (from ticket in tickets
                         join creatorUser in users on ticket.CreatorId equals creatorUser.Id
@@ -164,30 +164,34 @@ namespace TaskManagement.Services
             try
             {
                 var existingTicket = await ticketRepository.GetById(id);
-                var assignUser = await userRepository.GetById(existingTicket.AssignUserId);
-                var creatorUser = await userRepository.GetById(existingTicket.CreatorId);
-
-                var ticket = new TicketInfo
+                if(existingTicket != null)
                 {
-                    Id = existingTicket.Id,
-                    Title = existingTicket.Title,
-                    AssignUserId = existingTicket.AssignUserId,
-                    AssignUserName = assignUser.FullName,
-                    AssignRole = assignUser.Role,
-                    Priority = existingTicket.Priority,
-                    Division= existingTicket.Division,
-                    TicketStatus = existingTicket.TicketStatus,
-                    StartDate = existingTicket.StartDate,
-                    DueDate= existingTicket.DueDate,
-                    DateCreated= existingTicket.DateCreated,
-                    Description=existingTicket.Description,
-                    IsApproved =existingTicket.IsApproved,
-                    CreatorId =existingTicket.CreatorId,
-                    CreatorFullName = creatorUser.FullName,
-                    CreatorRole=creatorUser.Role,
-                };
+                    var assignUser = await userRepository.GetById(existingTicket.AssignUserId);
+                    var creatorUser = await userRepository.GetById(existingTicket.CreatorId);
 
-                return ticket;
+                    var ticket = new TicketInfo
+                    {
+                        Id = existingTicket.Id,
+                        Title = existingTicket.Title,
+                        AssignUserId = existingTicket.AssignUserId,
+                        AssignUserName = assignUser.FullName,
+                        AssignRole = assignUser.Role,
+                        Priority = existingTicket.Priority,
+                        Division = existingTicket.Division,
+                        TicketStatus = existingTicket.TicketStatus,
+                        StartDate = existingTicket.StartDate,
+                        DueDate = existingTicket.DueDate,
+                        DateCreated = existingTicket.DateCreated,
+                        Description = existingTicket.Description,
+                        IsApproved = existingTicket.IsApproved,
+                        CreatorId = existingTicket.CreatorId,
+                        CreatorFullName = creatorUser.FullName,
+                        CreatorRole = creatorUser.Role,
+                    };
+
+                    return ticket;
+                }
+                return null;
             }
             catch
             {
