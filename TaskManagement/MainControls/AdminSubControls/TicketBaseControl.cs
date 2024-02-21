@@ -18,25 +18,31 @@ namespace TaskManagement.UserControls.AdminSubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
         private IEnumerable<TicketInfo> Tickets = new List<TicketInfo>();
 
         public TicketBaseControl(
             IUserService userService,
             ITicketService ticketService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeContainer();
         }
 
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService);
-            create.TicketAdded += (s, ex) => { InitializeContainer(); };
+            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService, logsService);
+            create.TicketAdded += (s, ex) => 
+            { 
+                InitializeContainer(); 
+            };
             create.ShowDialog();
         }
 
@@ -48,7 +54,7 @@ namespace TaskManagement.UserControls.AdminSubControls
 
             if (Tickets != null && Tickets.Any())
             {
-                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService, requestService);
+                TicketControl ticketControl = new TicketControl(Tickets, userService, ticketService, requestService, logsService);
                 
                 ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
                 ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };
@@ -79,7 +85,7 @@ namespace TaskManagement.UserControls.AdminSubControls
                     ticket.Priority.ToLower().Contains(searchText)
                 ).ToList();
 
-                TicketControl ticketControl = new TicketControl(filteredTickets, userService, ticketService, requestService);
+                TicketControl ticketControl = new TicketControl(filteredTickets, userService, ticketService, requestService, logsService);
 
                 ticketControl.DeleteClick += (s, ex) => { InitializeContainer(); };
                 ticketControl.UpdateClick += (s, ev) => { InitializeContainer(); };

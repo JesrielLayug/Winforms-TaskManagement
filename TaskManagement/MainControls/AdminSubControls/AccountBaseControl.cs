@@ -22,13 +22,19 @@ namespace TaskManagement.MainControls.SubControls
 
         private readonly IUserService userService;
         private readonly IAuthenticationService authenticationService;
+        private readonly ILogsService logsService;
         private IEnumerable<User> Employees;
         private List<UserEditor> userEditors;
 
-        public AccountBaseControl(IUserService userService, IAuthenticationService authenticationService)
+        public AccountBaseControl(
+            IUserService userService, 
+            IAuthenticationService authenticationService,
+            ILogsService logsService
+            )
         {
             this.userService = userService;
             this.authenticationService = authenticationService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeDataGridView();
         }
@@ -39,22 +45,6 @@ namespace TaskManagement.MainControls.SubControls
             {
                 if (Employee != null)
                 {
-                    //var response = await authenticationService.Register(new UserEditor
-                    //{
-                    //    Role = "Employee",
-                    //    Gender = CBGender.Text,
-                    //    FullName = $"{TBFirstname.Text} {TBLastname.Text}",
-                    //    Position = CBPosition.Text,
-                    //    Email = TBEmail.Text,
-                    //    Password = TBPassword.Text,
-                    //    Authorization = CBAuthorization.Text
-                    //});
-
-                    //if (response.IsSuccess)
-                    //{
-                    //    MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    InitializeDataGridView();
-                    //}
                     var userTobeUpdate = new User
                     {
                         Role = "Employee",
@@ -65,6 +55,7 @@ namespace TaskManagement.MainControls.SubControls
                         Authorization = CBAuthorization.Text
                     };
 
+                    await logsService.Add($"Updated the account of {Employee.FullName}.");
                     var response = await userService.Update(userTobeUpdate, Employee.FullName);
                     if (response.IsSuccess)
                     {
@@ -204,13 +195,21 @@ namespace TaskManagement.MainControls.SubControls
             if(role == "Super Admin")
             {
                 SuperRegisterView superRegister = new SuperRegisterView(authenticationService);
-                superRegister.RegisterClick += async (s, ex) => { InitializeDataGridView(); };
+                superRegister.RegisterClick += async (s, ex) => 
+                {
+                    await logsService.Add("Created an account");
+                    InitializeDataGridView(); 
+                };
                 superRegister.ShowDialog();
             }
             else
             {
                 RegisterView register = new RegisterView(authenticationService);
-                register.RegisterClick += async (s, ex) => { InitializeDataGridView(); };
+                register.RegisterClick += async (s, ex) => 
+                {
+                    await logsService.Add("Created an account");
+                    InitializeDataGridView(); 
+                };
                 register.ShowDialog();
             }
         }

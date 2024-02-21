@@ -17,11 +17,16 @@ namespace TaskManagement.Views
     {
         private readonly IUserService userService;
         private readonly IAuthenticationService authenticationService;
+        private readonly ILogsService logsService;
 
-        public ForgotPassword(IUserService userService, IAuthenticationService authenticationService)
+        public ForgotPassword(
+            IUserService userService, 
+            IAuthenticationService authenticationService,
+            ILogsService logsService)
         {
             this.userService = userService;
             this.authenticationService = authenticationService;
+            this.logsService = logsService;
             InitializeComponent();
         }
 
@@ -46,13 +51,14 @@ namespace TaskManagement.Views
                 var response = await authenticationService.ResetPassword(TBEmail.Text, TBNewPassword.Text);
                 if (response.IsSuccess)
                 {
+                    await logsService.Add("Changed Password");
                     var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dialog == DialogResult.OK)
                         this.Close();
                 }
                 else
                 {
-                    var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var dialog = MessageBox.Show(response.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (dialog == DialogResult.OK)
                         this.Close();
                 }

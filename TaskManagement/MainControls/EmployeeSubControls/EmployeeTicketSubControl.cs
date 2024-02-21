@@ -20,18 +20,21 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
         public EmployeeTicketSubControl(
             IEnumerable<TicketInfo> ticketInfos, 
             IUserService userService, 
             ITicketService ticketService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.TicketInfos = ticketInfos;
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeAllFlowLayouts();
         }
@@ -66,7 +69,8 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                         ticket, 
                         userService, 
                         ticketService,
-                        requestService);
+                        requestService,
+                        logsService);
 
                     FLPNextUp.Controls.Add(card);
                 }
@@ -90,7 +94,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                         ticket, 
                         userService, 
                         ticketService, 
-                        requestService); 
+                        requestService, logsService); 
 
                     FLPInProgress.Controls.Add(card);
                 }
@@ -115,7 +119,8 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                         ticket, 
                         userService, 
                         ticketService, 
-                        requestService);
+                        requestService,
+                        logsService);
 
                     FLPCompleted.Controls.Add(card);
                 }

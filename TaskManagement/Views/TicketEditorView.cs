@@ -23,13 +23,15 @@ namespace TaskManagement.Views
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
         public TicketEditorView(
             TicketInfo Ticket,
             EmployeeTicketInfo Request,
             IUserService userService,
             ITicketService taskService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.Ticket = Ticket;
@@ -37,7 +39,7 @@ namespace TaskManagement.Views
             this.userService = userService;
             this.ticketService = taskService;
             this.requestService = requestService;
-
+            this.logsService = logsService;
             InitializeComponent();
             InitializedAllUsers();
         }
@@ -64,6 +66,7 @@ namespace TaskManagement.Views
             var response = await ticketService.Add(ticket);
             if (response.IsSuccess)
             {
+                await logsService.Add($"Created the ticket: {Ticket.Title}.");
                 TicketAdded?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -75,6 +78,7 @@ namespace TaskManagement.Views
             var response = await ticketService.Update(ticket, id);
             if (response.IsSuccess)
             {
+                await logsService.Add($"Updated the ticket: {Ticket.Title}.");
                 TicketUpdated?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
@@ -91,6 +95,7 @@ namespace TaskManagement.Views
             var response = await requestService.Add(request);
             if (response.IsSuccess)
             {
+                await logsService.Add($"Requested to add the ticket: {Ticket.Title}.");
                 TicketRequestAdded?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
@@ -100,6 +105,7 @@ namespace TaskManagement.Views
 
         private async Task RequestUpdateTicket(EmployeeTicketInfo request)
         {
+            await logsService.Add($"Requested to update the ticket: {Ticket.Title}.");
             var response = await requestService.Update(request);
             if (response.IsSuccess)
             {
@@ -139,9 +145,13 @@ namespace TaskManagement.Views
                     };
 
                     if (Ticket == null)
+                    {
                         await AddTicket(ticket);
+                    }
                     else
+                    {
                         await UpdateTicket(ticket, Ticket.Id);
+                    }
                 }
 
                 if(currentUserRole == "Employee")

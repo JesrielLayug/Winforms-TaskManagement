@@ -19,17 +19,20 @@ namespace TaskManagement.MainControls.Components
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
         public EmployeeTicketCard(
             TicketInfo ticket, 
             IUserService userService, 
             ITicketService ticketService,
-            IEmployeeRequestService requestService)
+            IEmployeeRequestService requestService,
+            ILogsService logsService)
         {
             this.ticket = ticket;
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeTexts();
         }
@@ -44,7 +47,7 @@ namespace TaskManagement.MainControls.Components
 
         private void BTNView_Click(object sender, EventArgs e)
         {
-            EmployeeTicketView view = new EmployeeTicketView(ticket, requestService);
+            EmployeeTicketView view = new EmployeeTicketView(ticket, requestService, logsService);
             view.ShowDialog();
         }
     }

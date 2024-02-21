@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.BTNLogs = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNLogout = new System.Windows.Forms.Button();
             this.BTNRequest = new System.Windows.Forms.Button();
             this.BTNTicket = new System.Windows.Forms.Button();
             this.BTNDashboard = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.gunaShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,24 +61,6 @@
             this.gunaShadowPanel1.Size = new System.Drawing.Size(62, 681);
             this.gunaShadowPanel1.TabIndex = 1;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(62, 59);
-            this.panel1.TabIndex = 0;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(62, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1202, 681);
-            this.MainPanel.TabIndex = 5;
-            // 
             // BTNLogs
             // 
             this.BTNLogs.FlatAppearance.BorderSize = 0;
@@ -89,6 +71,17 @@
             this.BTNLogs.Size = new System.Drawing.Size(63, 41);
             this.BTNLogs.TabIndex = 6;
             this.BTNLogs.UseVisualStyleBackColor = true;
+            this.BTNLogs.Click += new System.EventHandler(this.BTNLogs_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(62, 59);
+            this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -147,6 +140,14 @@
             this.BTNDashboard.TabIndex = 0;
             this.BTNDashboard.UseVisualStyleBackColor = true;
             this.BTNDashboard.Click += new System.EventHandler(this.BTNDashboard_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(62, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1202, 681);
+            this.MainPanel.TabIndex = 5;
             // 
             // EmployeeControl
             // 

@@ -30,6 +30,7 @@
         {
             this.MainPanel = new System.Windows.Forms.Panel();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.BTNLogs = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNLogout = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.BTNLogs);
             this.gunaShadowPanel1.Controls.Add(this.panel1);
             this.gunaShadowPanel1.Controls.Add(this.BTNLogout);
             this.gunaShadowPanel1.Controls.Add(this.BTNAccount);
@@ -67,6 +69,18 @@
             this.gunaShadowPanel1.ShadowStyle = Guna.UI.WinForms.ShadowMode.ForwardDiagonal;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(62, 690);
             this.gunaShadowPanel1.TabIndex = 0;
+            // 
+            // BTNLogs
+            // 
+            this.BTNLogs.FlatAppearance.BorderSize = 0;
+            this.BTNLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNLogs.Image = global::TaskManagement.Properties.Resources.logged_gray;
+            this.BTNLogs.Location = new System.Drawing.Point(-2, 229);
+            this.BTNLogs.Name = "BTNLogs";
+            this.BTNLogs.Size = new System.Drawing.Size(63, 41);
+            this.BTNLogs.TabIndex = 7;
+            this.BTNLogs.UseVisualStyleBackColor = true;
+            this.BTNLogs.Click += new System.EventHandler(this.BTNLogs_Click);
             // 
             // panel1
             // 
@@ -93,7 +107,7 @@
             this.BTNLogout.FlatAppearance.BorderSize = 0;
             this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
-            this.BTNLogout.Location = new System.Drawing.Point(0, 232);
+            this.BTNLogout.Location = new System.Drawing.Point(0, 273);
             this.BTNLogout.Name = "BTNLogout";
             this.BTNLogout.Size = new System.Drawing.Size(60, 41);
             this.BTNLogout.TabIndex = 5;
@@ -105,7 +119,7 @@
             this.BTNAccount.FlatAppearance.BorderSize = 0;
             this.BTNAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNAccount.Image = global::TaskManagement.Properties.Resources.account;
-            this.BTNAccount.Location = new System.Drawing.Point(-1, 189);
+            this.BTNAccount.Location = new System.Drawing.Point(-1, 187);
             this.BTNAccount.Name = "BTNAccount";
             this.BTNAccount.Size = new System.Drawing.Size(61, 41);
             this.BTNAccount.TabIndex = 3;
@@ -176,5 +190,6 @@
         private System.Windows.Forms.Button BTNTicket;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BTNLogs;
     }
 }

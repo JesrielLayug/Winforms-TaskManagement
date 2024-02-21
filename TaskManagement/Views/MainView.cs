@@ -19,6 +19,7 @@ namespace TaskManagement.Views
         private readonly ITicketService taskService;
         private readonly IEmployeeRequestService requestService;
         private readonly IAuthenticationService authenticationService;
+        private readonly ILogsService logsService;
 
         public string role { get; set; }
         public MainView(
@@ -26,13 +27,15 @@ namespace TaskManagement.Views
             IUserService userService,
             ITicketService taskService,
             IEmployeeRequestService requestService,
-            IAuthenticationService authenticationService
+            IAuthenticationService authenticationService,
+            ILogsService logsService
             )
         {
             this.userService = userService;
             this.taskService = taskService;
             this.requestService = requestService;
             this.authenticationService = authenticationService;
+            this.logsService = logsService;
             this.role = role;
 
             InitializeComponent();
@@ -43,15 +46,23 @@ namespace TaskManagement.Views
         {
             if (role == "Admin" || role == "Super Admin")
             {
-                AdminControl adminControl = new AdminControl(userService, taskService, authenticationService, requestService);
-                adminControl.LogoutClick += (s, ex) => { this.Close(); };
+                AdminControl adminControl = new AdminControl(userService, taskService, authenticationService, requestService, logsService);
+                adminControl.LogoutClick += (s, ex) => 
+                {
+                    logsService.Add("Logged out");
+                    this.Close(); 
+                };
                 adminControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(adminControl);
             }
             else
             {
-                EmployeeControl employeeControl = new EmployeeControl(userService, taskService, requestService, authenticationService);
-                employeeControl.LogoutClick += (s, ex) => { this.Close(); };
+                EmployeeControl employeeControl = new EmployeeControl(userService, taskService, requestService, authenticationService, logsService);
+                employeeControl.LogoutClick += (s, ex) => 
+                {
+                    logsService.Add("Logged out");
+                    this.Close(); 
+                };
                 employeeControl.Dock = DockStyle.Fill;
                 MainPanel.Controls.Add(employeeControl);
             }
@@ -59,7 +70,12 @@ namespace TaskManagement.Views
 
         private void MainView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginView loginView = new LoginView(authenticationService, userService, taskService, requestService);
+            LoginView loginView = new LoginView(
+                authenticationService, 
+                userService, 
+                taskService, 
+                requestService,
+                logsService);
             loginView.Show();
         }
     }

@@ -21,17 +21,20 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
         private IEnumerable<TicketInfo> Tickets = new List<TicketInfo>();
 
         public EmployeeTicketControl(
             IUserService userService, 
             ITicketService ticketService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeContainer();
         }
@@ -48,7 +51,8 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                     Tickets, 
                     userService, 
                     ticketService,
-                    requestService);
+                    requestService,
+                    logsService);
 
                 ticketControl.Dock = DockStyle.Fill;
                 Container.Controls.Add(ticketControl);
@@ -64,7 +68,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
 
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService);
+            TicketEditorView create = new TicketEditorView(null, null, userService, ticketService, requestService, logsService);
             create.TicketRequestAdded += (s, ex) => { InitializeContainer(); };
             create.ShowDialog();
         }
@@ -87,7 +91,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
                     filteredTickets,
                     userService,
                     ticketService,
-                    requestService);
+                    requestService, logsService);
 
                 ticketControl.Dock = DockStyle.Fill;
                 Container.Controls.Clear();

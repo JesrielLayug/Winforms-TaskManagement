@@ -21,18 +21,20 @@ namespace TaskManagement.MainControls.SubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
-
+        private readonly ILogsService logsService;
         IEnumerable<EmployeeTicketInfo> Tickets;
         EmployeeTicketInfo Ticket = new EmployeeTicketInfo();
 
         public PendingBaseControl(
             IUserService userService,
             ITicketService ticketService,
-            IEmployeeRequestService requestService)
+            IEmployeeRequestService requestService,
+            ILogsService logsService)
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
 
             // handles buttons click
             ApprovedClickHandler = new ButtonClickHandler();
@@ -121,9 +123,11 @@ namespace TaskManagement.MainControls.SubControls
 
             if (existingApprovedTicket == null)
             {
+                await logsService.Add($"Approved the ticket: {Ticket.Title}.");
                 var response = await ticketService.Add(newTicket);
                 if (response.IsSuccess)
                 {
+                    await logsService.Add($"Approved to add the ticket: {Ticket.Title}");
                     await requestService.Delete(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     InitializeDataGridView();
@@ -137,6 +141,7 @@ namespace TaskManagement.MainControls.SubControls
                 if (response.IsSuccess)
                 {
                     Ticket.IsApproved = true;
+                    await logsService.Add($"Approved to update the ticket: {Ticket.Title}");
                     await requestService.Update(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     InitializeDataGridView();
@@ -149,6 +154,7 @@ namespace TaskManagement.MainControls.SubControls
         private async void BTNCancel_Click(object sender, EventArgs e)
         {
             Ticket.IsCancelled = true;
+            await logsService.Add($"Cancelled the ticket: {Ticket.Title}");
             var response = await requestService.Update(Ticket);
             if(response.IsSuccess)
             {

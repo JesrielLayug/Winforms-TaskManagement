@@ -16,13 +16,13 @@ namespace TaskManagement.Views
     {
         TicketInfo ticket;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
-        public EmployeeTicketView(TicketInfo ticket, IEmployeeRequestService requestService)
+        public EmployeeTicketView(TicketInfo ticket, IEmployeeRequestService requestService, ILogsService logsService)
         {
             this.ticket = ticket;
             this.requestService = requestService;
-
-
+            this.logsService = logsService;
             InitializeComponent();
             InitializeTexts();
         }
@@ -62,6 +62,7 @@ namespace TaskManagement.Views
                 var dialog = MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if(dialog == DialogResult.OK)
                 {
+                    await logsService.Add($"Requested to update the ticket: {ticket.Title}");
                     this.Close();
                 }
             }

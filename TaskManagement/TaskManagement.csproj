@@ -273,17 +273,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Contracts\IEmployeeRequestRepository.cs" />
+    <Compile Include="Repositories\Contracts\ILogsRepository.cs" />
     <Compile Include="Repositories\Contracts\ITicketRepository.cs" />
     <Compile Include="Repositories\Contracts\IUserRepository.cs" />
     <Compile Include="Repositories\EmployeeRequestRepository.cs" />
+    <Compile Include="Repositories\LogsRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\Contracts\IAuthenticationService.cs" />
     <Compile Include="Services\Contracts\IEmployeeRequestService.cs" />
+    <Compile Include="Services\Contracts\ILogsService.cs" />
     <Compile Include="Services\Contracts\ITicketService.cs" />
     <Compile Include="Services\Contracts\IUserService.cs" />
     <Compile Include="Services\EmployeeRequestService.cs" />
+    <Compile Include="Services\LogsService.cs" />
     <Compile Include="Services\TicketService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="MainControls\AdminControl.cs">
@@ -462,6 +466,7 @@
     <None Include="Properties\DataSources\TaskManagement.Models.EmployeeTicket.datasource" />
     <None Include="Properties\DataSources\TaskManagement.Models.TicketSubInfo.datasource" />
     <None Include="Properties\DataSources\TaskManagement.Models.UserEditor.datasource" />
+    <None Include="Properties\DataSources\TaskManagement.Models.UserLogsEditor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

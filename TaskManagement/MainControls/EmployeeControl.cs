@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagement.MainControls.EmployeeSubControls;
+using TaskManagement.MainControls.GlobalComponents;
 using TaskManagement.Services.Contracts;
 using TaskManagement.Utilities;
 
@@ -23,18 +24,21 @@ namespace TaskManagement.MainControls
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
         private readonly IAuthenticationService authenticationService;
+        private readonly ILogsService logsService;
 
         public EmployeeControl(
             IUserService userService, 
             ITicketService ticketService,
             IEmployeeRequestService requestService,
-            IAuthenticationService authenticationService
+            IAuthenticationService authenticationService,
+            ILogsService logsService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
             this.authenticationService = authenticationService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeButtonEffect();
             InitializeControls();
@@ -48,8 +52,9 @@ namespace TaskManagement.MainControls
             List<UserControl> controls = new List<UserControl>()
             {
                 new EmployeeDashboardControl(userService, ticketService, requestService),
-                new EmployeeTicketControl(userService, ticketService, requestService),
-                new EmployeeRequestControl(userService, ticketService, requestService)
+                new EmployeeTicketControl(userService, ticketService, requestService, logsService),
+                new EmployeeRequestControl(userService, ticketService, requestService, logsService),
+                new LogsControl(logsService)
             };
 
             GetUserControlChanger = new UserControlChanger(controls, MainPanel);
@@ -132,5 +137,11 @@ namespace TaskManagement.MainControls
 
         #endregion
 
+        private void BTNLogs_Click(object sender, EventArgs e)
+        {
+            InitializeControls();
+            ButtonColorChanger.SelectedButton(BTNLogs);
+            GetUserControlChanger.Display(3);
+        }
     }
 }

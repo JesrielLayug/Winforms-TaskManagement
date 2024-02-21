@@ -20,18 +20,21 @@ namespace TaskManagement.Views
         private readonly IUserService userService;
         private readonly ITicketService taskService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
         public LoginView(
             IAuthenticationService authenticationService, 
             IUserService userService,
             ITicketService taskService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.authenticationService = authenticationService;
             this.userService = userService;
             this.taskService = taskService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
         }
 
@@ -56,12 +59,14 @@ namespace TaskManagement.Views
 
                     if (response.Role == "Admin" || response.Role == "Super Admin")
                     {
-                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
+                        await logsService.Add("Logged in");
+                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService, logsService);
                         mainView.Show();
                     }
                     else
                     {
-                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService);
+                        await logsService.Add("Logged in");
+                        MainView mainView = new MainView(response.Role, userService, taskService, requestService, authenticationService, logsService);
                         mainView.Show();
                     }
                 }
@@ -95,7 +100,7 @@ namespace TaskManagement.Views
 
         private void LinkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword forgotPassword = new ForgotPassword(userService, authenticationService);
+            ForgotPassword forgotPassword = new ForgotPassword(userService, authenticationService, logsService);
             forgotPassword.ShowDialog();
         }
     }

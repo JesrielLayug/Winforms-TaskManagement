@@ -21,7 +21,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
-
+        private readonly ILogsService logsService;
         private ButtonClickHandler ApprovedClickHandler;
 
 
@@ -31,12 +31,14 @@ namespace TaskManagement.MainControls.EmployeeSubControls
         public EmployeeRequestControl(
             IUserService userService,
             ITicketService ticketService,
-            IEmployeeRequestService requestService
+            IEmployeeRequestService requestService,
+            ILogsService logsService
             )
         {
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
 
             // Handles the Button Click
             ApprovedClickHandler = new ButtonClickHandler();
@@ -113,8 +115,12 @@ namespace TaskManagement.MainControls.EmployeeSubControls
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            TicketEditorView editor = new TicketEditorView(null, Ticket, userService, ticketService, requestService);
-            editor.TicketRequestUpdated += (s, es) => { InitializeDataGridView(); }; 
+            TicketEditorView editor = new TicketEditorView(null, Ticket, userService, ticketService, requestService, logsService);
+            editor.TicketRequestUpdated += async (s, es) => 
+            {
+                await logsService.Add($"Updated the ticket request: {Ticket.Title}");
+                InitializeDataGridView(); 
+            }; 
             editor.ShowDialog();
         }
 
@@ -123,6 +129,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             var dialog = MessageBox.Show("Are you sure you wan't to delete this request? This can't be undone.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if(dialog == DialogResult.OK)
             {
+                await logsService.Add($"Deleted the ticket request: {Ticket.Title}");
                 var response = await requestService.Delete(Ticket);
                 MessageBox.Show(response.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InitializeDataGridView();

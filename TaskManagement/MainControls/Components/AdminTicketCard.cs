@@ -20,6 +20,7 @@ namespace TaskManagement.UserControls.Components
         private readonly IUserService userService;
         private readonly ITicketService ticketService;
         private readonly IEmployeeRequestService requestService;
+        private readonly ILogsService logsService;
 
         public event EventHandler UpdateClick;
         public event EventHandler DeleteClick;
@@ -28,12 +29,14 @@ namespace TaskManagement.UserControls.Components
             TicketInfo ticket, 
             IUserService userService, 
             ITicketService ticketService,
-            IEmployeeRequestService requestService)
+            IEmployeeRequestService requestService,
+            ILogsService logsService)
         {
             this.ticket = ticket;
             this.userService = userService;
             this.ticketService = ticketService;
             this.requestService = requestService;
+            this.logsService = logsService;
             InitializeComponent();
             InitializeTexts();
         }
@@ -51,18 +54,22 @@ namespace TaskManagement.UserControls.Components
             view.ShowDialog();
         }
 
-        private void BTNUpdate_Click(object sender, EventArgs e)
+        private async void BTNUpdate_Click(object sender, EventArgs e)
         {
-            TicketEditorView editor = new TicketEditorView(ticket, null, userService, ticketService, requestService);
+            TicketEditorView editor = new TicketEditorView(ticket, null, userService, ticketService, requestService, logsService);
             editor.ShowDialog();
             var dialog = editor.DialogResult;
 
             if(dialog == DialogResult.OK)
+            {
+                await logsService.Add($"Updated the ticket: {ticket.Title}");
                 UpdateClick?.Invoke(this, EventArgs.Empty);
+            }
         }
 
-        private void BTNDelete_Click(object sender, EventArgs e)
+        private async void BTNDelete_Click(object sender, EventArgs e)
         {
+            await logsService.Add($"Deleted the ticket: {ticket.Title}");
             DeleteClick?.Invoke(this, EventArgs.Empty);
         }
 

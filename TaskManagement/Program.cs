@@ -39,10 +39,15 @@ namespace TaskManagement
                 ServiceLocator.GetService<IMongoClient>(),
                 ServiceLocator.GetService<IDatabaseSetting>()
                 ));
+            ServiceLocator.Register<ILogsRepository>(() => new LogsRepository(
+                ServiceLocator.GetService<IMongoClient>(),
+                ServiceLocator.GetService<IDatabaseSetting>()
+                ));
 
             var userRepository = ServiceLocator.GetService<IUserRepository>();
             var ticketRepository = ServiceLocator.GetService<ITicketRepository>();
             var requestRepository = ServiceLocator.GetService<IEmployeeRequestRepository>();
+            var logsRepository = ServiceLocator.GetService<ILogsRepository>();
 
             // Register Services
             ServiceLocator.Register<IAuthenticationService>(() => new AuthenticationService(
@@ -57,16 +62,26 @@ namespace TaskManagement
             ServiceLocator.Register<IEmployeeRequestService>(() => new EmployeeRequestService(
                 requestRepository
                 ));
+            ServiceLocator.Register<ILogsService>(() => new LogsService(
+                logsRepository
+                ));
 
 
             var authenticationService = ServiceLocator.GetService<IAuthenticationService>();
             var userService = ServiceLocator.GetService<IUserService>();
             var ticketService = ServiceLocator.GetService<ITicketService>();
             var requestService = ServiceLocator.GetService<IEmployeeRequestService>();
+            var lopsService = ServiceLocator.GetService<ILogsService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView(authenticationService, userService, ticketService, requestService));
+            Application.Run(new LoginView(
+                authenticationService, 
+                userService, 
+                ticketService, 
+                requestService, 
+                lopsService
+                ));
             //Application.Run(new DummyForm(authenticationService));
 
         }
