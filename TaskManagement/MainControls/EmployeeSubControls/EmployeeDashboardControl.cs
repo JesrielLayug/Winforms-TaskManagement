@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -259,10 +260,10 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             }
         }
 
-        private IEnumerable<int> GetTicketCountByStatus(IEnumerable<TicketInfo> tickets, string status)
+        private IEnumerable<int> GetTicketCountByStatus(IEnumerable<TicketInfo> tickets, string status, string[] dates)
         {
             return Enumerable.Range(0, XAxisLabels.Length)
-                             .Select(x => tickets.Count(t => t.TicketStatus == status && t.DateCreated.Date == DateTime.Now.AddDays(-x).Date));
+                             .Select(x => tickets.Count(t => t.TicketStatus == status && t.DateCreated.Date == DateTime.ParseExact(dates[x], "MMM d", CultureInfo.InvariantCulture)));
         }
 
         private void AddSeries(string status, IEnumerable<TicketInfo> tickets)
@@ -270,7 +271,7 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             var series = new LineSeries
             {
                 Title = status,
-                Values = new ChartValues<int>(GetTicketCountByStatus(tickets, status))
+                Values = new ChartValues<int>(GetTicketCountByStatus(tickets, status, XAxisLabels))
             };
 
             cartesianChart3.Series.Add(series);
@@ -337,16 +338,16 @@ namespace TaskManagement.MainControls.EmployeeSubControls
             var series = new LineSeries
             {
                 Title = priority,
-                Values = new ChartValues<int>(GetTicketCountByPriority(tickets, priority))
+                Values = new ChartValues<int>(GetTicketCountByPriority(tickets, priority, XAxisLabels))
             };
 
             cartesianChart4.Series.Add(series);
         }
 
-        private IEnumerable<int> GetTicketCountByPriority(IEnumerable<TicketInfo> tickets, string priority)
+        private IEnumerable<int> GetTicketCountByPriority(IEnumerable<TicketInfo> tickets, string priority, string[] dates)
         {
             return Enumerable.Range(0, XAxisLabels.Length)
-                     .Select(x => tickets.Count(t => t.Priority == priority && t.DateCreated.Date == DateTime.Now.AddDays(-x).Date));
+                     .Select(x => tickets.Count(t => t.Priority == priority && t.DateCreated.Date == DateTime.ParseExact(dates[x], "MMM d", CultureInfo.InvariantCulture)));
         }
 
         private void AddDummyPrioritySeries(string status)

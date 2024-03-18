@@ -15,6 +15,7 @@ using LiveCharts.WinForms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using LiveCharts.Definitions.Charts;
+using System.Globalization;
 
 namespace TaskManagement.MainControls.SubControls
 {
@@ -287,9 +288,9 @@ namespace TaskManagement.MainControls.SubControls
             if (Tickets.Any())
             {
                 // Create series for each status
-                AddSeries("Next Up", Tickets);
-                AddSeries("In Progress", Tickets);
-                AddSeries("Completed", Tickets);
+                AddSeries("Next Up", Tickets, XAxisLabels);
+                AddSeries("In Progress", Tickets, XAxisLabels);
+                AddSeries("Completed", Tickets, XAxisLabels);
             }
             else
             {
@@ -303,35 +304,33 @@ namespace TaskManagement.MainControls.SubControls
         {
             // Initialize X-axis labels
             XAxisLabels = new string[7];
-            DateTime previousDay = DateTime.Now; // Initialize previousDay outside the loop
+            DateTime previousDay = DateTime.Now;
 
             for (int i = 0; i < 7; i++)
             {
                 XAxisLabels[i] = previousDay.ToString("MMM d");
 
-                if (i == 6)
-                    previousDay = previousDay.AddDays(1); // Update previousDay after every 6 days
-                //else
-                //    previousDay = previousDay.AddDays(1); // Increment previousDay by 1 day
+                //if ((i + 1) % 3 == 0) // Increment previousDay by 1 day after every 3 days
+                previousDay = previousDay.AddDays(1);
             }
 
             return XAxisLabels;
         }
-        private void AddSeries(string status, IEnumerable<TicketInfo> tickets)
+        private void AddSeries(string status, IEnumerable<TicketInfo> tickets, string[] dates)
         {
             var series = new LineSeries
             {
                 Title = status,
-                Values = new ChartValues<int>(GetTicketCountByStatus(tickets, status)),
+                Values = new ChartValues<int>(GetTicketCountByStatus(tickets, status, dates)),
             };
 
             // Add series to the chart
             cartesianChart1.Series.Add(series);
         }
-        private IEnumerable<int> GetTicketCountByStatus(IEnumerable<TicketInfo> tickets, string status)
+        private IEnumerable<int> GetTicketCountByStatus(IEnumerable<TicketInfo> tickets, string status, string[] dates)
         {
-            return Enumerable.Range(0, XAxisLabels.Length)
-                             .Select(i => tickets.Count(t => t.TicketStatus == status && t.DateCreated.Date == DateTime.Now.AddDays(-i).Date));
+            return Enumerable.Range(0, dates.Length)
+                             .Select(i => tickets.Count(t => t.TicketStatus == status && t.DateCreated.Date == DateTime.ParseExact(dates[i], "MMM d", CultureInfo.InvariantCulture)));
         }
 
         private void AddDailyDummySeries(string status)
@@ -404,17 +403,17 @@ namespace TaskManagement.MainControls.SubControls
             var series = new LineSeries
             {
                 Title = division,
-                Values = new ChartValues<int>(GetTicketCountByDivision(tickets, division)),
+                Values = new ChartValues<int>(GetTicketCountByDivision(tickets, division, XAxisLabels)),
             };
 
             // Add series to the chart
             cartesianChart2.Series.Add(series);
         }
 
-        private IEnumerable<int> GetTicketCountByDivision(IEnumerable<TicketInfo> tickets, string division)
+        private IEnumerable<int> GetTicketCountByDivision(IEnumerable<TicketInfo> tickets, string division, string[] dates)
         {
             return Enumerable.Range(0, XAxisLabels.Length)
-                             .Select(i => tickets.Count(t => t.Division == division && t.DateCreated.Date == DateTime.Now.AddDays(-i).Date));
+                             .Select(i => tickets.Count(t => t.Division == division && t.DateCreated.Date == DateTime.ParseExact(dates[i], "MMM d", CultureInfo.InvariantCulture)));
         }
 
         private void AddDummySeries(string status)

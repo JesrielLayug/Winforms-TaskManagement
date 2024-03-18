@@ -130,11 +130,10 @@ namespace TaskManagement.MainControls
 
         private void BTNLogout_Click(object sender, EventArgs e)
         {
+            logsService.Add("Logged out.");
             ButtonColorChanger.SelectedButton(BTNLogout);
             authenticationService.Logout();
             LogoutClick?.Invoke(this, EventArgs.Empty);
-
-            logsService.Add("Logged out.");
         }
 
         #endregion
