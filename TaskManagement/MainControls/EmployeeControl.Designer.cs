@@ -66,9 +66,9 @@
             this.BTNLogs.FlatAppearance.BorderSize = 0;
             this.BTNLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogs.Image = global::TaskManagement.Properties.Resources.logged_gray;
-            this.BTNLogs.Location = new System.Drawing.Point(-3, 183);
+            this.BTNLogs.Location = new System.Drawing.Point(-3, 181);
             this.BTNLogs.Name = "BTNLogs";
-            this.BTNLogs.Size = new System.Drawing.Size(63, 41);
+            this.BTNLogs.Size = new System.Drawing.Size(65, 41);
             this.BTNLogs.TabIndex = 6;
             this.BTNLogs.UseVisualStyleBackColor = true;
             this.BTNLogs.Click += new System.EventHandler(this.BTNLogs_Click);
@@ -98,9 +98,9 @@
             this.BTNLogout.FlatAppearance.BorderSize = 0;
             this.BTNLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLogout.Image = global::TaskManagement.Properties.Resources.door;
-            this.BTNLogout.Location = new System.Drawing.Point(-3, 225);
+            this.BTNLogout.Location = new System.Drawing.Point(-3, 223);
             this.BTNLogout.Name = "BTNLogout";
-            this.BTNLogout.Size = new System.Drawing.Size(63, 41);
+            this.BTNLogout.Size = new System.Drawing.Size(65, 41);
             this.BTNLogout.TabIndex = 5;
             this.BTNLogout.UseVisualStyleBackColor = true;
             this.BTNLogout.Click += new System.EventHandler(this.BTNLogout_Click);
@@ -110,7 +110,7 @@
             this.BTNRequest.FlatAppearance.BorderSize = 0;
             this.BTNRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNRequest.Image = global::TaskManagement.Properties.Resources.message_gray;
-            this.BTNRequest.Location = new System.Drawing.Point(-2, 142);
+            this.BTNRequest.Location = new System.Drawing.Point(-2, 140);
             this.BTNRequest.Name = "BTNRequest";
             this.BTNRequest.Size = new System.Drawing.Size(64, 41);
             this.BTNRequest.TabIndex = 4;
@@ -122,7 +122,7 @@
             this.BTNTicket.FlatAppearance.BorderSize = 0;
             this.BTNTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNTicket.Image = global::TaskManagement.Properties.Resources.task;
-            this.BTNTicket.Location = new System.Drawing.Point(-1, 100);
+            this.BTNTicket.Location = new System.Drawing.Point(-1, 98);
             this.BTNTicket.Name = "BTNTicket";
             this.BTNTicket.Size = new System.Drawing.Size(63, 41);
             this.BTNTicket.TabIndex = 1;

@@ -65,7 +65,7 @@ namespace TaskManagement.UserControls
         {
             Color defaultBackColor = Color.Transparent;
             Color defaultForeColor = Color.White;
-            Color newBackColor = Color.FromArgb(64, 123, 255);
+            Color newBackColor = Color.FromArgb(0, 141, 255);
             Color newForeColor = Color.FromArgb(64, 123, 255);
 
             Image defaultDashboard = Properties.Resources.dashboard_3;

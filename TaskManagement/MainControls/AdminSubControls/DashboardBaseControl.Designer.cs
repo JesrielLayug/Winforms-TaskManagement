@@ -280,7 +280,7 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // LBEmployeesQuantity
             // 
-            this.LBEmployeesQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBEmployeesQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBEmployeesQuantity.ForeColor = System.Drawing.Color.Black;
             this.LBEmployeesQuantity.Location = new System.Drawing.Point(29, 19);
             this.LBEmployeesQuantity.Name = "LBEmployeesQuantity";
@@ -340,7 +340,7 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // LBCompletedQuantity
             // 
-            this.LBCompletedQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBCompletedQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCompletedQuantity.ForeColor = System.Drawing.Color.Black;
             this.LBCompletedQuantity.Location = new System.Drawing.Point(30, 19);
             this.LBCompletedQuantity.Name = "LBCompletedQuantity";
@@ -399,7 +399,7 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // LBInProgressQuantity
             // 
-            this.LBInProgressQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBInProgressQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBInProgressQuantity.ForeColor = System.Drawing.Color.Black;
             this.LBInProgressQuantity.Location = new System.Drawing.Point(27, 19);
             this.LBInProgressQuantity.Name = "LBInProgressQuantity";
@@ -458,7 +458,7 @@ namespace TaskManagement.MainControls.SubControls
             // 
             // LBNextUpQuantity
             // 
-            this.LBNextUpQuantity.Font = new System.Drawing.Font("Oswald", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBNextUpQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBNextUpQuantity.ForeColor = System.Drawing.Color.Black;
             this.LBNextUpQuantity.Location = new System.Drawing.Point(28, 18);
             this.LBNextUpQuantity.Name = "LBNextUpQuantity";

@@ -304,14 +304,12 @@ namespace TaskManagement.MainControls.SubControls
         {
             // Initialize X-axis labels
             XAxisLabels = new string[7];
-            DateTime previousDay = DateTime.Now;
+            DateTime currentDate = DateTime.Now.Date.AddDays(2); // Start from two days ahead of the current date
 
             for (int i = 0; i < 7; i++)
             {
-                XAxisLabels[i] = previousDay.ToString("MMM d");
-
-                //if ((i + 1) % 3 == 0) // Increment previousDay by 1 day after every 3 days
-                previousDay = previousDay.AddDays(1);
+                XAxisLabels[i] = currentDate.ToString("MMM d");
+                currentDate = currentDate.AddDays(-1); // Decrement currentDate by 1 day to go backward in time
             }
 
             return XAxisLabels;
