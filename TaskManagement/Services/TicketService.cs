@@ -46,11 +46,6 @@ namespace TaskManagement.Services
                     CreatorId = creator.Id
                 };
 
-                //if (creator.Role == "Admin")
-                //    taskTobeAdded.IsApproved = true;
-                //else
-                //    taskTobeAdded.IsApproved = false;
-
                 await ticketRepository.Add(taskTobeAdded);
 
                 return new Response

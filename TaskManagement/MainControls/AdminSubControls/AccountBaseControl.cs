@@ -71,7 +71,6 @@ namespace TaskManagement.MainControls.SubControls
         private async void InitializeDataGridView()
         {
             userEditors = new List<UserEditor>();
-
             var role = SettingsProvider.GetCurrentUserRole();
             if(role == "Admin")
             {
@@ -93,7 +92,6 @@ namespace TaskManagement.MainControls.SubControls
             else
             {
                 var users = await userService.GetAllAdminAndEmployee();
-
                 foreach (var user in users)
                 {
                     userEditors.Add(new UserEditor
@@ -107,8 +105,6 @@ namespace TaskManagement.MainControls.SubControls
                     });
                 }
             }
-            
-
             DGVUsers.DataSource = userEditors;
         }
         private void PopulateTextBoxes(UserEditor user)

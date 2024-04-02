@@ -49,6 +49,10 @@ namespace TaskManagement.Views
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Please complete all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private bool CheckAllFields()

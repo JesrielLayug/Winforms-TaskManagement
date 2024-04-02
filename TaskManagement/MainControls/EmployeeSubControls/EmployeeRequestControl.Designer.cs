@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BTNSearch = new Guna.UI.WinForms.GunaButton();
+            this.TBSearch = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.MainContainer = new System.Windows.Forms.Panel();
             this.ContentContainer = new System.Windows.Forms.Panel();
@@ -76,8 +78,6 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRequestCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeSubRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BTNSearch = new Guna.UI.WinForms.GunaButton();
-            this.TBSearch = new Guna.UI.WinForms.GunaTextBox();
             this.panel1.SuspendLayout();
             this.MainContainer.SuspendLayout();
             this.ContentContainer.SuspendLayout();
@@ -107,6 +107,52 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1202, 59);
             this.panel1.TabIndex = 17;
+            // 
+            // BTNSearch
+            // 
+            this.BTNSearch.AnimationHoverSpeed = 0.07F;
+            this.BTNSearch.AnimationSpeed = 0.03F;
+            this.BTNSearch.BackColor = System.Drawing.Color.Transparent;
+            this.BTNSearch.BaseColor = System.Drawing.Color.Transparent;
+            this.BTNSearch.BorderColor = System.Drawing.Color.White;
+            this.BTNSearch.BorderSize = 1;
+            this.BTNSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.BTNSearch.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNSearch.ForeColor = System.Drawing.Color.White;
+            this.BTNSearch.Image = null;
+            this.BTNSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.BTNSearch.Location = new System.Drawing.Point(1086, 12);
+            this.BTNSearch.Name = "BTNSearch";
+            this.BTNSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
+            this.BTNSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTNSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTNSearch.OnHoverImage = null;
+            this.BTNSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.BTNSearch.Radius = 5;
+            this.BTNSearch.Size = new System.Drawing.Size(75, 35);
+            this.BTNSearch.TabIndex = 39;
+            this.BTNSearch.Text = "Search";
+            this.BTNSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BTNSearch.Click += new System.EventHandler(this.BTNSearch_Click);
+            // 
+            // TBSearch
+            // 
+            this.TBSearch.BackColor = System.Drawing.Color.Transparent;
+            this.TBSearch.BaseColor = System.Drawing.Color.White;
+            this.TBSearch.BorderColor = System.Drawing.Color.Transparent;
+            this.TBSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TBSearch.FocusedBaseColor = System.Drawing.Color.White;
+            this.TBSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.TBSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TBSearch.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBSearch.Location = new System.Drawing.Point(864, 11);
+            this.TBSearch.Name = "TBSearch";
+            this.TBSearch.PasswordChar = '\0';
+            this.TBSearch.Radius = 5;
+            this.TBSearch.SelectedText = "";
+            this.TBSearch.Size = new System.Drawing.Size(216, 36);
+            this.TBSearch.TabIndex = 40;
             // 
             // label2
             // 
@@ -503,11 +549,11 @@
             // 
             // LBTicketName
             // 
-            this.LBTicketName.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTicketName.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTicketName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.LBTicketName.Location = new System.Drawing.Point(37, 35);
+            this.LBTicketName.Location = new System.Drawing.Point(29, 37);
             this.LBTicketName.Name = "LBTicketName";
-            this.LBTicketName.Size = new System.Drawing.Size(141, 33);
+            this.LBTicketName.Size = new System.Drawing.Size(174, 33);
             this.LBTicketName.TabIndex = 48;
             this.LBTicketName.Text = "Lorem Ipsum";
             // 
@@ -534,28 +580,28 @@
             // 
             // DGVRequests
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVRequests.AutoGenerateColumns = false;
             this.DGVRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVRequests.BackgroundColor = System.Drawing.Color.White;
             this.DGVRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVRequests.ColumnHeadersHeight = 45;
             this.DGVRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn,
@@ -565,14 +611,14 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.dateRequestCreatedDataGridViewTextBoxColumn});
             this.DGVRequests.DataSource = this.employeeSubRequestBindingSource;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVRequests.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGVRequests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVRequests.EnableHeadersVisualStyles = false;
             this.DGVRequests.GridColor = System.Drawing.Color.White;
@@ -580,9 +626,9 @@
             this.DGVRequests.Name = "DGVRequests";
             this.DGVRequests.ReadOnly = true;
             this.DGVRequests.RowHeadersVisible = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.DGVRequests.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVRequests.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVRequests.RowTemplate.Height = 40;
             this.DGVRequests.RowTemplate.ReadOnly = true;
@@ -622,8 +668,8 @@
             // assignNameDataGridViewTextBoxColumn
             // 
             this.assignNameDataGridViewTextBoxColumn.DataPropertyName = "AssignName";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.assignNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.assignNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.assignNameDataGridViewTextBoxColumn.HeaderText = "Assignee Name";
             this.assignNameDataGridViewTextBoxColumn.Name = "assignNameDataGridViewTextBoxColumn";
             this.assignNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -659,52 +705,6 @@
             // employeeSubRequestBindingSource
             // 
             this.employeeSubRequestBindingSource.DataSource = typeof(TaskManagement.Models.EmployeeTicketInfo);
-            // 
-            // BTNSearch
-            // 
-            this.BTNSearch.AnimationHoverSpeed = 0.07F;
-            this.BTNSearch.AnimationSpeed = 0.03F;
-            this.BTNSearch.BackColor = System.Drawing.Color.Transparent;
-            this.BTNSearch.BaseColor = System.Drawing.Color.Transparent;
-            this.BTNSearch.BorderColor = System.Drawing.Color.White;
-            this.BTNSearch.BorderSize = 1;
-            this.BTNSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNSearch.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNSearch.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNSearch.ForeColor = System.Drawing.Color.White;
-            this.BTNSearch.Image = null;
-            this.BTNSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNSearch.Location = new System.Drawing.Point(1086, 12);
-            this.BTNSearch.Name = "BTNSearch";
-            this.BTNSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(206)))));
-            this.BTNSearch.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNSearch.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNSearch.OnHoverImage = null;
-            this.BTNSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNSearch.Radius = 5;
-            this.BTNSearch.Size = new System.Drawing.Size(75, 35);
-            this.BTNSearch.TabIndex = 39;
-            this.BTNSearch.Text = "Search";
-            this.BTNSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNSearch.Click += new System.EventHandler(this.BTNSearch_Click);
-            // 
-            // TBSearch
-            // 
-            this.TBSearch.BackColor = System.Drawing.Color.Transparent;
-            this.TBSearch.BaseColor = System.Drawing.Color.White;
-            this.TBSearch.BorderColor = System.Drawing.Color.Transparent;
-            this.TBSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TBSearch.FocusedBaseColor = System.Drawing.Color.White;
-            this.TBSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.TBSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TBSearch.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBSearch.Location = new System.Drawing.Point(864, 11);
-            this.TBSearch.Name = "TBSearch";
-            this.TBSearch.PasswordChar = '\0';
-            this.TBSearch.Radius = 5;
-            this.TBSearch.SelectedText = "";
-            this.TBSearch.Size = new System.Drawing.Size(216, 36);
-            this.TBSearch.TabIndex = 40;
             // 
             // EmployeeRequestControl
             // 

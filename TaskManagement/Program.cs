@@ -26,6 +26,8 @@ namespace TaskManagement
             ServiceLocator.Register<IMongoClient>(() => new MongoClient("mongodb+srv://jesriellayug:password027@cluster0.1yqsz2d.mongodb.net/?authMechanism=SCRAM-SHA-1"));
             ServiceLocator.Register<IDatabaseSetting>(() => new DatabaseSetting());
 
+
+
             // Register Repositories
             ServiceLocator.Register<IUserRepository>(() => new UserRepository(
                 ServiceLocator.GetService<IMongoClient>(),
