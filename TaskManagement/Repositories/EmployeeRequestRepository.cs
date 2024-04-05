@@ -30,9 +30,9 @@ namespace TaskManagement.Repositories
             await RequestCollection.InsertOneAsync(request);
         }
 
-        public async Task Delete(string id)
+        public async Task Delete(string title)
         {
-            await RequestCollection.DeleteOneAsync(x => x.Id == id);
+            await RequestCollection.DeleteOneAsync(x => x.Title == title);
         }
 
         public async Task<IEnumerable<EmployeeTicket>> GetAllUserRequest(string employeeId)
@@ -59,6 +59,11 @@ namespace TaskManagement.Repositories
         public async Task<IEnumerable<EmployeeTicket>> GetAllApproved()
         {
             return await RequestCollection.Find(x => x.IsApproved).ToListAsync();
+        }
+
+        public async Task<EmployeeTicket> GetByTitle(string name)
+        {
+            return await RequestCollection.Find(x => x.Title == name).FirstOrDefaultAsync();
         }
     }
 }

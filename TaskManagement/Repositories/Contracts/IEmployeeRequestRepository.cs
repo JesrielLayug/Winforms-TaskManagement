@@ -11,10 +11,11 @@ namespace TaskManagement.Repositories.Contracts
     {
         Task Add(EmployeeTicket request);
         Task Update(EmployeeTicket request, string Id);
-        Task Delete(string id);
+        Task Delete(string title);
         Task<IEnumerable<EmployeeTicket>> GetAllUserRequest(string employeeId);
         Task<IEnumerable<EmployeeTicket>> GetAll();
         Task<EmployeeTicket> GetById(string id);
+        Task<EmployeeTicket> GetByTitle(string name);
         Task<IEnumerable<EmployeeTicket>> GetAllApproved();
     }
 }

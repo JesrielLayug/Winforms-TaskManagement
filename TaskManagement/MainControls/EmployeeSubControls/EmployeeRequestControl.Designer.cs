@@ -549,13 +549,14 @@
             // 
             // LBTicketName
             // 
-            this.LBTicketName.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTicketName.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTicketName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.LBTicketName.Location = new System.Drawing.Point(29, 37);
+            this.LBTicketName.Location = new System.Drawing.Point(29, 22);
             this.LBTicketName.Name = "LBTicketName";
-            this.LBTicketName.Size = new System.Drawing.Size(174, 33);
+            this.LBTicketName.Size = new System.Drawing.Size(174, 53);
             this.LBTicketName.TabIndex = 48;
             this.LBTicketName.Text = "Lorem Ipsum";
+            this.LBTicketName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 

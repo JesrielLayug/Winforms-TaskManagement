@@ -269,13 +269,14 @@
             // 
             // LBTicketName
             // 
-            this.LBTicketName.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTicketName.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTicketName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.LBTicketName.Location = new System.Drawing.Point(47, 17);
+            this.LBTicketName.Location = new System.Drawing.Point(48, -3);
             this.LBTicketName.Name = "LBTicketName";
-            this.LBTicketName.Size = new System.Drawing.Size(141, 33);
+            this.LBTicketName.Size = new System.Drawing.Size(204, 60);
             this.LBTicketName.TabIndex = 48;
             this.LBTicketName.Text = "Lorem Ipsum";
+            this.LBTicketName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -312,6 +313,7 @@
             this.CBStatus.Radius = 5;
             this.CBStatus.Size = new System.Drawing.Size(104, 33);
             this.CBStatus.TabIndex = 62;
+            this.CBStatus.SelectionChangeCommitted += new System.EventHandler(this.CBStatus_SelectionChangeCommitted);
             // 
             // BTNSubmit
             // 
@@ -322,6 +324,7 @@
             this.BTNSubmit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(130)))), ((int)(((byte)(253)))));
             this.BTNSubmit.BorderSize = 1;
             this.BTNSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTNSubmit.Enabled = false;
             this.BTNSubmit.FocusedColor = System.Drawing.Color.Empty;
             this.BTNSubmit.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(130)))), ((int)(((byte)(253)))));

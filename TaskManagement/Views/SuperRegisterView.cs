@@ -48,6 +48,10 @@ namespace TaskManagement.Views
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Please complete all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private bool CheckAllFields()
@@ -61,7 +65,7 @@ namespace TaskManagement.Views
                !string.IsNullOrEmpty(TBPassword.Text) &&
                !string.IsNullOrEmpty(CBRole.Text))
                 return true;
-
+            
             return false;
         }
     }

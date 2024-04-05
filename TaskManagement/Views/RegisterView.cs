@@ -26,7 +26,7 @@ namespace TaskManagement.Views
 
         private async void BTNRegister_Click(object sender, EventArgs e)
         {
-            if(CheckAllFields())
+            if (CheckAllFields())
             {
                 var response = await authenticationService.Register(new UserEditor
                 {
@@ -57,16 +57,18 @@ namespace TaskManagement.Views
 
         private bool CheckAllFields()
         {
-            if (!string.IsNullOrEmpty(CBAuthorization.Text) &&
+            if (
+               !string.IsNullOrEmpty(CBAuthorization.Text) &&
                !string.IsNullOrEmpty(CBGender.Text) &&
                !string.IsNullOrEmpty(CBPosition.Text) &&
                !string.IsNullOrEmpty(TBFirstname.Text) &&
                !string.IsNullOrEmpty(TBLastname.Text) &&
                !string.IsNullOrEmpty(TBEmail.Text) &&
-               !string.IsNullOrEmpty(TBPassword.Text))
+               !string.IsNullOrEmpty(TBPassword.Text)
+               )
                 return true;
-
-            return false;
+            else
+                return false;
         }
     }
 }

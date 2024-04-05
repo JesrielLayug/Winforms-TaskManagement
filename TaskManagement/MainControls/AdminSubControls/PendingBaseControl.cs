@@ -143,6 +143,9 @@ namespace TaskManagement.MainControls.SubControls
                     Ticket.IsApproved = true;
                     await requestService.Update(Ticket);
                     MessageBox.Show("Ticket is successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    await requestService.Delete(Ticket);
+
                     InitializeDataGridView();
 
                     await logsService.Add($"Approved to update the ticket: {Ticket.Title}");

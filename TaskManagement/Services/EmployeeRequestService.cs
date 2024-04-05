@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.Runtime.Internal;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -156,7 +157,7 @@ namespace TaskManagement.Services
         {
             try
             {
-                await employeeRequestRepository.Delete(request.Id);
+                await employeeRequestRepository.Delete(request.Title);
                 return new Response
                 {
                     IsSuccess = true,
@@ -230,6 +231,33 @@ namespace TaskManagement.Services
                 return ticketInfos;
             }
             catch { throw; };
+        }
+
+        public async Task<EmployeeTicketInfo> GetByTitle(string title)
+        {
+            var existingRequest = await employeeRequestRepository.GetByTitle(title);
+
+            if(existingRequest != null) 
+                return new EmployeeTicketInfo
+                {
+                    Id = existingRequest.Id,
+                    TicketId = existingRequest.TicketId,
+                    Title = existingRequest.Title,
+                    AssignName= existingRequest.AssignName,
+                    Priority = existingRequest.Priority,
+                    Division = existingRequest.Division,
+                    TicketStatus = existingRequest.TicketStatus,
+                    StartDate = existingRequest.StartDate,
+                    DueDate = existingRequest.DueDate,
+                    Description = existingRequest.Description,
+                    IsApproved=existingRequest.IsApproved,
+                    IsCancelled = existingRequest.IsCancelled,
+                    RequestorName=existingRequest.RequestorName,
+                    DateRequestCreated=existingRequest.DateRequestCreated.ToString("MMM d")
+                };
+            else
+                return null;
+            
         }
     }
 }

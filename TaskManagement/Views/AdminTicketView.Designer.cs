@@ -175,13 +175,14 @@
             // 
             // LBTicketName
             // 
-            this.LBTicketName.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTicketName.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTicketName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(73)))));
-            this.LBTicketName.Location = new System.Drawing.Point(42, 9);
+            this.LBTicketName.Location = new System.Drawing.Point(35, -1);
             this.LBTicketName.Name = "LBTicketName";
-            this.LBTicketName.Size = new System.Drawing.Size(141, 33);
+            this.LBTicketName.Size = new System.Drawing.Size(204, 48);
             this.LBTicketName.TabIndex = 31;
             this.LBTicketName.Text = "Lorem Ipsum";
+            this.LBTicketName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gunaShadowPanel3
             // 
@@ -312,7 +313,7 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Due:";
             // 
-            // TicketView
+            // AdminTicketView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,7 +339,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TicketView";
+            this.Name = "AdminTicketView";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

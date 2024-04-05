@@ -229,6 +229,7 @@
             // 
             // FLPInProgress
             // 
+            this.FLPInProgress.AutoScroll = true;
             this.FLPInProgress.Location = new System.Drawing.Point(1, 0);
             this.FLPInProgress.Name = "FLPInProgress";
             this.FLPInProgress.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
